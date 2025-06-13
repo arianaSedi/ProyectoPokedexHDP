@@ -15,7 +15,7 @@
     <div class="pokedex-navbar d-flex align-items-center justify-content-between w-100">
       
       <div class="pokedex-izq d-flex me-3 align-items-center gap-2 justify-content-start">
-        <div class="circulo-btn mb-1 mt-3 mx-3"></div>
+        <div class="circulo-btn mb-1 mt-5 mx-3"></div>
         <div class="circ red"></div>
         <div class="circ yellow"></div>
         <div class="circ green"></div>
@@ -42,6 +42,44 @@
 
     </div>
   </main>
+
+  <footer class="pokedex-footer">
+    <div class="footer-content d-flex flex-column flex-md-row justify-content-center align-items-center w-100">
+
+      <!-- Cruz direccional a la izquierda -->
+      <div class="cruz-container d-flex justify-content-start mb-4 mb-md-0">
+        <div class="cruz">
+          <div class="flecha up"></div>
+          <div class="flecha down"></div>
+          <div class="flecha left"></div>
+          <div class="flecha right"></div>
+          <div class="centro"></div>
+        </div>
+      </div>
+
+      <!-- Pantalla verde en el centro -->
+      <div class="pantalla-nombres text-center">
+        <p class="nombre-equipo mb-0">Ariana Sedillo ✦ SF22015</p>
+        <p class="nombre-equipo mb-0">Angelica Amaya ✦ AP22010</p>
+        <p class="nombre-equipo mb-0">Diego Montesinos ✦ FM22026</p>
+        <p class="nombre-equipo mb-0">Freddy Villatoro ✦ VR20003</p>
+        <p class="nombre-equipo mb-0">Ivan Molina ✦ MR22085</p>
+      </div>
+
+      <!-- Botones a la derecha -->
+      <div class="botones-acciones d-flex flex-row align-items-end">
+        <button class="btn-rojo-pokedex"></button>
+        <button class="btn-verde-pokedex"></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante para subir -->
+  <button id="flechaScroll" title="Subir" class="scroll-btn">
+    <img src="images/flechaPoke.png" alt="Subir" class="scroll-img" />
+  </button>
+
+  <script src="Scripts/flechaScroll.js" defer> </script>
 
 </body>
 </html>
