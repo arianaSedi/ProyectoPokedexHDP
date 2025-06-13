@@ -3,18 +3,24 @@ body {
   padding: 0;
 }
 
+/*ESTILOS DE POKEDEX.HTML*/
+
 /* Contenedor general de la barra */
 .pokedex-navbar {
   background-color: #d32f2f;
   height: 75px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   border-bottom: 5px solid #9a0007;
 }
 
 /* Parte izquierda grande como Pokedex */
 .pokedex-izq {
   width: 450px;
-  height: 125px;
+  height: 150px;
   background-color: #d32f2f;
   border-bottom: 5px solid #9a0007;
   border-bottom-right-radius: 300px;
@@ -24,8 +30,8 @@ body {
 
 /* Boton azul grande */
 .circulo-btn {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   background-color: #2f56c0;
   border: 4px solid white;
   border-radius: 50%;
@@ -33,8 +39,8 @@ body {
 
 /* Luces pequeñas */
 .circ {
-  width: 12px;
-  height: 12px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   border: 1px solid white;
 }
@@ -78,17 +84,49 @@ body {
 
 /* Contenedor estilo pantalla blanca */
 .main-pokedex {
-  height: calc(100vh - 75px); /* Resta el alto del nav */
-  padding: 20px;
+  padding-top: 100px; /* suficiente para evitar el navbar fijo */
+  padding-bottom: 100px; /* espacio inferior para el botón flotante */
+  display: flex;
+  justify-content: center;
 }
 
 .pokedex-pantalla {
   background-color: white;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.35);
   border: 0.5px solid #0808088e;
-  max-width: 95%;
   width: 100%;
+  max-width: 95%;
   border-bottom-left-radius: 100px;
-  height: 500px;
+}
+
+
+/* Boton flotante para volver arriba */
+.scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #3a3737;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffc400;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  transition: transform 0.2s ease;
+}
+.scroll-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.sscroll-btn:hover {
+  transform: scale(1.1);
 }

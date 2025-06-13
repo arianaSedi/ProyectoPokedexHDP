@@ -15,7 +15,7 @@
     <div class="pokedex-navbar d-flex align-items-center justify-content-between w-100">
       
       <div class="pokedex-izq d-flex me-3 align-items-center gap-2 justify-content-start">
-        <div class="circulo-btn mb-1 mt-3 mx-3"></div>
+        <div class="circulo-btn mb-1 mt-5 mx-3"></div>
         <div class="circ red"></div>
         <div class="circ yellow"></div>
         <div class="circ green"></div>
@@ -39,9 +39,36 @@
     <div class="pokedex-pantalla p-4 text-center">
         
     <!-- tarjetas pokemones aqui -->
-
+     
     </div>
   </main>
+
+  <!-- Boton flotante para subir -->
+  <button id="flechaScroll" title="Subir" class="scroll-btn">
+    <img src="images/flechaPoke.png" alt="Subir" class="scroll-img" />
+  </button>
+
+  <script>
+  const flechaScroll = document.getElementById("flechaScroll");
+
+  // Mostrar el boton cuando se hace scroll hacia abajo
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      flechaScroll.style.display = "block";
+    } else {
+      flechaScroll.style.display = "none";
+    }
+  };
+
+  // Scroll suave hacia arriba al hacer clic
+  flechaScroll.onclick = function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+</script>
+
 
 </body>
 </html>
