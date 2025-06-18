@@ -1,4 +1,4 @@
-import Estadisticas from "../Clases/Estadisticas";
+import Estadisticas from "../Clases/Estadisticas.js";
 
 const getEstadisticas = (dtPoke) =>{
 
