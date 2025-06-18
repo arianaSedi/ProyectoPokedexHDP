@@ -1,0 +1,401 @@
+/*Esto es pa crear la tarjeta*/
+
+.card{
+  width: 16rem;
+  height: 23rem;
+  border: none;
+  position: relative;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  transition: all 20ms ease-out;
+}
+
+.card:hover{
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2%);
+}
+
+.tarjeta_principal{
+  width: 28rem;
+  height: 45rem;
+}
+
+
+.margen_top{
+  margin-top: -20px;
+}
+
+.br_infor{
+  border-radius: 15px;
+}
+
+.fondoTarjetaVerde{
+  background: #5eff00;
+  background: radial-gradient(circle,rgba(94, 255, 0, 1) 0%, rgba(14, 158, 21, 1) 100%); 
+}
+
+.fondoTarjetaRojo{
+  background: #ff0000;
+  background: radial-gradient(circle,rgba(255, 0, 0, 1) 0%, rgba(117, 11, 11, 1) 100%);
+  
+}
+
+.fondoTarjetaBlanco{
+  background: #ffffff;
+  background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(207, 207, 207, 1) 100%);
+}
+
+.fondoTarjetaNegro{
+  background: #000000;
+background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(77, 77, 77, 1) 100%);
+}
+
+.fondoTarjetaMorado{
+  background: #8d70b5;
+background: radial-gradient(circle,rgba(141, 112, 181, 1) 0%, rgba(39, 0, 107, 1) 100%);
+}
+
+.fondoTarjetaAzul{
+  background: #00e5ff;
+background: radial-gradient(circle,rgba(0, 229, 255, 1) 0%, rgba(6, 38, 74, 1) 100%);
+}
+
+.fondoTarjetaMarron{
+  background: #cc9047;
+background: radial-gradient(circle,rgba(204, 144, 71, 1) 0%, rgba(74, 26, 6, 1) 100%);
+}
+
+.fondoTarjetaAmarillo{
+  background: #ffee00;
+background: radial-gradient(circle,rgba(255, 238, 0, 1) 0%, rgba(190, 196, 0, 1) 100%);
+}
+
+.fondoTarjetaRosa{
+  background: #ff00cc;
+background: radial-gradient(circle,rgba(255, 0, 204, 1) 0%, rgba(120, 6, 107, 1) 100%);
+}
+
+.fondoTarjetaGris{
+  background: #9e9999;
+background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1) 100%);
+}
+
+.boton_volver{
+  width: 10%;
+  height: 45px;
+  border: none;
+  background-color: transparent;
+  transition: all 100ms ease-out;
+}
+
+.boton_volver:hover{
+  transform: translateX(-25%);
+}
+
+.img_volver{
+  width: 30px;
+  height: 30px;
+}
+
+.boton_acompañante{
+  width: 12%;
+  height: 45px;
+  border: none;
+  background-color: transparent;
+  transition: all 100ms ease-out;
+}
+
+.boton_acompañante:hover{
+ transform: scale(1.3);
+}
+
+.img_pokeball{
+  width: 35px;
+  height: 35px;
+}
+
+.fuente_nombre{
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  position: absolute;
+  font-size: 35px;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+
+.fuente_nombreP{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  color: white;
+  top :50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 7px;
+}
+
+
+
+.fuente_id{
+
+  font-family: 'Times New Roman', Times, serif;
+  color: #0b287a;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 70px;
+}
+
+.fuente_idPokedex{
+  font-family: 'Times New Roman', Times, serif;
+ color: #7eb284;
+ font-weight: bold;
+ letter-spacing: 2px;
+}
+
+.imagen_tarjeta{
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  transform: translateY(-20%) translateX(20%);
+}
+
+.imagen_tarjetaPokedex{
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fuente_tipos{
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(81, 135, 189);
+  font-size: 16px;
+  transform: translateY(-105px);
+}
+
+@font-face {
+    font-family: "letra-circle";
+    src: url('circlethings.ttf') format('truetype');
+}
+
+.fuente_circle_ {
+    font-family: 'letra-circle';
+    color: #5e7966;
+}
+
+.fuente_tiposPoke{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #5e7966;
+  font-size: 22px;
+}
+
+.decoracion_tipos{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #222121;
+  font-size: 15px;
+  transform: translateY(-105px);
+}
+
+.margen_corto{
+  margin-top: 2.5px;
+}
+
+.formacursor{
+  cursor: pointer;
+}
+
+.color_verdep {
+    color: #6ad07e;
+}
+
+.color_rojop {
+    color: #ab3030;
+}
+
+.color_azulp {
+    color: #5e8aa1;
+}
+
+.color_blancop {
+    color: #d6d6d6;
+}
+
+.color_cafep {
+    color: #a76837;
+}
+
+.color_amarillop {
+    color: #a99029;
+}
+
+.color_moradop {
+    color: #603b9c;
+}
+
+.color_rosadop {
+    color: #b84f8c;
+}
+
+.color_grisp {
+    color: #9f9f9f;
+}
+
+.color_negrop {
+    color: #6c6a6a;
+}
+
+.margen_abajo{
+  margin-bottom: 15px;
+}
+
+.margen_arriba{
+  margin-top: 20px;
+}
+
+.margen_acercar_arriba {
+  margin-top: -14px;
+}
+
+.contorno-tipos {
+    -webkit-text-stroke: 0.5px #1d1d1d;
+}
+
+.borde_verde{
+-webkit-text-stroke: 12px #92c79d;
+position: absolute;
+z-index: 1;
+}
+
+.borde_amarillo{
+  -webkit-text-stroke: 12px #eddc93;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_blanco{
+  -webkit-text-stroke: 12px #e1dddd;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_negro{
+  -webkit-text-stroke: 12px #424242;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_rosa{
+  -webkit-text-stroke: 12px #faacd8;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_rojo{
+  -webkit-text-stroke: 12px #f28585;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_azul{
+  -webkit-text-stroke: 12px #7bb6d6; 
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_marron{
+  -webkit-text-stroke: 12px #c08f69;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_gris{
+  -webkit-text-stroke: 12px #B6B4B4;
+  position: absolute;
+  z-index: 1;
+}
+
+.borde_morado{
+  -webkit-text-stroke: 12px #7B6E91;
+  position: absolute;
+  z-index: 1;
+}
+
+.contorno-verde {
+    -webkit-text-stroke: 12px #92c79d;
+}
+
+.contorno-rojo {
+    -webkit-text-stroke: 12px #f28585;
+}
+
+.contorno-azul {
+    -webkit-text-stroke: 12px #7bb6d6;
+}
+
+.contorno-blanco {
+    -webkit-text-stroke: 12px #e1dddd;
+}
+
+.contorno-marron {
+    -webkit-text-stroke: 12px #c08f69;
+}
+
+.contorno-amarillo {
+    -webkit-text-stroke: 12px #eddc93;
+}
+
+.contorno-morado {
+    -webkit-text-stroke: 12px #7B6E91;
+}
+
+.contorno-rosado {
+    -webkit-text-stroke: 12px #faacd8;
+}
+
+.contorno-gris {
+    -webkit-text-stroke: 12px #B6B4B4;
+}
+
+.contorno-negro {
+    -webkit-text-stroke: 12px #424242;
+}
+
+.color_verde {
+    color: #84b58e;
+}
+
+.color_rojo {
+    color: #ae5353;
+}
+
+.color_azul {
+    color: #5e8aa1;
+}
+
+.color_blanco {
+    color: #C2C2C2;
+}
+
+.color_cafe {
+    color: #a57d5e;
+}
+
+.color_amarillo {
+    color: #c1b378;
+}
+
+.color_morado {
+    color: #716683;
+}
+
+.color_rosado {
+    color: #e796c5;
+}
+
+.color_gris {
+    color: #676767;
+}
+
+.color_negro {
+    color: #c0bdbd;
+}
