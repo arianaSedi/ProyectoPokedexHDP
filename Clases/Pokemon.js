@@ -156,7 +156,7 @@ class pokemon {
 
 
     // convierte el objeto pokemon a json para envio o almacenamiento
-    tojson(){
+    toJSON(){
         return {
             id: this.#id,
             nombre: this.#name,

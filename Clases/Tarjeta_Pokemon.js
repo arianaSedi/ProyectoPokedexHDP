@@ -4,7 +4,7 @@ const Tarjetas_Pokemon = (pokemon) => {
   const main = document.querySelector("main");
 
   const area = document.createElement("div");
-  area.setAttribute("class", "areaTarjeta"); //pokedex-pantalla
+  area.setAttribute("class", "areaTarjeta justify-content-center items-align-center d-flex");
   area.setAttribute("data-area", "");
 
   const dibujarTarjeta = document.createElement("div");
@@ -236,7 +236,7 @@ const Tarjetas_Pokemon = (pokemon) => {
   //columna donde ira la img
   const area_imgPokemonColumna = document.createElement("div");
   area_imgPokemonColumna.setAttribute("class", "col d-flex aling-items-center");
-  area_imgPokemonColumna("data-image", "");
+  area_imgPokemonColumna.setAttribute("data-image", "");
 
   //Img del pokemon
   const imgPokemon = document.createElement("img");
@@ -284,6 +284,8 @@ const Tarjetas_Pokemon = (pokemon) => {
 
   area_imgPokemonFila.appendChild(tipos_columna);
 
+
+
   //faltaria pero en principio no interfiere con lo de freddy
 
   area_volver.appendChild(boton_volver).appendChild(img_volver);
@@ -298,7 +300,7 @@ const Tarjetas_Pokemon = (pokemon) => {
   dibujarTarjeta.appendChild(area_NombreID);
   dibujarTarjeta.appendChild(area_imgPokemonFila);
 
-  area.appendChild(Tarjetas_Pokemon);
+  area.appendChild(dibujarTarjeta);
 
   let hijosecundario = main.childNodes[1];
 
@@ -309,7 +311,7 @@ const Tarjetas_Pokemon = (pokemon) => {
   };
 
   boton_volver.addEventListener("click", () => {
-    const AreaDiv = document.querySelector("[data-area]");
+    const AreaDiv = document.querySelector('[data-area]');
     if (AreaDiv) {
       AreaDiv.remove();
     }

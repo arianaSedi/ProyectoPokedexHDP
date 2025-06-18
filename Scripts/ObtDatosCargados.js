@@ -1,6 +1,6 @@
 import pokemon from "../Clases/Pokemon.js";
 import obtPokemones from "../Funciones/obtPokemon.js"
-import obtMovimientos from "../Funciones//obtMovimientos.js"
+import obtMovimientos from "../Funciones/obtMovimientos.js"
 import obtColor from "../Funciones/obtColor.js"
 import obtEspecies from "../Funciones/obtEspecies.js"
 import obtDebilidades from "../Funciones/obtDebilidades.js"
@@ -30,7 +30,7 @@ const ObtDatosCargados = async () =>{
             Poke.setName(pokemon_detalles.name)
             Poke.setId(pokemon_detalles.id)
 
-            pokemon_detalles.abilties.forEach(ability => Poke.addAbility(ability.ability.name))
+            pokemon_detalles.abilities.forEach(ability => Poke.addAbility(ability.ability.name))
             pokemon_detalles.types.forEach(type => Poke.addType(type.type.name))
 
             Poke.setHeight(pokemon_detalles.height)
@@ -55,8 +55,8 @@ const ObtDatosCargados = async () =>{
                 colores.push(color)
             }
 
-            const ArrayMovs = await obtMovimientos(pokemon_detalles.moves)
-            ArrayMovs.forEach(move => Poke.addMove(move))
+        const ArrayMovs = await obtMovimientos(pokemon_detalles.moves)
+        ArrayMovs.forEach(move => Poke.addMove(move))
 
             const imgPoke = pokemon_detalles.sprites.other?.['official-artwork']?.front_default;
             Poke.setImage(imgPoke)

@@ -28,7 +28,7 @@ openConsulta.onsuccess = async function (event){
     const transaction = db.transaction("datos", "readonly")
     const tabla_datos = transaction.objectStore("datos")
 
-    contadorConsulta = tabla_datos.count()
+    const  contadorConsulta = tabla_datos.count()
 
     contadorConsulta.onsuccess = async function () {
         //se verifica si la tabla ya contiene elementos

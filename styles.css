@@ -268,7 +268,8 @@ body {
   align-items: center;
   background-color: #00000042;
   position: fixed;
-  margin-top: -10%;
+  z-index: 2;
+  margin-top: -105px;
   backdrop-filter: blur(15px);
 }
 
@@ -404,6 +405,134 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
   left:50%;
   transform: translate(-50%, -50%);
   letter-spacing: 7px;
+}
+
+
+
+.fuente_id{
+
+  font-family: 'Times New Roman', Times, serif;
+  color: #0b287a;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 70px;
+}
+
+.fuente_idPokedex{
+  font-family: 'Times New Roman', Times, serif;
+ color: #7eb284;
+ font-weight: bold;
+ letter-spacing: 2px;
+}
+
+.imagen_tarjeta{
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  transform: translateY(-20%) translateX(20%);
+}
+
+.imagen_tarjetaPokedex{
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fuente_tipos{
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(81, 135, 189);
+  font-size: 16px;
+  transform: translateY(-105px);
+}
+
+@font-face {
+    font-family: "letra-circle";
+    src: url('circlethings.ttf') format('truetype');
+}
+
+.fuente_circle_ {
+    font-family: 'letra-circle';
+    color: #5e7966;
+}
+
+.fuente_tiposPoke{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #5e7966;
+  font-size: 22px;
+}
+
+.decoracion_tipos{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #222121;
+  font-size: 15px;
+  transform: translateY(-105px);
+}
+
+.margen_corto{
+  margin-top: 2.5px;
+}
+
+.formacursor{
+  cursor: pointer;
+}
+
+.color_verdep {
+    color: #6ad07e;
+}
+
+.color_rojop {
+    color: #ab3030;
+}
+
+.color_azulp {
+    color: #5e8aa1;
+}
+
+.color_blancop {
+    color: #d6d6d6;
+}
+
+.color_cafep {
+    color: #a76837;
+}
+
+.color_amarillop {
+    color: #a99029;
+}
+
+.color_moradop {
+    color: #603b9c;
+}
+
+.color_rosadop {
+    color: #b84f8c;
+}
+
+.color_grisp {
+    color: #9f9f9f;
+}
+
+.color_negrop {
+    color: #6c6a6a;
+}
+
+.margen_abajo{
+  margin-bottom: 15px;
+}
+
+.margen_arriba{
+  margin-top: 20px;
+}
+
+.margen_acercar_arriba {
+  margin-top: -14px;
+}
+
+.contorno-tipos {
+    -webkit-text-stroke: 0.5px #1d1d1d;
 }
 
 .borde_verde{
@@ -544,131 +673,4 @@ z-index: 1;
 
 .color_negro {
     color: #c0bdbd;
-}
-
-.fuente_id{
-
-  font-family: 'Times New Roman', Times, serif;
-  color: #0b287a;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-size: 70px;
-}
-
-.fuente_idPokedex{
-  font-family: 'Times New Roman', Times, serif;
- color: #7eb284;
- font-weight: bold;
- letter-spacing: 2px;
-}
-
-.imagen_tarjeta{
-  width: 220px;
-  height: 220px;
-  object-fit: contain;
-  transform: translateY(-20%) translateX(20%);
-}
-
-.imagen_tarjetaPokedex{
-  width: 220px;
-  height: 220px;
-  object-fit: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.fuente_tipos{
-  font-family: 'Courier New', Courier, monospace;
-  color: rgb(81, 135, 189);
-  font-size: 16px;
-  transform: translateY(-105px);
-}
-
-.decoracion_tipos{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #222121;
-  font-size: 15px;
-  transform: translateY(-105px);
-}
-
-.margen_corto{
-  margin-top: 2.5px;
-}
-
-.formacursor{
-  cursor: pointer;
-}
-
-.color_verdep {
-    color: #6ad07e;
-}
-
-.color_rojop {
-    color: #ab3030;
-}
-
-.color_azulp {
-    color: #5e8aa1;
-}
-
-.color_blancop {
-    color: #d6d6d6;
-}
-
-.color_cafep {
-    color: #a76837;
-}
-
-.color_amarillop {
-    color: #a99029;
-}
-
-.color_moradop {
-    color: #603b9c;
-}
-
-.color_rosadop {
-    color: #b84f8c;
-}
-
-.color_grisp {
-    color: #9f9f9f;
-}
-
-.color_negrop {
-    color: #6c6a6a;
-}
-
-.margen_abajo{
-  margin-bottom: 15px;
-}
-
-.margen_arriba{
-  margin-top: 20px;
-}
-
-.margen_acercar_arriba {
-  margin-top: -14px;
-}
-
-.contorno-tipos {
-    -webkit-text-stroke: 0.5px #1d1d1d;
-}
-
-
-@font-face {
-    font-family: "letra-circle";
-    src: url('circlethings.ttf') format('truetype');
-}
-
-.fuente_circle_ {
-    font-family: 'letra-circle';
-    color: #5e7966;
-}
-
-.fuente_tiposPoke{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #5e7966;
-  font-size: 22px;
 }

@@ -84,7 +84,7 @@ class Pokedex {
       })
 
 
-      Cuerpo_tarjeta = document.createElement("div")
+      const Cuerpo_tarjeta = document.createElement("div")
       Cuerpo_tarjeta.setAttribute("class", "card-body")
 
       const fila_p = document.createElement("div")
@@ -142,7 +142,7 @@ class Pokedex {
       }
 
       const nombre = Pokemon[i].nombre
-      const nombrePoke = nombre.chatAt(0).toUpperCase() + nombre.slice(1)
+      const nombrePoke = nombre.charAt(0).toUpperCase() + nombre.slice(1)
       
       const titulo_tarjeta = document.createElement("div")
       titulo_tarjeta.setAttribute("class", "row position-relative text-center margen_arriba")
@@ -195,9 +195,9 @@ class Pokedex {
       imagen_tarjeta.setAttribute("class", "row")
 
       const imagen_pokemonPokedex = document.createElement("img")
-      imagen_pokemonPokedex.setAttribute("src", Pokemon[i].imagem)
+      imagen_pokemonPokedex.setAttribute("src", Pokemon[i].imagen)
       imagen_pokemonPokedex.setAttribute("class", "imagen_tarjetaPokedex margen_arriba margen_abajo")
-      imagen_pokemonPokedex.setAttribute("alt", Pokemon[i].imagem)
+      imagen_pokemonPokedex.setAttribute("alt", Pokemon[i].imagen)
 
       const tipos_contenedor = document.createElement("div")
       tipos_contenedor.setAttribute("class", "row d-flex")
