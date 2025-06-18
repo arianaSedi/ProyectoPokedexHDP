@@ -116,7 +116,7 @@ const Tarjetas_Pokemon = (pokemon) => {
   area_NombreID.setAttribute("class", "row flex-row aling-items-center mt-3");
 
   const area_nombre = document.createElement("div");
-  area_nombre.setAttribute("clas", "col d-flex flex-wrap");
+  area_nombre.setAttribute("clas", "col d-flex flex-wrap"); //cuidao
 
   const nombrePoke = pokemon.nombre;
   const nombre = nombrePoke.charAt(0).toUpperCase() + nombrePoke.slice(1);
@@ -128,43 +128,43 @@ const Tarjetas_Pokemon = (pokemon) => {
     case "white":
       nombre_borde.setAttribute(
         "class",
-        "card borde_blanco fuente_nombre ms-2"
+        "borde_blanco fuente_nombre ms-2"
       );
       break;
     case "black":
-      nombre_borde.setAttribute("class", "card borde_negro fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_negro fuente_nombre ms-2");
       break;
     case "gray":
-      nombre_borde.setAttribute("class", "card borde_gris fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_gris fuente_nombre ms-2");
       break;
     case "red":
-      nombre_borde.setAttribute("class", "card borde_rojo fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_rojo fuente_nombre ms-2");
       break;
     case "blue":
-      nombre_borde.setAttribute("class", "card borde_azul fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_azul fuente_nombre ms-2");
       break;
     case "green":
-      nombre_borde.setAttribute("class", "card borde_verde fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_verde fuente_nombre ms-2");
       break;
     case "brown":
       nombre_borde.setAttribute(
         "class",
-        "card borde_marron fuente_nombre ms-2"
+        "borde_marron fuente_nombre ms-2"
       );
       break;
     case "yellow":
       nombre_borde.setAttribute(
         "class",
-        "card borde_amarillo fuente_nombre ms-2"
+        "borde_amarillo fuente_nombre ms-2"
       );
       break;
     case "pink":
-      nombre_borde.setAttribute("class", "card borde_rosa fuente_nombre ms-2");
+      nombre_borde.setAttribute("class", "borde_rosa fuente_nombre ms-2");
       break;
     case "purple":
       nombre_borde.setAttribute(
         "class",
-        "card borde_morado fuente_nombre ms-2"
+        "borde_morado fuente_nombre ms-2"
       );
       break;
     default:

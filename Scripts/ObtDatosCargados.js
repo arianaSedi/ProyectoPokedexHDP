@@ -55,8 +55,8 @@ const ObtDatosCargados = async () =>{
                 colores.push(color)
             }
 
-        const ArrayMovs = await obtMovimientos(pokemon_detalles.moves)
-        ArrayMovs.forEach(move => Poke.addMove(move))
+            const ArrayMovs = await obtMovimientos(pokemon_detalles.moves)
+            ArrayMovs.forEach(move => Poke.addMove(move))
 
             const imgPoke = pokemon_detalles.sprites.other?.['official-artwork']?.front_default;
             Poke.setImage(imgPoke)

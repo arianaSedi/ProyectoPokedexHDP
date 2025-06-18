@@ -169,7 +169,7 @@ class pokemon {
             grupos_huevo: this.#eggGroups,  
             estadisticas: this.#stats.toJSON(),
             color: this.#color,              
-            movimientos: this.#moves.map(mov => mov.toJSON()),
+            movimientos: this.#moves.map(nombre => ({ nombre })),
             imagen: this.#image,             
             shiny: this.#shiny,              
             sonido: this.#sound              
