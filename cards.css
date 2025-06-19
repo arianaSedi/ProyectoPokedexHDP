@@ -267,14 +267,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 6rem; 
+  padding-top: 3.5rem; 
   z-index: 999; 
 }
 
 
 .card{
-  width: 16rem;
-  height: 23rem;
+  width: 18rem;
+  height: 28rem;
   border: none;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -283,16 +283,17 @@ body {
 
 .card:hover{
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2%);
+  transform: translateY(1%);
 }
 
 .tarjeta_principal{
-  width: 28rem;
-  height: 25rem;
+  width: 30rem;
+  min-height: 20rem;
+  height: auto;
 }
 
 .margen_top{
-  margin-top: 10px;
+  margin-top: -10px;
 }
 
 .br_infor{
@@ -395,21 +396,26 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  line-height: 1.2;
-  
+  line-height: 1.5;
   
 }
 
 .fuente_nombreP{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: white;
-  top :50%;
-  left:50%;
-  transform: translate(-15%, -50%);
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  line-height: 1.2;
+  color: transparent;
+  -webkit-text-stroke: 1.5px white;
+  top: 0;
+  left: 0;
   letter-spacing: 5px;
+  z-index: 1;
+  white-space: nowrap;
+  margin: 0;
+  position: absolute;
+  
 }
 
 .fuente_id{
@@ -678,21 +684,22 @@ z-index: 1;
 }
 
 .botonOp {
-    font-size: 15px;
+    font-size: 12px;
     font-family: 'Options-font';
     text-transform: uppercase;
     display: inline;
     text-align: center;
     font-weight: bold;
-    padding: 0.7em 2em;
+    padding: 1em 1em;
     border: none;
     border-radius: 20px;
     position: relative;
     color: #5a5a5a;
     text-decoration: none;
     transition: 0.3s ease all;
+    margin-bottom: 20px;
     z-index: 1;
-    width: 150px;
+    width: 100px;
     background-color: transparent;
 }
 
