@@ -3,12 +3,16 @@ import setAcompañantes from "./SetAcompañantes.js";
 const CardsPokemon = (pokemon) => {
   const main = document.querySelector("main");
 
+  //main.innerHTML = "";
+
   const area = document.createElement("div");
   area.setAttribute(
     "class",
     "areaTarjeta justify-content-center items-align-center d-flex"
   );
   area.setAttribute("data-area", "");
+
+  main.appendChild(area);
 
   const dibujarTarjeta = document.createElement("div");
 
@@ -119,7 +123,7 @@ const CardsPokemon = (pokemon) => {
   area_NombreID.setAttribute("class", "row flex-row aling-items-center mt-3");
 
   const area_nombre = document.createElement("div");
-  area_nombre.setAttribute("clas", "col d-flex flex-wrap"); //cuidao
+  area_nombre.setAttribute("class", "col d-flex flex-wrap"); //cuidao
 
   const nombrePoke = pokemon.nombre;
   const nombre = nombrePoke.charAt(0).toUpperCase() + nombrePoke.slice(1);
@@ -164,7 +168,7 @@ const CardsPokemon = (pokemon) => {
 
   const color_nombre = document.createElement("h3");
   color_nombre.textContent = nombre;
-  color_nombre.setAttribute("class", "_nombre ms-2");
+  color_nombre.setAttribute("class", "fuente_nombre ms-2");
 
   const area_id = document.createElement("div");
   area_id.setAttribute(
@@ -515,11 +519,16 @@ const CardsPokemon = (pokemon) => {
   dibujarTarjeta.appendChild(area_imgPokemonFila);
   dibujarTarjeta.appendChild(informacion_fila);
 
+  /*dibujarTarjeta.addEventListener("click", () => {
+    console.log("Tarjeta clickeada:", pokemon.nombre);
+  });*/
+
   area.appendChild(dibujarTarjeta);
 
-  let hijosecundario = main.childNodes[1];
+  const tarjetaExistente = document.querySelector(".areaTarjeta");
+  if (tarjetaExistente) tarjetaExistente.remove();
 
-  main.insertBefore(area, hijosecundario.nextSibling);
+  main.appendChild(area);
 
   boton_volver.addEventListener("click", () => {
     const AreaDiv = document.querySelector("[data-area]");

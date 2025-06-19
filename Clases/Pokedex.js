@@ -1,3 +1,4 @@
+import CardsPokemon from "./CardsPokemon.js";
 import Tarjetas_Pokemon from "./CardsPokemon.js";
 
 class Pokedex {
@@ -80,9 +81,8 @@ class Pokedex {
       }
 
       contenedorTarjeta.addEventListener("click", () =>{
-        Tarjetas_Pokemon(Pokemon[i])
+        CardsPokemon(Pokemon[i])
       })
-
 
       const Cuerpo_tarjeta = document.createElement("div")
       Cuerpo_tarjeta.setAttribute("class", "card-body")
