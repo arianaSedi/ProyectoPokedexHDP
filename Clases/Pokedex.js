@@ -1,4 +1,4 @@
-import Tarjetas_Pokemon from "./Tarjeta_Pokemon.js";
+import Tarjetas_Pokemon from "./CardsPokemon.js";
 
 class Pokedex {
   async renderPokedex(data) {
