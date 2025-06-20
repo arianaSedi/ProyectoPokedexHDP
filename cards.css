@@ -257,21 +257,23 @@ body {
 
 /*Esto es pa el area de la tarjeta*/
 .areaTarjeta {
-
-  width: 100%;
-  height: 105vh;
-  justify-content: center;
-  align-items: center;
-  background-color: #00000042;
   position: fixed;
-  z-index: 2;
-  margin-top: -105px;
-  backdrop-filter: blur(15px);
+  top: 75px; 
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 75px); 
+  background-color: rgba(0, 0, 0, 0.295); 
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 3.5rem; 
+  z-index: 999; 
 }
 
-.card{
-  width: 16rem;
-  height: 23rem;
+.card {
+  width: 18rem;
+  height: 28rem;
   border: none;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -280,31 +282,32 @@ body {
 
 .card:hover{
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-2%);
+  transform: translateY(1%);
 }
 
 .tarjeta_principal{
-  width: 28rem;
-  height: 45rem;
+  width: 30rem;
+  min-height: 20rem;
+  height: auto;
 }
 
-
 .margen_top{
-  margin-top: -20px;
+  margin-top: -10px;
 }
 
 .br_infor{
   border-radius: 15px;
+  margin-top: -50px;
 }
 
 .fondoTarjetaVerde{
-  background: #5eff00;
-  background: radial-gradient(circle,rgba(94, 255, 0, 1) 0%, rgba(14, 158, 21, 1) 100%); 
+  background: #94db6b;
+  background: radial-gradient(circle,rgb(204, 231, 221) 0%, rgb(68, 204, 136) 100%); 
 }
 
 .fondoTarjetaRojo{
   background: #ff0000;
-  background: radial-gradient(circle,rgba(255, 0, 0, 1) 0%, rgba(117, 11, 11, 1) 100%);
+  background: radial-gradient(circle,rgb(212, 154, 140) 0%, rgb(207, 74, 33) 100%);
   
 }
 
@@ -315,37 +318,37 @@ body {
 
 .fondoTarjetaNegro{
   background: #000000;
-background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(77, 77, 77, 1) 100%);
+background: radial-gradient(circle,rgb(83, 83, 83) 0%, rgb(0, 0, 0) 100%);
 }
 
 .fondoTarjetaMorado{
   background: #8d70b5;
-background: radial-gradient(circle,rgba(141, 112, 181, 1) 0%, rgba(39, 0, 107, 1) 100%);
+background: radial-gradient(circle,rgb(175, 145, 218) 0%, rgb(78, 39, 151) 100%);
 }
 
 .fondoTarjetaAzul{
   background: #00e5ff;
-background: radial-gradient(circle,rgba(0, 229, 255, 1) 0%, rgba(6, 38, 74, 1) 100%);
+background: radial-gradient(circle,rgb(147, 195, 223) 0%, rgb(43, 122, 168) 100%);
 }
 
 .fondoTarjetaMarron{
   background: #cc9047;
-background: radial-gradient(circle,rgba(204, 144, 71, 1) 0%, rgba(74, 26, 6, 1) 100%);
+background: radial-gradient(circle,rgb(226, 175, 113) 0%, rgb(124, 63, 37) 100%);
 }
 
 .fondoTarjetaAmarillo{
   background: #ffee00;
-background: radial-gradient(circle,rgba(255, 238, 0, 1) 0%, rgba(190, 196, 0, 1) 100%);
+background: radial-gradient(circle,rgb(223, 221, 145) 0%, rgb(238, 216, 22) 100%);
 }
 
 .fondoTarjetaRosa{
   background: #ff00cc;
-background: radial-gradient(circle,rgba(255, 0, 204, 1) 0%, rgba(120, 6, 107, 1) 100%);
+background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100%);
 }
 
 .fondoTarjetaGris{
   background: #9e9999;
-background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1) 100%);
+  background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .boton_volver{
@@ -361,8 +364,10 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 }
 
 .img_volver{
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 15px ;
 }
 
 .boton_acompañante{
@@ -380,55 +385,62 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 .img_pokeball{
   width: 35px;
   height: 35px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
-.fuente_nombre{
+.fuente_nombre {
   font-family: 'Times New Roman', Times, serif;
   color: white;
-  position: absolute;
   font-size: 35px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  position: absolute;
   z-index: 2;
+  line-height: 1.2;
+  
 }
 
 .fuente_nombreP{
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 45px;
-  color: white;
-  top :50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-  letter-spacing: 7px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 35px;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  z-index: 1;
+  white-space: nowrap;
+  position: absolute;
+  
 }
 
-
-
 .fuente_id{
-
   font-family: 'Times New Roman', Times, serif;
-  color: #0b287a;
+  color: #fdfdfd;
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 70px;
 }
 
 .fuente_idPokedex{
-  font-family: 'Times New Roman', Times, serif;
- color: #7eb284;
- font-weight: bold;
- letter-spacing: 2px;
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 25px;
 }
 
 .imagen_tarjeta{
   width: 220px;
-  height: 220px;
+  height: 235px;
   object-fit: contain;
   transform: translateY(-20%) translateX(20%);
 }
 
 .imagen_tarjetaPokedex{
   width: 220px;
-  height: 220px;
+  height: 250px;
   object-fit: contain;
   display: block;
   margin-left: auto;
@@ -454,16 +466,36 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 
 .fuente_tiposPoke{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #5e7966;
+  color: #051d0c;
   font-size: 22px;
 }
 
 .decoracion_tipos{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #222121;
+  color: #c2b8b8;
   font-size: 15px;
   transform: translateY(-105px);
 }
+.container-tipo {
+  background-color: rgba(255, 255, 255, 0.384); 
+  padding: 5px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 5px;
+  width: fit-content;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* Para evitar márgenes extra que descuadran */
+.container-tipo p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 
 .margen_corto{
   margin-top: 2.5px;
@@ -474,47 +506,47 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 }
 
 .color_verdep {
-    color: #6ad07e;
+    color: #bbfae5;
 }
 
 .color_rojop {
-    color: #ab3030;
+    color: #f5c7b5;
 }
 
 .color_azulp {
-    color: #5e8aa1;
+    color: #8acdf1;
 }
 
 .color_blancop {
-    color: #d6d6d6;
+    color: #706f6f;
 }
 
 .color_cafep {
-    color: #a76837;
+    color: #ebb990;
 }
 
 .color_amarillop {
-    color: #a99029;
+    color: #bba43c;
 }
 
 .color_moradop {
-    color: #603b9c;
+    color: #c5a1ff;
 }
 
 .color_rosadop {
-    color: #b84f8c;
+    color: #ffd6ee;
 }
 
 .color_grisp {
-    color: #9f9f9f;
+    color: #d6d0d0;
 }
 
 .color_negrop {
-    color: #6c6a6a;
+    color: #b9b8b8;
 }
 
 .margen_abajo{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .margen_arriba{
@@ -526,53 +558,53 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 }
 
 .contorno-tipos {
-    -webkit-text-stroke: 0.5px #1d1d1d;
+    -webkit-text-stroke: 0.4px #575757;
 }
 
 .borde_verde{
--webkit-text-stroke: 12px #92c79d;
-position: absolute;
-z-index: 1;
+  -webkit-text-stroke: 12px  #60c48d;
+  position: absolute;
+  z-index: 1;
 }
 
 .borde_amarillo{
-  -webkit-text-stroke: 12px #eddc93;
+  -webkit-text-stroke: 12px #cab65c;
   position: absolute;
   z-index: 1;
 }
 
 .borde_blanco{
-  -webkit-text-stroke: 12px #e1dddd;
+  -webkit-text-stroke: 12px #817c7c;
   position: absolute;
   z-index: 1;
 }
 
 .borde_negro{
-  -webkit-text-stroke: 12px #424242;
+  -webkit-text-stroke: 12px #7a7979;
   position: absolute;
   z-index: 1;
 }
 
 .borde_rosa{
-  -webkit-text-stroke: 12px #faacd8;
+  -webkit-text-stroke: 12px #e09bc4;
   position: absolute;
   z-index: 1;
 }
 
 .borde_rojo{
-  -webkit-text-stroke: 12px #f28585;
+  -webkit-text-stroke: 12px #e9a089;
   position: absolute;
   z-index: 1;
 }
 
 .borde_azul{
-  -webkit-text-stroke: 12px #7bb6d6; 
+  -webkit-text-stroke: 12px #7bb6d6;
   position: absolute;
   z-index: 1;
 }
 
 .borde_marron{
-  -webkit-text-stroke: 12px #c08f69;
+  -webkit-text-stroke: 12px #dd996b;
   position: absolute;
   z-index: 1;
 }
@@ -584,17 +616,17 @@ z-index: 1;
 }
 
 .borde_morado{
-  -webkit-text-stroke: 12px #7B6E91;
+  -webkit-text-stroke: 12px #bf92dd;
   position: absolute;
   z-index: 1;
 }
 
 .contorno-verde {
-    -webkit-text-stroke: 12px #92c79d;
+    -webkit-text-stroke: 12px #60c48d;
 }
 
 .contorno-rojo {
-    -webkit-text-stroke: 12px #f28585;
+    -webkit-text-stroke: 12px #e9a089;
 }
 
 .contorno-azul {
@@ -602,23 +634,23 @@ z-index: 1;
 }
 
 .contorno-blanco {
-    -webkit-text-stroke: 12px #e1dddd;
+    -webkit-text-stroke: 12px #817c7c;
 }
 
 .contorno-marron {
-    -webkit-text-stroke: 12px #c08f69;
+    -webkit-text-stroke: 12px #dd996b;
 }
 
 .contorno-amarillo {
-    -webkit-text-stroke: 12px #eddc93;
+    -webkit-text-stroke: 12px #cab65c;
 }
 
 .contorno-morado {
-    -webkit-text-stroke: 12px #7B6E91;
+    -webkit-text-stroke: 12px #bf92dd;
 }
 
 .contorno-rosado {
-    -webkit-text-stroke: 12px #faacd8;
+    -webkit-text-stroke: 12px #e09bc4;
 }
 
 .contorno-gris {
@@ -626,23 +658,24 @@ z-index: 1;
 }
 
 .contorno-negro {
-    -webkit-text-stroke: 12px #424242;
+    -webkit-text-stroke: 12px #7a7979;
 }
 
 .color_verde {
-    color: #84b58e;
+    color: #70bda1;
+    
 }
 
 .color_rojo {
-    color: #ae5353;
+    color: #be6c4c;
 }
 
 .color_azul {
-    color: #5e8aa1;
+    color: #4d86a5;
 }
 
 .color_blanco {
-    color: #C2C2C2;
+    color: #d3d3d4;
 }
 
 .color_cafe {
@@ -654,17 +687,104 @@ z-index: 1;
 }
 
 .color_morado {
-    color: #716683;
+    color: #bd71f0;
 }
 
 .color_rosado {
-    color: #e796c5;
+    color: #d481b3;
 }
 
 .color_gris {
-    color: #676767;
+    color: #858383;
 }
 
 .color_negro {
-    color: #c0bdbd;
+    color: #4d4c4c;
 }
+
+.botonOp {
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: inline;
+    font-style: italic;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    color: #5a5a5a;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    margin-bottom: 20px;
+    z-index: 1;
+    width: 100px;
+    background-color: transparent;
+}
+
+.botonOp:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    border-bottom: 2px solid rgb(35, 15, 146);
+    z-index: -1;
+}
+
+.botonOp:hover,
+.botonOp:focus,
+.botonOp.active {
+    color: black;
+}
+
+.botonOp:hover:before,
+.botonOp:focus:before,
+.botonOp.active:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.botonOp:active {
+    transform: scale(0.9);
+    color: #000000;
+}
+
+.fuente_infor {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #292929;
+}
+
+.fuente_data_bold {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #0f0f0f;
+    font-weight: bold;
+}
+
+
+.fuente_data{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #636363;
+    font-weight: bold;
+}
+
+/*COLORES DE LOS ID EN CARDSPOKEMON*/
+.color_white { color: #807f7f; }
+.color_black { color: #a0a0a0; }
+.color_gray  { color: #b4b6b6; }
+.color_red   { color: #f1a485; }
+.color_blue  { color: #9fcff0; }
+.color_green { color: #3ea76a; }
+.color_brown { color: #ffc493; }
+.color_yellow { color: #c7ad46; }
+.color_pink   { color: #fac0dd; }
+.color_purple { color: #e8b5fc; }

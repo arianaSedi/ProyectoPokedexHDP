@@ -1,5 +1,5 @@
 import ObtDatosCargados from "../Scripts/ObtDatosCargados.js"
-import ObtenerDatosDB from "../Funciones/getDataPokedex.js"
+import ObtenerDatosDB from "../Funciones/obtDataPokedex.js"
 
 const openConsulta = indexedDB.open("pokemons", 1)
 
