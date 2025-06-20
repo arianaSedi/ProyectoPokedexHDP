@@ -189,7 +189,7 @@ class Pokedex {
         }
 
         const tipo = document.createElement("div") // contenedor que tiene adentro el texto como tipo
-        tipo.setAttribute("class", "d-flex align-items-center margen_acercar_arriba")
+        tipo.setAttribute("class", "container-tipo d-flex align-items-center margen_acercar_arriba")
 
         const circuloDEtipo = document.createElement("p")
         const name = document.createElement("p")
@@ -213,18 +213,18 @@ class Pokedex {
             break;
             
             case "fighting":
-            circuloDEtipo.setAttribute("class","color_marron fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_marron contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
 
             case "psychic":
-            circuloDEtipo.setAttribute("class","color_rosa fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_rosado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosa contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -317,7 +317,7 @@ class Pokedex {
             break;
 
             case "ground":
-            circuloDEtipo.setAttribute("class","color_marron fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
             name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
