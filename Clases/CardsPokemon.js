@@ -174,14 +174,20 @@ const CardsPokemon = (pokemon) => {
     col1.setAttribute("class", "col d-flex justify-content-start col-3 ms-2");
 
     const texto1 = document.createElement("p");
-    texto1.setAttribute("class", "fuente_data");
-    texto1.textContent = titulo;
+    
+    // Solo para "Breending", aplicar negrita especial
+    if (titulo === "Breending") {
+      texto1.setAttribute("class", "fuente_data_bold");
+    } else {
+      texto1.setAttribute("class", "fuente_data");
+    }
 
+  texto1.textContent = titulo;
     const col2 = document.createElement("div");
     col2.setAttribute("class", "col d-flex justify-content-start");
 
     const texto2 = document.createElement("p");
-    texto2.setAttribute("class", "fuente_data fw-bold");
+    texto2.setAttribute("class", "fuente_infor fw-bold");
     texto2.textContent = valor;
 
     col1.appendChild(texto1);
@@ -196,13 +202,13 @@ const CardsPokemon = (pokemon) => {
   const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
 
   containerInfor.appendChild(crearFila("Data", ""));
-  containerInfor.appendChild(crearFila("Especie", pokemon.especie));
-  containerInfor.appendChild(crearFila("Altura", `${pokemon.altura} cm (${alturaM})`));
-  containerInfor.appendChild(crearFila("Peso", `${pokemon.peso} kg (${pesoLb})`));
-  containerInfor.appendChild(crearFila("Habilidades", pokemon.habilidades.join(", ")));
-  containerInfor.appendChild(crearFila("Debilidades", pokemon.debilidades.join(", ")));
-  containerInfor.appendChild(crearFila("Cría", ""));
-  containerInfor.appendChild(crearFila("Grupo Huevo", pokemon.grupos_huevo.join(", ")));
+  containerInfor.appendChild(crearFila("Species", pokemon.especie));
+  containerInfor.appendChild(crearFila("Height", `${pokemon.altura} cm (${alturaM})`));
+  containerInfor.appendChild(crearFila("Weight", `${pokemon.peso} kg (${pesoLb})`));
+  containerInfor.appendChild(crearFila("Abilities", pokemon.habilidades.join(", ")));
+  containerInfor.appendChild(crearFila("Weaknesses", pokemon.debilidades.join(", ")));
+  containerInfor.appendChild(crearFila("Breending", ""));
+  containerInfor.appendChild(crearFila("Egg Groups", pokemon.grupos_huevo.join(", ")));
 
   // Ensamblar todo
   area_nombre.appendChild(nombre_borde);

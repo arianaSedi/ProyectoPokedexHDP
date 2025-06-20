@@ -205,10 +205,10 @@ class Pokedex {
             break;
          
             case "dragon":
-            circuloDEtipo.setAttribute("class","color_rojo fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_azul fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rojo contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_azul contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
             
@@ -229,10 +229,10 @@ class Pokedex {
             break;
 
             case "rock":
-            circuloDEtipo.setAttribute("class","color_gris fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_gris contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -325,7 +325,7 @@ class Pokedex {
             break;
 
             case "fairy":
-            circuloDEtipo.setAttribute("class","color_rosa fuente_circle_ contorno-tipos")
+            circuloDEtipo.setAttribute("class","color_rosado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
             name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos" )
