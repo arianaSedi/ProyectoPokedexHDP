@@ -70,7 +70,7 @@ const CardsPokemon = (pokemon) => {
   area_NombreID.setAttribute("class", "row flex-row align-items-center mt-3");
 
   const area_nombre = document.createElement("div");
-  area_nombre.setAttribute("class", "col d-flex flex-wrap");
+  area_nombre.setAttribute("class", "col d-flex flex-wrap position-relative");
 
   const nombre = pokemon.nombre.charAt(0).toUpperCase() + pokemon.nombre.slice(1);
   const nombre_borde = document.createElement("h3");

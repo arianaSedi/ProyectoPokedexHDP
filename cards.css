@@ -271,10 +271,9 @@ body {
   z-index: 999; 
 }
 
-
-.card{
+.card {
   width: 18rem;
-  height: 28rem;
+  height: 25rem;
   border: none;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -302,13 +301,13 @@ body {
 }
 
 .fondoTarjetaVerde{
-  background: #5eff00;
-  background: radial-gradient(circle,rgba(94, 255, 0, 1) 0%, rgba(14, 158, 21, 1) 100%); 
+  background: #94db6b;
+  background: radial-gradient(circle,rgb(204, 231, 221) 0%, rgb(68, 204, 136) 100%); 
 }
 
 .fondoTarjetaRojo{
   background: #ff0000;
-  background: radial-gradient(circle,rgba(255, 0, 0, 1) 0%, rgba(117, 11, 11, 1) 100%);
+  background: radial-gradient(circle,rgb(212, 154, 140) 0%, rgb(207, 74, 33) 100%);
   
 }
 
@@ -319,37 +318,37 @@ body {
 
 .fondoTarjetaNegro{
   background: #000000;
-background: radial-gradient(circle,rgba(0, 0, 0, 1) 0%, rgba(77, 77, 77, 1) 100%);
+background: radial-gradient(circle,rgb(83, 83, 83) 0%, rgb(0, 0, 0) 100%);
 }
 
 .fondoTarjetaMorado{
   background: #8d70b5;
-background: radial-gradient(circle,rgba(141, 112, 181, 1) 0%, rgba(39, 0, 107, 1) 100%);
+background: radial-gradient(circle,rgb(175, 145, 218) 0%, rgb(78, 39, 151) 100%);
 }
 
 .fondoTarjetaAzul{
   background: #00e5ff;
-background: radial-gradient(circle,rgba(0, 229, 255, 1) 0%, rgba(6, 38, 74, 1) 100%);
+background: radial-gradient(circle,rgb(147, 195, 223) 0%, rgb(43, 122, 168) 100%);
 }
 
 .fondoTarjetaMarron{
   background: #cc9047;
-background: radial-gradient(circle,rgba(204, 144, 71, 1) 0%, rgba(74, 26, 6, 1) 100%);
+background: radial-gradient(circle,rgb(226, 175, 113) 0%, rgb(124, 63, 37) 100%);
 }
 
 .fondoTarjetaAmarillo{
   background: #ffee00;
-background: radial-gradient(circle,rgba(255, 238, 0, 1) 0%, rgba(190, 196, 0, 1) 100%);
+background: radial-gradient(circle,rgb(223, 221, 145) 0%, rgb(238, 216, 22) 100%);
 }
 
 .fondoTarjetaRosa{
   background: #ff00cc;
-background: radial-gradient(circle,rgba(255, 0, 204, 1) 0%, rgba(120, 6, 107, 1) 100%);
+background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100%);
 }
 
 .fondoTarjetaGris{
   background: #9e9999;
-background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1) 100%);
+background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .boton_volver{
@@ -391,14 +390,14 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
   color: white;
   font-size: 32px;
   letter-spacing: 5px;
-  text-align: start;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
   position: absolute;
   z-index: 2;
-  line-height: 1.5;
+  line-height: 1.2;
   
 }
 
@@ -406,31 +405,26 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
   font-family: 'Times New Roman', Times, serif;
   font-size: 32px;
   line-height: 1.2;
-  color: transparent;
-  -webkit-text-stroke: 1.5px white;
-  top: 0;
-  left: 0;
   letter-spacing: 5px;
   z-index: 1;
   white-space: nowrap;
-  margin: 0;
   position: absolute;
   
 }
 
 .fuente_id{
   font-family: 'Times New Roman', Times, serif;
-  color: #0b287a;
+  color: #fdfdfd;
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 70px;
 }
 
 .fuente_idPokedex{
-  font-family: 'Times New Roman', Times, serif;
-  color: #7eb284;
+  font-family:'Times New Roman', Times, serif;
   font-weight: bold;
   letter-spacing: 2px;
+  font-size: 25px;
 }
 
 .imagen_tarjeta{
@@ -468,13 +462,13 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 
 .fuente_tiposPoke{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: #5e7966;
+  color: #051d0c;
   font-size: 22px;
 }
 
 .decoracion_tipos{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: #222121;
+  color: #c2b8b8;
   font-size: 15px;
   transform: translateY(-105px);
 }
@@ -488,43 +482,43 @@ background: radial-gradient(circle,rgba(158, 153, 153, 1) 0%, rgba(54, 54, 54, 1
 }
 
 .color_verdep {
-    color: #6ad07e;
+    color: #bbfae5;
 }
 
 .color_rojop {
-    color: #ab3030;
+    color: #f5c7b5;
 }
 
 .color_azulp {
-    color: #5e8aa1;
+    color: #8acdf1;
 }
 
 .color_blancop {
-    color: #d6d6d6;
+    color: #706f6f;
 }
 
 .color_cafep {
-    color: #a76837;
+    color: #ebb990;
 }
 
 .color_amarillop {
-    color: #a99029;
+    color: #bba43c;
 }
 
 .color_moradop {
-    color: #603b9c;
+    color: #c5a1ff;
 }
 
 .color_rosadop {
-    color: #b84f8c;
+    color: #ffd6ee;
 }
 
 .color_grisp {
-    color: #9f9f9f;
+    color: #d6d0d0;
 }
 
 .color_negrop {
-    color: #6c6a6a;
+    color: #b9b8b8;
 }
 
 .margen_abajo{
@@ -604,11 +598,11 @@ z-index: 1;
 }
 
 .contorno-verde {
-    -webkit-text-stroke: 12px #92c79d;
+    -webkit-text-stroke: 12px #60c48d;
 }
 
 .contorno-rojo {
-    -webkit-text-stroke: 12px #f28585;
+    -webkit-text-stroke: 12px #e9a089;
 }
 
 .contorno-azul {
@@ -616,23 +610,23 @@ z-index: 1;
 }
 
 .contorno-blanco {
-    -webkit-text-stroke: 12px #e1dddd;
+    -webkit-text-stroke: 12px #817c7c;
 }
 
 .contorno-marron {
-    -webkit-text-stroke: 12px #c08f69;
+    -webkit-text-stroke: 12px #dd996b;
 }
 
 .contorno-amarillo {
-    -webkit-text-stroke: 12px #eddc93;
+    -webkit-text-stroke: 12px #cab65c;
 }
 
 .contorno-morado {
-    -webkit-text-stroke: 12px #7B6E91;
+    -webkit-text-stroke: 12px #bf92dd;
 }
 
 .contorno-rosado {
-    -webkit-text-stroke: 12px #faacd8;
+    -webkit-text-stroke: 12px #e09bc4;
 }
 
 .contorno-gris {
@@ -640,7 +634,7 @@ z-index: 1;
 }
 
 .contorno-negro {
-    -webkit-text-stroke: 12px #424242;
+    -webkit-text-stroke: 12px #7a7979;
 }
 
 .color_verde {
@@ -668,11 +662,11 @@ z-index: 1;
 }
 
 .color_morado {
-    color: #716683;
+    color: #c5a1ff;
 }
 
 .color_rosado {
-    color: #e796c5;
+    color: #e4dae0;
 }
 
 .color_gris {

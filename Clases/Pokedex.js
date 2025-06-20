@@ -1,5 +1,4 @@
 import CardsPokemon from "./CardsPokemon.js";
-import Tarjetas_Pokemon from "./CardsPokemon.js";
 
 class Pokedex {
   async renderPokedex(data) {
@@ -114,13 +113,13 @@ class Pokedex {
             h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_verdep")
             break;
         case "brown":
-            h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_marronp")
+            h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_cafep")
             break;
         case "yellow":
             h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_amarillop")
             break;
         case "pink":
-            h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_rosap")
+            h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_rosadop")
             break;
         case "purple":
             h5p.setAttribute("class", "fuente_idPokedex margen_abajo color_moradop")
@@ -132,13 +131,13 @@ class Pokedex {
       const IDS = Pokemon[i].id.toString()
 
       if (IDS.length === 1){
-        h5p.textContent = "N " + "'000" + IDS
+        h5p.textContent = "N" + "º000" + IDS
       }
       else if(IDS.length === 2){
-        h5p.textContent = "N " + "'00" + IDS
+        h5p.textContent = "N " + "º00" + IDS
       }
       else if(IDS.length === 3){
-        h5p.textContent = "N " + "'0" + IDS
+        h5p.textContent = "N " + "º0" + IDS
       }
 
       const nombre = Pokemon[i].nombre
@@ -147,49 +146,25 @@ class Pokedex {
       const titulo_tarjeta = document.createElement("div")
       titulo_tarjeta.setAttribute("class", "row position-relative text-center margen_arriba")
 
-      const titulo_sombra = document.createElement("h3")
+      const titulo_sombra = document.createElement("h3");
+      titulo_sombra.textContent = nombrePoke;
 
-      switch (Pokemon[i].color){
-                case "white":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-white ")
-            break;
-        case "black":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-negro ")
-            break;
-        case "gray":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-gris")
-            break;
-        case "red":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-rojo")
-            break;
-        case "blue":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-azul")
-            break;
-        case "green":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-verde")
-            break;
-        case "brown":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-marron")
-            break;
-        case "yellow":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-amarillo")
-            break;
-        case "pink":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-rosa")
-            break;
-        case "purple":
-            titulo_sombra.setAttribute("class", "fuente_nombreP contorno-morado")
-            break;
-        default:
-            break;
+      switch (Pokemon[i].color) {
+        case "white": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-blanco"); break;
+        case "black": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-negro"); break;
+        case "gray": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-gris"); break;
+        case "red": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-rojo"); break;
+        case "blue": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-azul"); break;
+        case "green": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-verde"); break;
+        case "brown": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-marron"); break;
+        case "yellow": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-amarillo"); break;
+        case "pink": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-rosado"); break;
+        case "purple": titulo_sombra.setAttribute("class", "fuente_nombreP contorno-morado"); break;
       }
 
-      titulo_sombra.textContent=nombrePoke
-
-      const titulos = document.createElement("h3")
-      titulo_sombra.setAttribute("class", "fuente_nombreP")
-
-      titulos.textContent = nombrePoke
+      const titulos = document.createElement("h3");
+      titulos.textContent = nombrePoke;
+      titulos.setAttribute("class", "fuente_nombre"); 
 
       const imagen_tarjeta = document.createElement("div")
       imagen_tarjeta.setAttribute("class", "row")
@@ -214,7 +189,7 @@ class Pokedex {
         }
 
         const tipo = document.createElement("div") // contenedor que tiene adentro el texto como tipo
-        tipo.setAttribute("class", "d-flex aling-items-center margen_acercar_arriba")
+        tipo.setAttribute("class", "d-flex align-items-center margen_acercar_arriba")
 
         const circuloDEtipo = document.createElement("p")
         const name = document.createElement("p")
@@ -225,7 +200,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_morado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color morado contorni-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_morado contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
          
@@ -345,7 +320,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_marron fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_marron contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -353,7 +328,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_rosa fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosa contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -375,6 +350,7 @@ class Pokedex {
       titulo_tarjeta.appendChild(titulo_sombra)
       titulo_tarjeta.appendChild(titulos)
       Cuerpo_tarjeta.appendChild(imagen_tarjeta).appendChild(imagen_pokemonPokedex)
+      Cuerpo_tarjeta.appendChild(tipos_contenedor);
       main.appendChild(contenedor)
       
     }
