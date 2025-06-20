@@ -273,7 +273,7 @@ body {
 
 .card {
   width: 18rem;
-  height: 25rem;
+  height: 28rem;
   border: none;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -348,7 +348,7 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 
 .fondoTarjetaGris{
   background: #9e9999;
-background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
+  background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .boton_volver{
@@ -364,8 +364,10 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .img_volver{
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 15px ;
 }
 
 .boton_acompañante{
@@ -383,12 +385,14 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 .img_pokeball{
   width: 35px;
   height: 35px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .fuente_nombre {
   font-family: 'Times New Roman', Times, serif;
   color: white;
-  font-size: 32px;
+  font-size: 35px;
   letter-spacing: 5px;
   text-align: center;
   white-space: nowrap;
@@ -403,7 +407,7 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 
 .fuente_nombreP{
   font-family: 'Times New Roman', Times, serif;
-  font-size: 32px;
+  font-size: 35px;
   line-height: 1.2;
   letter-spacing: 5px;
   z-index: 1;
@@ -429,14 +433,14 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 
 .imagen_tarjeta{
   width: 220px;
-  height: 220px;
+  height: 235px;
   object-fit: contain;
   transform: translateY(-20%) translateX(20%);
 }
 
 .imagen_tarjetaPokedex{
   width: 220px;
-  height: 220px;
+  height: 250px;
   object-fit: contain;
   display: block;
   margin-left: auto;
@@ -472,6 +476,26 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
   font-size: 15px;
   transform: translateY(-105px);
 }
+.container-tipo {
+  background-color: rgba(255, 255, 255, 0.384); 
+  padding: 5px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 5px;
+  width: fit-content;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* Para evitar márgenes extra que descuadran */
+.container-tipo p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
 
 .margen_corto{
   margin-top: 2.5px;
@@ -522,7 +546,7 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .margen_abajo{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .margen_arriba{
@@ -534,53 +558,53 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .contorno-tipos {
-    -webkit-text-stroke: 0.5px #1d1d1d;
+    -webkit-text-stroke: 0.4px #575757;
 }
 
 .borde_verde{
--webkit-text-stroke: 12px #92c79d;
-position: absolute;
-z-index: 1;
+  -webkit-text-stroke: 12px  #60c48d;
+  position: absolute;
+  z-index: 1;
 }
 
 .borde_amarillo{
-  -webkit-text-stroke: 12px #eddc93;
+  -webkit-text-stroke: 12px #cab65c;
   position: absolute;
   z-index: 1;
 }
 
 .borde_blanco{
-  -webkit-text-stroke: 12px #e1dddd;
+  -webkit-text-stroke: 12px #817c7c;
   position: absolute;
   z-index: 1;
 }
 
 .borde_negro{
-  -webkit-text-stroke: 12px #424242;
+  -webkit-text-stroke: 12px #7a7979;
   position: absolute;
   z-index: 1;
 }
 
 .borde_rosa{
-  -webkit-text-stroke: 12px #faacd8;
+  -webkit-text-stroke: 12px #e09bc4;
   position: absolute;
   z-index: 1;
 }
 
 .borde_rojo{
-  -webkit-text-stroke: 12px #f28585;
+  -webkit-text-stroke: 12px #e9a089;
   position: absolute;
   z-index: 1;
 }
 
 .borde_azul{
-  -webkit-text-stroke: 12px #7bb6d6; 
+  -webkit-text-stroke: 12px #7bb6d6;
   position: absolute;
   z-index: 1;
 }
 
 .borde_marron{
-  -webkit-text-stroke: 12px #c08f69;
+  -webkit-text-stroke: 12px #dd996b;
   position: absolute;
   z-index: 1;
 }
@@ -592,7 +616,7 @@ z-index: 1;
 }
 
 .borde_morado{
-  -webkit-text-stroke: 12px #7B6E91;
+  -webkit-text-stroke: 12px #bf92dd;
   position: absolute;
   z-index: 1;
 }
@@ -638,19 +662,20 @@ z-index: 1;
 }
 
 .color_verde {
-    color: #84b58e;
+    color: #70bda1;
+    
 }
 
 .color_rojo {
-    color: #ae5353;
+    color: #be6c4c;
 }
 
 .color_azul {
-    color: #5e8aa1;
+    color: #4d86a5;
 }
 
 .color_blanco {
-    color: #C2C2C2;
+    color: #d3d3d4;
 }
 
 .color_cafe {
@@ -662,29 +687,30 @@ z-index: 1;
 }
 
 .color_morado {
-    color: #c5a1ff;
+    color: #bd71f0;
 }
 
 .color_rosado {
-    color: #e4dae0;
+    color: #d481b3;
 }
 
 .color_gris {
-    color: #676767;
+    color: #858383;
 }
 
 .color_negro {
-    color: #c0bdbd;
+    color: #4d4c4c;
 }
 
 .botonOp {
-    font-size: 12px;
-    font-family: 'Options-font';
-    text-transform: uppercase;
+    font-size: 15px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: inline;
+    font-style: italic;
     text-align: center;
     font-weight: bold;
-    padding: 1em 1em;
+    letter-spacing: 0.1rem;
+    padding: 1rem 0.5rem;
     border: none;
     border-radius: 20px;
     position: relative;
@@ -706,7 +732,7 @@ z-index: 1;
     bottom: 0;
     opacity: 0;
     content: '';
-    border-bottom: 2px solid rgb(31, 31, 31);
+    border-bottom: 2px solid rgb(35, 15, 146);
     z-index: -1;
 }
 
@@ -727,16 +753,38 @@ z-index: 1;
 
 .botonOp:active {
     transform: scale(0.9);
+    color: #000000;
 }
 
 .fuente_infor {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
-    color: #0e0e0e;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #292929;
 }
 
-.fuente_data{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 12px;
-    color: #0e0e0e;
+.fuente_data_bold {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #0f0f0f;
+    font-weight: bold;
 }
+
+
+.fuente_data{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #636363;
+    font-weight: bold;
+}
+
+/*COLORES DE LOS ID EN CARDSPOKEMON*/
+.color_white { color: #807f7f; }
+.color_black { color: #a0a0a0; }
+.color_gray  { color: #b4b6b6; }
+.color_red   { color: #f1a485; }
+.color_blue  { color: #9fcff0; }
+.color_green { color: #3ea76a; }
+.color_brown { color: #ffc493; }
+.color_yellow { color: #c7ad46; }
+.color_pink   { color: #fac0dd; }
+.color_purple { color: #e8b5fc; }
