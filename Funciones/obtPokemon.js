@@ -1,27 +1,29 @@
 const obtPokemones = async function () {
+  const options = { method: 'GET' };
 
-    // Declaramos el metodo GET para la variable options que sera pasada como parametro de la funcion fetch
-    const options = {
-        method: 'GET'
-    };
+  const respuesta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150", options);
+  const datos = await respuesta.json();
+  const urlPokemons = datos.results.map(p => p.url);
 
-    // Obtenemos los primeros 150 pokemones
-    const respuesta = await fetch("https://pokeapi.co/api/v2/pokemon?limit=150", options);
-    const datos = await respuesta.json(); // Parseamos a JSON la respuesta
+  const detalles = await Promise.all(
+    urlPokemons.map(url => fetch(url, options).then(res => res.json()))
+  );
 
-    // Obtenemos las URLs individuales de cada Pokemon
-    const urlPokemons = datos.results.map(pokemon => pokemon.url);
+  const pokemones = detalles.map(p => ({
+    id: p.id,
+    nombre: p.name,
+    imagen: p.sprites.other["official-artwork"].front_default,
+    tipos: p.types.map(t => t.type.name),
+    habilidades: p.abilities.map(a => a.ability.name),
+    peso: p.weight,
+    altura: p.height,
+    estadisticas: p.stats,
+    moves: p.moves, // necesario para Moves
+    species_url: p.species.url, // necesario para Evolution
+    color: "gray" // opcional
+  }));
 
-    // Creamos un array de promesas que obtendran el detalle de cada Pokemon
-    const promesasDetalles = urlPokemons.map(url =>
-        fetch(url, options).then(res => res.json())
-    );
-
-    // Esperamos a que todas las promesas se resuelvan
-    const detallesPokemons = await Promise.all(promesasDetalles);
-
-    return detallesPokemons;
-
-}
+  return pokemones;
+};
 
 export default obtPokemones;

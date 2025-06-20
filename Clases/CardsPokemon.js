@@ -1,11 +1,17 @@
 import getEstadisticas from "../Funciones/obtEstadisticas.js";
+import obtMovimientos from "../Funciones/obtMovimientos.js";
 import setAcompañantes from "./SetAcompañantes.js";
+import obtEvoluciones from "../Funciones/obtEvoluciones.js";
 
-const CardsPokemon = (pokemon) => {
+
+const CardsPokemon = async (pokemon) => {
   //aseguramos que las stats estan disponibles
   if (!pokemon.estadisticas && pokemon.stats) {
     pokemon.estadisticas = getEstadisticas(pokemon.stats);
   }
+
+  pokemon.movimientos = obtMovimientos(pokemon.movimientos || []);
+  pokemon.evoluciones = await obtEvoluciones(pokemon.especie || "");
 
   const main = document.querySelector("main");
 
@@ -365,6 +371,63 @@ const CardsPokemon = (pokemon) => {
         containerInfor.appendChild(textoDefensas);
 
       }
+
+      if (texto === "Moves") {
+        const movesTitle = document.createElement("h5");
+        movesTitle.classList.add("fw-bold", "text-start", "mt-3", "px-3");
+        movesTitle.textContent = "Known Moves";
+        containerInfor.appendChild(movesTitle);
+
+        if (pokemon.movimientos.length > 0) {
+          const ul = document.createElement("ul");
+          ul.classList.add("px-4");
+          pokemon.movimientos.forEach((mov) => {
+            const li = document.createElement("li");
+            li.textContent = mov;
+            li.classList.add("fuente_data");
+            ul.appendChild(li);
+          });
+          containerInfor.appendChild(ul);
+        } else {
+          containerInfor.innerHTML += "<p class='px-3'>No moves available.</p>";
+        }
+      }
+
+      if (texto === "Evolution") {
+        if (pokemon.evoluciones && pokemon.evoluciones.length > 0) {
+          const evoTitle = document.createElement("h5");
+          evoTitle.classList.add("fw-bold", "text-start", "mt-3", "px-3");
+          evoTitle.textContent = "Evolution Chain";
+          containerInfor.appendChild(evoTitle);
+
+          const containerEvos = document.createElement("div");
+          containerEvos.classList.add("d-flex", "flex-wrap", "gap-3", "justify-content-start", "px-3");
+
+          pokemon.evoluciones.forEach((evo) => {
+            const evoCard = document.createElement("div");
+            evoCard.style.textAlign = "center";
+
+            const img = document.createElement("img");
+            img.src = evo.imagen || "/images/pokeball-abierta.png";
+            img.alt = evo.nombre;
+            img.style.width = "60px";
+            img.style.height = "60px";
+
+            const label = document.createElement("p");
+            label.classList.add("fuente_data");
+            label.textContent = evo.nombre;
+
+            evoCard.appendChild(img);
+            evoCard.appendChild(label);
+            containerEvos.appendChild(evoCard);
+          });
+
+          containerInfor.appendChild(containerEvos);
+        } else {
+          containerInfor.innerHTML = "<p class='px-3'>No evolution data available.</p>";
+        }
+      }
+      
     });
 
     NavbarOpciones.appendChild(btn);
