@@ -1,6 +1,12 @@
+import getEstadisticas from "../Funciones/obtEstadisticas.js";
 import setAcompañantes from "./SetAcompañantes.js";
 
 const CardsPokemon = (pokemon) => {
+  //aseguramos que las stats estan disponibles
+  if (!pokemon.estadisticas && pokemon.stats) {
+    pokemon.estadisticas = getEstadisticas(pokemon.stats);
+  }
+
   const main = document.querySelector("main");
 
   // Eliminar tarjeta previa si existe
@@ -14,7 +20,7 @@ const CardsPokemon = (pokemon) => {
 
   const dibujarTarjeta = document.createElement("div");
 
-  // Clase dinámica según color
+  // Clase dinamica segun color
   const coloresTarjeta = {
     white: "fondoTarjetaBlanco",
     black: "fondoTarjetaNegro",
@@ -158,6 +164,57 @@ const CardsPokemon = (pokemon) => {
     btn.addEventListener("click", () => {
       BotonesInfor.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
+      containerInfor.innerHTML = "";
+
+      if (texto === "About") {
+        const alturaM = (pokemon.altura / 100).toFixed(2) + " m";
+        const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
+        containerInfor.appendChild(crearFila("Data", ""));
+        containerInfor.appendChild(crearFila("Species", pokemon.especie));
+        containerInfor.appendChild(crearFila("Height", `${pokemon.altura} cm (${alturaM})`));
+        containerInfor.appendChild(crearFila("Weight", `${pokemon.peso} kg (${pesoLb})`));
+        containerInfor.appendChild(crearFila("Abilities", pokemon.habilidades.join(", ")));
+        containerInfor.appendChild(crearFila("Weaknesses", pokemon.debilidades.join(", ")));
+        containerInfor.appendChild(crearFila("Breending", ""));
+        containerInfor.appendChild(crearFila("Egg Groups", pokemon.grupos_huevo.join(", ")));
+      }
+if (texto === "Stats") {
+        const stats = pokemon.estadisticas;
+        if (!stats) {
+          containerInfor.innerHTML = "<p>Error: Estadísticas no definidas.</p>";
+          return;
+        }
+
+        const tituloStats = document.createElement("h5");
+        tituloStats.innerText = "Base Stats";
+        containerInfor.appendChild(tituloStats);
+
+        const crearStat = (nombre, valor) => {
+          const fila = document.createElement("div");
+          fila.classList.add("row", "align-items-center", "mb-1");
+          const label = document.createElement("div");
+          label.classList.add("col-3");
+          label.innerText = nombre;
+          const barra = document.createElement("div");
+          barra.classList.add("col-9");
+          const barraRoja = document.createElement("div");
+          barraRoja.style.backgroundColor = "red";
+          barraRoja.style.height = "5px";
+          barraRoja.style.width = `${valor / 2}%`;
+          barra.appendChild(barraRoja);
+          fila.appendChild(label);
+          fila.appendChild(barra);
+          return fila;
+        };
+
+        containerInfor.appendChild(crearStat("HP", stats.hp));
+        containerInfor.appendChild(crearStat("Attack", stats.attack));
+        containerInfor.appendChild(crearStat("Defense", stats.defense));
+        containerInfor.appendChild(crearStat("Sp. Atk", stats.special_attack));
+        containerInfor.appendChild(crearStat("Sp. Def", stats.special_defense));
+        containerInfor.appendChild(crearStat("Speed", stats.speed));
+        containerInfor.appendChild(crearStat("Total", stats.total || 0));
+      }
     });
     NavbarOpciones.appendChild(btn);
     return btn;
@@ -182,7 +239,7 @@ const CardsPokemon = (pokemon) => {
       texto1.setAttribute("class", "fuente_data");
     }
 
-  texto1.textContent = titulo;
+    texto1.textContent = titulo;
     const col2 = document.createElement("div");
     col2.setAttribute("class", "col d-flex justify-content-start");
 
@@ -198,17 +255,8 @@ const CardsPokemon = (pokemon) => {
     return fila;
   };
 
-  const alturaM = (pokemon.altura / 100).toFixed(2) + " m";
-  const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
-
-  containerInfor.appendChild(crearFila("Data", ""));
-  containerInfor.appendChild(crearFila("Species", pokemon.especie));
-  containerInfor.appendChild(crearFila("Height", `${pokemon.altura} cm (${alturaM})`));
-  containerInfor.appendChild(crearFila("Weight", `${pokemon.peso} kg (${pesoLb})`));
-  containerInfor.appendChild(crearFila("Abilities", pokemon.habilidades.join(", ")));
-  containerInfor.appendChild(crearFila("Weaknesses", pokemon.debilidades.join(", ")));
-  containerInfor.appendChild(crearFila("Breending", ""));
-  containerInfor.appendChild(crearFila("Egg Groups", pokemon.grupos_huevo.join(", ")));
+  // Cargar "About" por defecto
+  BotonesInfor[0].click();
 
   // Ensamblar todo
   area_nombre.appendChild(nombre_borde);

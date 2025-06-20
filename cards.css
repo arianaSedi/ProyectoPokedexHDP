@@ -749,6 +749,7 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 
 .botonOp:active {
     transform: scale(0.9);
+    color: #000000;
 }
 
 .fuente_infor {

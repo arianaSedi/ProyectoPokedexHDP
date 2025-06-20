@@ -1,4 +1,5 @@
 import CardsPokemon from "./CardsPokemon.js";
+import getEstadisticas from "../Funciones/obtEstadisticas.js";
 
 class Pokedex {
   async renderPokedex(data) {
@@ -336,6 +337,14 @@ class Pokedex {
             break;
 
         }
+
+        contenedorTarjeta.addEventListener("click", () => {
+          //convertir si stats aun no esta procesado
+          if (!Pokemon[i].stats || !Pokemon[i].stats.vida) {
+            Pokemon[i].stats = getEstadisticas(Pokemon[i].estadisticas).toJSON();
+          }
+          CardsPokemon(Pokemon[i]);
+        });
 
         tipo.appendChild(circuloDEtipo)
         tipo.appendChild(name)
