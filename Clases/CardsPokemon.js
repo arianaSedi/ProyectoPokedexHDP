@@ -157,72 +157,6 @@ const CardsPokemon = (pokemon) => {
     { texto: "Moves", clase: "botonOp" },
   ];
 
-  const BotonesInfor = botonesNav.map(({ texto, clase }) => {
-    const btn = document.createElement("button");
-    btn.setAttribute("class", clase);
-    btn.textContent = texto;
-    btn.addEventListener("click", () => {
-      BotonesInfor.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      containerInfor.innerHTML = "";
-
-      if (texto === "About") {
-        const alturaM = (pokemon.altura / 100).toFixed(2) + " m";
-        const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
-        containerInfor.appendChild(crearFila("Data", ""));
-        containerInfor.appendChild(crearFila("Species", pokemon.especie));
-        containerInfor.appendChild(crearFila("Height", `${pokemon.altura} cm (${alturaM})`));
-        containerInfor.appendChild(crearFila("Weight", `${pokemon.peso} kg (${pesoLb})`));
-        containerInfor.appendChild(crearFila("Abilities", pokemon.habilidades.join(", ")));
-        containerInfor.appendChild(crearFila("Weaknesses", pokemon.debilidades.join(", ")));
-        containerInfor.appendChild(crearFila("Breending", ""));
-        containerInfor.appendChild(crearFila("Egg Groups", pokemon.grupos_huevo.join(", ")));
-      }
-if (texto === "Stats") {
-        const stats = pokemon.estadisticas;
-        if (!stats) {
-          containerInfor.innerHTML = "<p>Error: Estadísticas no definidas.</p>";
-          return;
-        }
-
-        const tituloStats = document.createElement("h5");
-        tituloStats.innerText = "Base Stats";
-        containerInfor.appendChild(tituloStats);
-
-        const crearStat = (nombre, valor) => {
-          const fila = document.createElement("div");
-          fila.classList.add("row", "align-items-center", "mb-1");
-          const label = document.createElement("div");
-          label.classList.add("col-3");
-          label.innerText = nombre;
-          const barra = document.createElement("div");
-          barra.classList.add("col-9");
-          const barraRoja = document.createElement("div");
-          barraRoja.style.backgroundColor = "red";
-          barraRoja.style.height = "5px";
-          barraRoja.style.width = `${valor / 2}%`;
-          barra.appendChild(barraRoja);
-          fila.appendChild(label);
-          fila.appendChild(barra);
-          return fila;
-        };
-
-        containerInfor.appendChild(crearStat("HP", stats.hp));
-        containerInfor.appendChild(crearStat("Attack", stats.attack));
-        containerInfor.appendChild(crearStat("Defense", stats.defense));
-        containerInfor.appendChild(crearStat("Sp. Atk", stats.special_attack));
-        containerInfor.appendChild(crearStat("Sp. Def", stats.special_defense));
-        containerInfor.appendChild(crearStat("Speed", stats.speed));
-        containerInfor.appendChild(crearStat("Total", stats.total || 0));
-      }
-    });
-    NavbarOpciones.appendChild(btn);
-    return btn;
-  });
-
-  const containerInfor = document.createElement("div");
-  containerInfor.setAttribute("class", "margen_top d-flex flex-column");
-
   const crearFila = (titulo, valor) => {
     const fila = document.createElement("div");
     fila.setAttribute("class", "row align-items-center d-flex");
@@ -254,6 +188,114 @@ if (texto === "Stats") {
 
     return fila;
   };
+
+  //BOTONES DE LA NAVBAR DE LA CARD
+  const BotonesInfor = botonesNav.map(({ texto, clase }) => {
+  const btn = document.createElement("button");
+  btn.setAttribute("class", clase);
+  btn.textContent = texto;
+
+  //EVENTO DE LOS BOTONES
+  btn.addEventListener("click", () => {
+    BotonesInfor.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    containerInfor.innerHTML = "";
+
+    if (texto === "About") {
+      const alturaM = (pokemon.altura / 100).toFixed(2) + " m";
+      const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
+      containerInfor.appendChild(crearFila("Data", ""));
+      containerInfor.appendChild(crearFila("Species", pokemon.especie));
+      containerInfor.appendChild(crearFila("Height", `${pokemon.altura} cm (${alturaM})`));
+      containerInfor.appendChild(crearFila("Weight", `${pokemon.peso} kg (${pesoLb})`));
+      containerInfor.appendChild(crearFila("Abilities", pokemon.habilidades.join(", ")));
+      containerInfor.appendChild(crearFila("Weaknesses", pokemon.debilidades.join(", ")));
+      containerInfor.appendChild(crearFila("Breending", ""));
+      containerInfor.appendChild(crearFila("Egg Groups", pokemon.grupos_huevo.join(", ")));
+    }
+
+    if (texto === "Stats") {
+      const stats = pokemon.estadisticas;
+      if (!stats) {
+        containerInfor.innerHTML = "<p>Error: Estadísticas no definidas.</p>";
+        return;
+      }
+
+      /*const tituloStats = document.createElement("h5");
+      tituloStats.classList.add("fw-bold", "text-center", "mb-3", "mt-2");
+      containerInfor.appendChild(tituloStats);*/
+
+      const crearStat = (nombre, valor) => {
+      const fila = document.createElement("div");
+      fila.classList.add("d-flex", "align-items-center", "mb-2", "px-3", "gap-2");
+
+      const nombreDiv = document.createElement("div");
+      nombreDiv.style.width = "80px"; // nombre fijo a la izquierda
+      nombreDiv.textContent = nombre;
+
+      const valorDiv = document.createElement("div");
+      valorDiv.style.width = "30px";
+      valorDiv.classList.add("text-end", "fw-bold");
+      valorDiv.textContent = valor;
+
+      const barraCont = document.createElement("div");
+      barraCont.style.flex = "1"; // ocupa el resto del espacio
+      barraCont.style.backgroundColor = "#e0e0e0";
+      barraCont.style.borderRadius = "4px";
+      barraCont.style.height = "6px";
+      barraCont.style.overflow = "hidden";
+
+      const barra = document.createElement("div");
+      barra.style.width = `${(valor / 150) * 100}%`;
+      barra.style.height = "100%";
+      barra.style.backgroundColor = valor >= 60 ? "green" : "red";
+
+      barraCont.appendChild(barra);
+
+      fila.appendChild(nombreDiv);
+      fila.appendChild(valorDiv);
+      fila.appendChild(barraCont);
+
+      return fila;
+    };
+
+      containerInfor.appendChild(crearStat("HP", stats.vida));
+      containerInfor.appendChild(crearStat("Attack", stats.ataque));
+      containerInfor.appendChild(crearStat("Defense", stats.defensa));
+      containerInfor.appendChild(crearStat("Sp. Atk", stats.ataque_especial));
+      containerInfor.appendChild(crearStat("Sp. Def", stats.defensa_especial));
+      containerInfor.appendChild(crearStat("Speed", stats.velocidad));
+
+      const total =
+        stats.vida +
+        stats.ataque +
+        stats.defensa +
+        stats.ataque_especial +
+        stats.defensa_especial +
+        stats.velocidad;
+
+      containerInfor.appendChild(crearStat("Total", total));
+      
+      // seccion de tipo defensas
+      const tituloDefensas = document.createElement("h5");
+      tituloDefensas.innerText = "Type defenses";
+      tituloDefensas.classList.add("fw-bold", "text-start", "mt-4", "px-3");
+      containerInfor.appendChild(tituloDefensas);
+
+      const textoDefensas = document.createElement("p");
+      textoDefensas.innerText = `The effectiveness of each type on ${pokemon.nombre.charAt(0).toUpperCase() + pokemon.nombre.slice(1)}.`;
+      textoDefensas.classList.add("text-start", "px-3", "mb-3");
+      containerInfor.appendChild(textoDefensas);
+
+    }
+  });
+
+  NavbarOpciones.appendChild(btn);
+  return btn;
+});
+
+  const containerInfor = document.createElement("div");
+  containerInfor.setAttribute("class", "margen_top d-flex flex-column");
 
   // Cargar "About" por defecto
   BotonesInfor[0].click();
