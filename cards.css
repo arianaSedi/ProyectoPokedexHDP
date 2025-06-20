@@ -273,7 +273,7 @@ body {
 
 .card {
   width: 18rem;
-  height: 26rem;
+  height: 28rem;
   border: none;
   position: relative;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
@@ -348,7 +348,7 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 
 .fondoTarjetaGris{
   background: #9e9999;
-background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
+  background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .boton_volver{
@@ -364,8 +364,10 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 }
 
 .img_volver{
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: 15px ;
 }
 
 .boton_acompañante{
@@ -383,12 +385,14 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 .img_pokeball{
   width: 35px;
   height: 35px;
+  margin-top: 20px;
+  margin-right: 20px;
 }
 
 .fuente_nombre {
   font-family: 'Times New Roman', Times, serif;
   color: white;
-  font-size: 32px;
+  font-size: 35px;
   letter-spacing: 5px;
   text-align: center;
   white-space: nowrap;
@@ -403,7 +407,7 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 
 .fuente_nombreP{
   font-family: 'Times New Roman', Times, serif;
-  font-size: 32px;
+  font-size: 35px;
   line-height: 1.2;
   letter-spacing: 5px;
   z-index: 1;
@@ -429,14 +433,14 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
 
 .imagen_tarjeta{
   width: 220px;
-  height: 220px;
+  height: 235px;
   object-fit: contain;
   transform: translateY(-20%) translateX(20%);
 }
 
 .imagen_tarjetaPokedex{
   width: 220px;
-  height: 220px;
+  height: 250px;
   object-fit: contain;
   display: block;
   margin-left: auto;
@@ -772,3 +776,15 @@ background: radial-gradient(circle,rgb(204, 201, 201) 0%, rgb(78, 77, 77) 100%);
     color: #636363;
     font-weight: bold;
 }
+
+/*COLORES DE LOS ID EN CARDSPOKEMON*/
+.color_white { color: #807f7f; }
+.color_black { color: #a0a0a0; }
+.color_gray  { color: #b4b6b6; }
+.color_red   { color: #f1a485; }
+.color_blue  { color: #9fcff0; }
+.color_green { color: #3ea76a; }
+.color_brown { color: #ffc493; }
+.color_yellow { color: #c7ad46; }
+.color_pink   { color: #fac0dd; }
+.color_purple { color: #e8b5fc; }
