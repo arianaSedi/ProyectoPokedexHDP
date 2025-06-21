@@ -1,23 +1,27 @@
-// Clase para gestionar los movimientos del Pokémon
 class Movimientos {
   constructor(movesData) {
-    // Si movesData no es un arreglo válido, usar un arreglo vacío
-    this.movesData = Array.isArray(movesData) ? movesData : [];
-  }
+    this.movesData = [];
 
-  // Método para obtener los primeros movimientos en inglés
-  Moves(cantidad = 5) {
-    const primerosMovimientos = [];
-
-    for (let i = 0; i < this.movesData.length && primerosMovimientos.length < cantidad; i++) {
-      const movimiento = this.movesData[i].move;
-
-      if (movimiento && typeof movimiento.name === "string") {
-        primerosMovimientos.push(movimiento.name.replace("-", " "));
+    if (Array.isArray(movesData)) {
+      for (let i = 0; i < movesData.length && this.movesData.length < 5; i++) {
+        const mov = movesData[i];
+        if (typeof mov === "string") {
+          this.movesData.push(mov);
+        } else if (mov?.move?.name) {
+          this.movesData.push(mov.move.name.replace("-", " "));
+        } else if (typeof mov.name === "string") {
+          this.movesData.push(mov.name.replace("-", " "));
+        }
       }
     }
+  }
 
-    return primerosMovimientos;
+  Moves() {
+    return this.movesData;
+  }
+
+  toJSON() {
+    return this.movesData;
   }
 }
 

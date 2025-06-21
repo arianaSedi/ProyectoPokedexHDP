@@ -10,7 +10,10 @@ const CardsPokemon = async (pokemon) => {
     pokemon.estadisticas = getEstadisticas(pokemon.stats);
   }
 
-  pokemon.movimientos = obtMovimientos(pokemon.movimientos || []);
+  if (!pokemon.movimientos || !pokemon.movimientos.Moves) {
+    pokemon.movimientos = obtMovimientos(pokemon.movimientos);
+  }
+
   pokemon.evoluciones = await obtEvoluciones(pokemon.especie || "");
 
   const main = document.querySelector("main");
@@ -374,17 +377,18 @@ const CardsPokemon = async (pokemon) => {
 
       if (texto === "Moves") {
         const movesTitle = document.createElement("h5");
-        movesTitle.classList.add("fw-bold", "text-start", "mt-3", "px-3");
+        movesTitle.className = "fw-bold text-start mt-3 px-3";
         movesTitle.textContent = "Known Moves";
         containerInfor.appendChild(movesTitle);
 
-        if (pokemon.movimientos.length > 0) {
+        const moves = pokemon.movimientos.Moves();
+        if (moves.length > 0) {
           const ul = document.createElement("ul");
-          ul.classList.add("px-4");
-          pokemon.movimientos.forEach((mov) => {
+          ul.className = "px-4";
+          moves.forEach((mov) => {
             const li = document.createElement("li");
             li.textContent = mov;
-            li.classList.add("fuente_data");
+            li.className = "fuente_data";
             ul.appendChild(li);
           });
           containerInfor.appendChild(ul);

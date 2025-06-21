@@ -1,9 +1,8 @@
 import Movimientos from "../Clases/Movimientos.js";
 
 const obtMovimientos = (dtMovimientos) => {
-  if (!Array.isArray(dtMovimientos)) return [];
-  const gestorMovimientos = new Movimientos(dtMovimientos);
-  return gestorMovimientos.Moves();
+  const gestor = new Movimientos(dtMovimientos);
+  return gestor;
 };
 
 export default obtMovimientos;

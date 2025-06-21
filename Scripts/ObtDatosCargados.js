@@ -48,8 +48,8 @@ const ObtDatosCargados = async () => {
     Poke.setColor(color);
     if (!colores.includes(color)) colores.push(color);
 
-    const movimientos = await obtMovimientos(detalle.moves);
-    movimientos.forEach((m) => Poke.addMove(m));
+    const movimientos = obtMovimientos(detalle.moves); // ← clase Movimientos
+    Poke.setMoves(movimientos);
 
     const imagen = detalle.sprites.other?.["official-artwork"]?.front_default;
     Poke.setImage(imagen);

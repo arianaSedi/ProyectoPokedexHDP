@@ -144,8 +144,16 @@ class pokemon {
         this.#color = color;
     }
 
-    addMove(move) {
-        this.#moves.push(move);
+    //addMove(move) {
+    //    this.#moves.push(move);
+    //}
+
+    //setMove(movesArray) {
+    //    this.#moves = movesArray;
+    //}
+
+    setMoves(movimientos) {
+        this.#moves = movimientos;
     }
 
     setEvolution(evo) {
@@ -178,7 +186,7 @@ class pokemon {
             grupos_huevo: this.#eggGroups,  
             estadisticas: this.#stats.toJSON(),
             color: this.#color,              
-            movimientos: this.#moves,
+            movimientos: this.#moves.toJSON(),
             evoluciones: this.#evolution,
             imagen: this.#image,             
             shiny: this.#shiny,              

@@ -1,40 +1,46 @@
-const obtEvoluciones = async (especieUrl) => {
+// Función que obtiene la cadena evolutiva desde una species URL
+const obtEvoluciones = async (speciesUrl) => {
   try {
-    if (!especieUrl || typeof especieUrl !== "string" || !especieUrl.startsWith("http")) {
-      console.warn("URL inválida para obtEvoluciones:", especieUrl);
+    // Validación estricta para evitar errores 
+    if (
+      !speciesUrl ||
+      typeof speciesUrl !== "string" ||
+      !speciesUrl.startsWith("http")
+    ) {
+      console.warn("URL inválida para obtEvoluciones:", speciesUrl);
       return [];
     }
 
-    console.log("speciesUrl recibido en obtEvoluciones:", especieUrl);
+    console.log("speciesUrl recibido en obtEvoluciones:", speciesUrl);
 
-    const responseSpecies = await fetch(especieUrl);
+    //  Obtener datos de la especie
+    const responseSpecies = await fetch(speciesUrl);
     const speciesData = await responseSpecies.json();
 
-    const evo = speciesData.evolution_chain.url;
-    console.log("🔗 Buscando evolución en:", evo);
+    //Obtener URL de la cadena evolutiva
+    const evoUrl = speciesData.evolution_chain.url;
+    console.log("Buscando evolución en:", evoUrl);
 
-    const responseChain = await fetch(evo);
+    // Obtener la cadena evolutiva completa
+    const responseChain = await fetch(evoUrl);
     const chainData = await responseChain.json();
 
     const evoluciones = [];
-
     let actual = chainData.chain;
+
+    // Recorrer la cadena evolutiva
     while (actual) {
       const nombre = actual.species.name;
 
-      const resPoke = await fetch(`https://pokeapi.co/api/v2/pokemon-species/1/`);
+      const resPoke = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`);
       const pokeData = await resPoke.json();
 
       evoluciones.push({
         nombre,
-        imagen: pokeData.sprites.other["official-artwork"].front_default
+        imagen: pokeData.sprites.other["official-artwork"].front_default || "",
       });
 
-      if (actual.evolves_to.length > 0) {
-        actual = actual.evolves_to[0];
-      } else {
-        actual = null;
-      }
+      actual = actual.evolves_to[0] || null;
     }
 
     return evoluciones;
