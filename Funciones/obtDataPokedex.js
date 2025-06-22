@@ -19,7 +19,7 @@ const ObtenerDatosDB = () =>{
         getallrequest.onsuccess = function (event){
             let alldata = event.target.result
 
-            variable.dibujarPokedex(alldata)
+            variable.renderPokedex(alldata)
         };
 
         getallrequest.onerror = function (event){
