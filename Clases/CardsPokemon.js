@@ -158,6 +158,9 @@ const CardsPokemon = (pokemon) => {
     btn.addEventListener("click", () => {
       BotonesInfor.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
+
+      if (texto === "About") renderAbout();
+      if (texto === "Moves") renderMoves();
     });
     NavbarOpciones.appendChild(btn);
     return btn;
@@ -192,9 +195,13 @@ const CardsPokemon = (pokemon) => {
     return fila;
   };
 
+
+  // Función para mostrar la sección About
+const renderAbout = () => {
+  containerInfor.innerHTML = "";
+
   const alturaM = (pokemon.altura / 100).toFixed(2) + " m";
   const pesoLb = (pokemon.peso * 2.2046).toFixed(2) + " lbs";
-
   containerInfor.appendChild(crearFila("Data", ""));
   containerInfor.appendChild(crearFila("Especie", pokemon.especie));
   containerInfor.appendChild(crearFila("Altura", `${pokemon.altura} cm (${alturaM})`));
@@ -203,6 +210,26 @@ const CardsPokemon = (pokemon) => {
   containerInfor.appendChild(crearFila("Debilidades", pokemon.debilidades.join(", ")));
   containerInfor.appendChild(crearFila("Cría", ""));
   containerInfor.appendChild(crearFila("Grupo Huevo", pokemon.grupos_huevo.join(", ")));
+};
+
+// Función para mostrar movimientos
+
+const renderMoves = () => {
+  containerInfor.innerHTML = "";
+
+  if (!pokemon.movimientos || pokemon.movimientos.length === 0) {
+    containerInfor.appendChild(crearFila("Movimientos", "No hay movimientos"));
+    return;
+  }
+
+  // Mostrar los primeros 5 movimientos
+  const movimientos = pokemon.movimientos.slice(0, 5).map(m => m.nombre.replace("-", " "));
+
+  movimientos.forEach((move, i) => {
+    containerInfor.appendChild(crearFila(`Movimiento ${i + 1}`, move));
+  });
+};
+
 
   // Ensamblar todo
   area_nombre.appendChild(nombre_borde);
@@ -233,6 +260,7 @@ const CardsPokemon = (pokemon) => {
   dibujarTarjeta.appendChild(informacion_fila);
 
   area.appendChild(dibujarTarjeta);
+  renderAbout(); // Mostrar la sección "About" por defecto
   main.appendChild(area);
 };
 

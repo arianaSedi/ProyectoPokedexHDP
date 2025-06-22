@@ -1,7 +1,7 @@
 import CardsPokemon from "./CardsPokemon.js";
 
 class Pokedex {
-  async renderPokedex(data) {
+  async dibujarPokedex(data) {
     const Pokemon = data;
 
     const contenedor = document.createElement("div");
