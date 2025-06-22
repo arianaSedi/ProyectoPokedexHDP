@@ -413,6 +413,7 @@ const CardsPokemon = (pokemon) => {
   dibujarTarjeta.appendChild(informacion_fila);
 
   area.appendChild(dibujarTarjeta);
+  renderAbout(); // Mostrar la sección "About" por defecto
   main.appendChild(area);
 };
 
