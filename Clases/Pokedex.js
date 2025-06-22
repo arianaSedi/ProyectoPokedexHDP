@@ -2,7 +2,7 @@ import CardsPokemon from "./CardsPokemon.js";
 import getEstadisticas from "../Funciones/obtEstadisticas.js";
 
 class Pokedex {
-  async renderPokedex(data) {
+  async dibujarPokedex(data) {
     const Pokemon = data;
 
     const contenedor = document.createElement("div");
