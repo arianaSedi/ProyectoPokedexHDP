@@ -11,10 +11,6 @@ openConsulta.onupgradeneeded = function (event){
         db.createObjectStore("datos", {keyPath: 'id', autoIncrement:true})
 
     }
-
-    if(!db.objectStoreNames.contains("acompañantes")){
-        db.createObjectStore("acompañantes", {keyPath: 'id', autoIncrement:true})
-    }
 }
 
 openConsulta.onsuccess = async function (event){
