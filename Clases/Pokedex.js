@@ -2,7 +2,7 @@ import CardsPokemon from "./CardsPokemon.js";
 import getEstadisticas from "../Funciones/obtEstadisticas.js";
 
 class Pokedex {
-  async dibujarPokedex(data) {
+  async dibujarpokedex(data) {
     const Pokemon = data;
 
     const contenedor = document.createElement("div");
@@ -19,61 +19,61 @@ class Pokedex {
         case "white":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaBlanco rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaBlanco rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "black":
           contenedorTarjeta.setAttribute(
             "class",
-            "card  fondoTarjetaNegro rounded-3 mx-3 my-3  formacursor"
+            "card  fondoTarjetaNegro rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "gray":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaGris rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaGris rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "red":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaRojo rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaRojo rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "blue":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaAzul rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaAzul rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "green":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaVerde rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaVerde rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "brown":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaMarron rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaMarron rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "yellow":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaAmarillo rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaAmarillo rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "pink":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaRosa rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaRosa rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         case "purple":
           contenedorTarjeta.setAttribute(
             "class",
-            "card fondoTarjetaMorado rounded-3 mx-3 my-3  formacursor"
+            "card fondoTarjetaMorado rounded-3 mx-3 my-3  formacursor FiltroBuscarPokemon"
           );
           break;
         default:
@@ -201,7 +201,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_morado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_morado contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_morado contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
          
@@ -209,7 +209,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_azul fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_azul contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_azul contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
             
@@ -217,7 +217,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -225,7 +225,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_rosado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -233,7 +233,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -241,7 +241,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_gris fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_gris contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_gris contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -249,7 +249,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_blanco fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_blanco contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_blanco contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -257,7 +257,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_verde fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_verde contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_verde contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -265,7 +265,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_morado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_morado contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_morado contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -273,7 +273,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_rojo fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rojo contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_rojo contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -281,7 +281,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_blanco fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_blanco contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_blanco contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -289,7 +289,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_azul fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_azul contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_azul contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -297,7 +297,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_verde fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_verde contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_verde contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -305,7 +305,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_amarillo fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_amarillo contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_amarillo contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -313,7 +313,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_gris fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_gris contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_gris contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -321,7 +321,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_cafe fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_cafe contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -329,7 +329,7 @@ class Pokedex {
             circuloDEtipo.setAttribute("class","color_rosado fuente_circle_ contorno-tipos")
             circuloDEtipo.textContent = "a"
 
-            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos" )
+            name.setAttribute("class","fuente_tiposPoke ms-2 color_rosado contorno-tipos ColorTipo" )
             name.textContent = ArraydeTipos[y]
             break;
 
@@ -361,7 +361,7 @@ class Pokedex {
       Cuerpo_tarjeta.appendChild(imagen_tarjeta).appendChild(imagen_pokemonPokedex)
       Cuerpo_tarjeta.appendChild(tipos_contenedor);
       main.appendChild(contenedor)
-      
+
     }
   }
 }

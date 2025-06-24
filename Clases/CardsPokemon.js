@@ -374,12 +374,12 @@ const CardsPokemon = (pokemon) => {
   );
   //NavbarOpciones.setAttribute("class", "row align-items-center d-flex justify-content-between");
 
-  const botonesNav = [
-    { texto: "About", clase: "botonOp active" },
-    { texto: "Stats", clase: "botonOp" },
-    { texto: "Evolution", clase: "botonOp" },
-    { texto: "Moves", clase: "botonOp" },
-  ];
+const botonesNav = [
+  { texto: "About", clase: "botonOp active" },
+  { texto: "Stats", clase: "botonOp" },
+  { texto: "Moves", clase: "botonOp" },
+];
+
 
   const crearFila = (titulo, valor) => {
     const fila = document.createElement("div");
@@ -530,28 +530,32 @@ const CardsPokemon = (pokemon) => {
         }.`;
         textoDefensas.classList.add("text-start", "px-3", "mb-3");
         containerInfor.appendChild(textoDefensas);
+
       }
       if (texto === "Moves") {
-        renderMoves();
+          
+          const renderMoves = () => {
+          containerInfor.innerHTML = "";
+          if (!pokemon.movimientos || pokemon.movimientos.length === 0) {
+            containerInfor.appendChild(crearFila("Moves", "No hay movimientos"));
+            return;
+          }
+          pokemon.movimientos.slice(0, 5).forEach((mov, i) => {
+            containerInfor.appendChild(
+              crearFila(`Move ${i + 1}`, mov.nombre.replace("-", " "))
+            );
+          });
+          };
+             renderMoves();
       }
+
     });
 
     NavbarOpciones.appendChild(btn);
     return btn;
   });
 
-  const renderMoves = () => {
-    containerInfor.innerHTML = "";
-    if (!pokemon.movimientos || pokemon.movimientos.length === 0) {
-      containerInfor.appendChild(crearFila("Moves", "No hay movimientos"));
-      return;
-    }
-    pokemon.movimientos.slice(0, 5).forEach((mov, i) => {
-      containerInfor.appendChild(
-        crearFila(`Move ${i + 1}`, mov.nombre.replace("-", " "))
-      );
-    });
-  };
+
 
   const containerInfor = document.createElement("div");
   containerInfor.setAttribute("class", "margen_top d-flex flex-column");
@@ -597,7 +601,7 @@ const CardsPokemon = (pokemon) => {
   dibujarTarjeta.appendChild(informacion_fila);
 
   area.appendChild(dibujarTarjeta);
-  //renderAbout(); // Mostrar la sección "About" por defecto
+  
   main.appendChild(area);
 };
 
