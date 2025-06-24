@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokedex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <!-- <script type="module" src="/Conexiones/conexionPokedex.js"> </script> -->
+</head>
+
+<body class="bg-red">
+
+  <!-- Barra de navegacion estilo Pokedex -->
+  <nav class="navbar p-0">
+    <div class="pokedex-navbar d-flex align-items-center justify-content-between w-100">
+
+      <div class="pokedex-izq d-flex me-3 align-items-center gap-2 justify-content-start">
+        <div class="circulo-btn mb-1 mt-5 mx-3"></div>
+        <div class="circ red"></div>
+        <div class="circ yellow"></div>
+        <div class="circ green"></div>
+      </div>
+
+      <!-- Logo Pokemon -->
+      <div>
+        <img src="images/Pokédex_logo.png" alt="Logo Pokémon" class="logo-img mb-1">
+      </div>
+
+      <div class="nav-links d-flex align-items-center me-4 gap-4">
+        <a href="home.html" class="nav-link">Inicio</a>
+        <a href="pokedex.html" class="nav-link">Pokédex</a>
+        <a href="acompanantes.html" class="nav-link">Acompañantes</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Título de la sección -->
+  <h1 class="text-white text-center tituloPokedex"> MIS ACOMPAÑANTES</h1>
+  <!-- Contenedor blanco estilo pantalla de Pokedex -->
+  <main class="d-flex justify-content-center align-items-center mt-5 d-flex flex-column align-items-center">
+
+    <!-- tarjetas pokemones aqui -->
+    <div id="listaAcompanantes" class="row justify-content-center"></div>
+
+    <!-- Equipos -->
+    <div class="container mt-5">
+      <h2 class="text-center text-white">Equipos</h2>
+      <div id="listaEquipos" class="row mt-4"></div>
+    </div>
+
+
+  </main>
+
+  <footer class="pokedex-footer">
+    <div class="footer-content d-flex flex-column flex-md-row justify-content-center align-items-center w-100">
+
+      <!-- Cruz direccional a la izquierda -->
+      <div class="cruz-container d-flex justify-content-start mb-4 mb-md-0">
+        <div class="cruz">
+          <div class="flecha up"></div>
+          <div class="flecha down"></div>
+          <div class="flecha left"></div>
+          <div class="flecha right"></div>
+          <div class="centro"></div>
+        </div>
+      </div>
+
+      <!-- Pantalla verde en el centro -->
+      <div class="pantalla-nombres text-center">
+        <p class="nombre-equipo mb-0">Ariana Sedillo ✦ SF22015</p>
+        <p class="nombre-equipo mb-0">Angelica Amaya ✦ AP22010</p>
+        <p class="nombre-equipo mb-0">Diego Montesinos ✦ FM22026</p>
+        <p class="nombre-equipo mb-0">Freddy Villatoro ✦ VR20003</p>
+        <p class="nombre-equipo mb-0">Ivan Molina ✦ MR22085</p>
+      </div>
+
+      <!-- Botones a la derecha -->
+      <div class="botones-acciones d-flex flex-row align-items-end">
+        <button class="btn-rojo-pokedex"></button>
+        <button class="btn-verde-pokedex"></button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boton flotante para subir -->
+  <button id="flechaScroll" title="Subir" class="scroll-btn">
+    <img src="images/flechaPoke.png" alt="Subir" class="scroll-img" />
+  </button>
+
+  <script src="Scripts/flechaScroll.js" defer> </script>
+  <script type="module" src="Scripts/acompanantes.js"></script>
+
+</body>
+
+</html>
