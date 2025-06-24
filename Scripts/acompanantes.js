@@ -97,6 +97,16 @@ async function cargarAcompanantes() {
   });
 }
 
+function mostrarAnimacionEliminacion() {
+  const animacion = document.getElementById("eliminacionAnimacion");
+  animacion.classList.remove("oculto");
+
+  setTimeout(() => {
+    animacion.classList.add("oculto");
+  }, 1500); // dura 1.5s
+}
+
+
 window.asignar = async function (id) {
   const select = document.getElementById(`select-${id}`);
   const equipo = select.value;
@@ -115,12 +125,17 @@ window.asignar = async function (id) {
   }
 };
 
-window.eliminar = async function (id) {
-  if (confirm("¿Seguro que deseas eliminar este acompañante?")) {
+window.eliminar = async function(id) {
+  if (!confirm("¿Seguro que deseas eliminar este acompañante?")) return;
+
+  mostrarAnimacionEliminacion(); // Mostrar GIF
+
+  setTimeout(async () => {
     await eliminarAcompanante(id);
     await cargarAcompanantes();
-  }
+  }, 1500); // Espera que termine el gif
 };
+
 
 window.eliminarDeEquipo = async (nombreEquipo, id) => {
   const equipos = await obtenerEquipos();

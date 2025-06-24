@@ -78,15 +78,18 @@ const CardsPokemon = (pokemon) => {
   img_pokeball.setAttribute("class", "img_pokeball");
 
   boton_acompañante.addEventListener("click", async () => {
-  const acompañante = {
-    id: pokemon.id,
-    name: pokemon.nombre || pokemon.name || "Sin nombre",
-    image: pokemon.imagen || pokemon.image || "images/pokeball.png"
-  };
+  const resultado = await agregarAcompanante(pokemon);
 
-  const resultado = await agregarAcompanante(acompañante);
-  alert(resultado);
+  // Solo mostrar animación si fue agregado correctamente
+  if (resultado === "Pokémon agregado correctamente") {
+    mostrarAnimacionCaptura();
+    alert(resultado);
+    setTimeout(() => window.location.reload(), 3000); // esperar animación
+  } else {
+    alert(resultado);
+  }
 });
+
 
 
   boton_volver.addEventListener("click", () => {
@@ -604,5 +607,20 @@ const CardsPokemon = (pokemon) => {
 function conteo(numero) {
   return Math.abs(numero).toString().length;
 }
+
+//Animacion Pokebola
+function mostrarAnimacionCaptura() {
+  const anim = document.getElementById("capturaAnimacion");
+  if (anim) anim.classList.remove("oculto");
+}
+
+function ocultarAnimacionCaptura() {
+  setTimeout(() => {
+    const anim = document.getElementById("capturaAnimacion");
+    if (anim) anim.classList.add("oculto");
+  }, 2000); // Oculta después de 2 segundos
+}
+
+
 
 export default CardsPokemon;
