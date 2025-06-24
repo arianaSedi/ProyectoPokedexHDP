@@ -78,6 +78,8 @@ const CardsPokemon = (pokemon) => {
   img_pokeball.setAttribute("class", "img_pokeball");
 
   boton_acompañante.addEventListener("click", async () => {
+  console.log("Pokemon que se va a agregar:", pokemon);
+
   const resultado = await agregarAcompanante(pokemon);
 
   // Solo mostrar animación si fue agregado correctamente
@@ -88,9 +90,7 @@ const CardsPokemon = (pokemon) => {
   } else {
     alert(resultado);
   }
-});
-
-
+  });
 
   boton_volver.addEventListener("click", () => {
     const AreaDiv = document.querySelector("[data-area]");

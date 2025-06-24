@@ -74,8 +74,8 @@ export async function agregarAcompanante(pokemon) {
 
   storeWrite.put({
     id: pokemon.id,
-    name: pokemon.name || pokemon.nombre || "Sin nombre",
-    image: pokemon.image || pokemon.imagen || "images/pokeball.png"
+    image: pokemon.image || pokemon.imagen || "images/pokeball.png",
+    color: pokemon.color || "gray"  // ← Agregar esta línea
   });
 
   return "Pokémon agregado correctamente";
