@@ -1,28 +1,25 @@
-class Movimientos {
-  constructor(movesData) {
-    this.movesData = [];
-
-    if (Array.isArray(movesData)) {
-      for (let i = 0; i < movesData.length && this.movesData.length < 5; i++) {
-        const mov = movesData[i];
-        if (typeof mov === "string") {
-          this.movesData.push(mov);
-        } else if (mov?.move?.name) {
-          this.movesData.push(mov.move.name.replace("-", " "));
-        } else if (typeof mov.name === "string") {
-          this.movesData.push(mov.name.replace("-", " "));
-        }
-      }
+// Clase para gestionar los movimientos del Pokémon
+class Movimientos{
+    constructor(movesData) {
+        this.movesData = movesData;
     }
-  }
 
-  Moves() {
-    return this.movesData;
-  }
+    // Método para obtener los primeros movimientos en inglés (cantidad = 5, solo 5 movimientos de cada pokemon mostrara)
+    Moves(cantidad = 5) {
+        const primerosMovimientos = [];
 
-  toJSON() {
-    return this.movesData;
-  }
+        for (let i = 0; i < this.movesData.length && primerosMovimientos.length < cantidad; i++) {
+            const movimiento = this.movesData[i].move;
+
+            if (movimiento && typeof movimiento.name === "string") {
+                primerosMovimientos.push(movimiento.name.replace("-", " "));
+            }
+        }
+
+        return primerosMovimientos;
+    }
 }
 
+// Exportar la clase para que pueda ser usada en otros archivos
 export default Movimientos;
+

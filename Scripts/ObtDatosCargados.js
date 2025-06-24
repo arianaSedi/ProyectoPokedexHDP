@@ -1,74 +1,90 @@
-import Pokemon from "../Clases/Pokemon.js";
-import obtPokemones from "../Funciones/obtPokemon.js";
-import obtMovimientos from "../Funciones/obtMovimientos.js";
-import obtColor from "../Funciones/obtColor.js";
-import obtEspecies from "../Funciones/obtEspecies.js";
-import obtDebilidades from "../Funciones/obtDebilidades.js";
-import obtGrupoHuevos from "../Funciones/obtGrupoHuevos.js";
-import getEstadisticas from "../Funciones/obtEstadisticas.js";
-import obtEvoluciones from "../Funciones/obtEvoluciones.js";
+import pokemon from "../Clases/Pokemon.js";
+import obtPokemones from "../Funciones/obtPokemon.js"
+import obtMovimientos from "../Funciones/obtMovimientos.js"
+import obtColor from "../Funciones/obtColor.js"
+import obtEspecies from "../Funciones/obtEspecies.js"
+import obtDebilidades from "../Funciones/obtDebilidades.js"
+import obtGrupoHuevos from "../Funciones/obtGrupoHuevos.js"
+import getEstadisticas from "../Funciones/obtEstadisticas.js"
 
-const ObtDatosCargados = async () => {
-  const Pokemons = [];
-  const colores = [];
 
-  const detallesPokemones = await obtPokemones();
-  const opciones = { method: "GET" };
+const ObtDatosCargados = async () =>{
+    try {
 
-  const promesa = detallesPokemones.map(async (detalle) => {
-    const especieUrl = detalle?.species?.url;
-    if (!especieUrl) return;
+        const Pokemons = []
+        const colores = []
 
-    const Poke = new Pokemon();
+        const pokemon_detalles = await obtPokemones()
 
-    //Poke.setSpecies(especieUrl);
-    Poke.setSpecies(detalle.species.url);
+        const opciones = {
+            method: 'GET'
+        };
 
-    const respuesta = await fetch(especieUrl, opciones);
-    const dataEspecies = await respuesta.json();
+        const promesa = pokemon_detalles.map(async (pokemon_detalles) =>{
 
-    Poke.setName(detalle.name);
-    Poke.setId(detalle.id);
+            const Poke = new pokemon()
 
-    detalle.abilities.forEach((ab) => Poke.addAbility(ab.ability.name));
-    detalle.types.forEach((tp) => Poke.addType(tp.type.name));
+            const responde = await fetch(pokemon_detalles.species.url, opciones)
+            const dataEspecies = await responde.json();
 
-    Poke.setHeight(detalle.height);
-    Poke.setWeight(detalle.weight);
+            Poke.setName(pokemon_detalles.name)
+            Poke.setId(pokemon_detalles.id)
 
-    const debiles = await obtDebilidades(detalle.types);
-    debiles.forEach((d) => Poke.addWeakness(d));
+            pokemon_detalles.abilities.forEach(ability => Poke.addAbility(ability.ability.name))
+            pokemon_detalles.types.forEach(type => Poke.addType(type.type.name))
 
-    const grupos = obtGrupoHuevos(dataEspecies);
-    grupos.forEach((g) => Poke.addEggGroup(g));
+            Poke.setHeight(pokemon_detalles.height)
+            Poke.setWeight(pokemon_detalles.weight)
 
-    Poke.setStats(getEstadisticas(detalle.stats));
+            const Especie = obtEspecies(dataEspecies)
+            Poke.setSpecies(Especie)
 
-    const color = obtColor(dataEspecies);
-    Poke.setColor(color);
-    if (!colores.includes(color)) colores.push(color);
 
-    const movimientos = obtMovimientos(detalle.moves); // ← clase Movimientos
-    Poke.setMoves(movimientos);
+            const Debilidades = await obtDebilidades(pokemon_detalles.types)
+            Debilidades.forEach(weakness => Poke.addWeakness(weakness))
 
-    const imagen = detalle.sprites.other?.["official-artwork"]?.front_default;
-    Poke.setImage(imagen);
-    
-    const shiny = detalle.sprites.other?.["official-artwork"]?.front_shiny;
-    Poke.setShiny(shiny);
+            const GrupoHuevos = obtGrupoHuevos(dataEspecies)
+            GrupoHuevos.forEach(group => Poke.addEggGroup(group))
 
-    const evo = await obtEvoluciones(especieUrl);
-    Poke.setEvolution(evo);
+            const estadisticas = getEstadisticas(pokemon_detalles.stats)
+            Poke.setStats(estadisticas)
 
-    const sonido = detalle.cries?.latest;
-    Poke.setSound(sonido);
+            const color = obtColor(dataEspecies)
+            Poke.setColor(color)
+            if(!colores.includes(color)){
+                colores.push(color)
+            }
 
-    Pokemons.push(Poke);
-  });
+            const ArrayMovs = await obtMovimientos(pokemon_detalles.moves)
+            ArrayMovs.forEach(move => Poke.addMove(move))
 
-  await Promise.all(promesa);
-  Pokemons.sort((a, b) => a.getId() - b.getId());
-  return Pokemons;
-};
+            const imgPoke = pokemon_detalles.sprites.other?.['official-artwork']?.front_default;
+            Poke.setImage(imgPoke)
+
+            const shiny = pokemon_detalles.sprites.other?.['official-artwork']?.front_shiny
+            Poke.setShiny(shiny)
+
+
+            const sound = pokemon_detalles.cries.latest
+            Poke.setSound(sound)
+
+            Pokemons.push(Poke)
+
+        })
+
+
+        await Promise.all(promesa)
+
+        Pokemons.sort((a,b) => a.getId() - b.getId())
+
+        return Pokemons
+
+        
+    } catch (error) {
+        console.log("A ocurrido un error a la carga de datos ", error)
+    }
+}
+
+ObtDatosCargados()
 
 export default ObtDatosCargados;

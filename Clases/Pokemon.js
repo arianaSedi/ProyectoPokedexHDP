@@ -19,8 +19,6 @@ class pokemon {
     #image;       // url imagen normal
     #shiny;       // url imagen shiny
     #sound;       // sonido
-    #evolution;
-    
 
     // constructor inicializa arreglos vacios y estadisticas
     constructor(){
@@ -30,8 +28,6 @@ class pokemon {
         this.#eggGroups = [];
         this.#stats = new estadisticas();
         this.#moves = [];
-        this.#evolution = [];
-
     }
 
     // metodos get para obtener valores
@@ -83,10 +79,6 @@ class pokemon {
         return this.#moves;
     }
 
-    getEvolution() {
-    return this.#evolution;
-}
-
     getImage() {
         return this.#image;
     }
@@ -116,15 +108,17 @@ class pokemon {
         this.#types.push(type);
     }
 
-    setSpecies(url) {
-        this.#species = url;
+    setSpecies(species) {
+        this.#species = species;
     }
 
     setHeight(height) {
+        // API gives height in decimeters, convert to centimeters
         this.#height = height * 10;
     }
 
     setWeight(weight) {
+        // API gives weight in hectograms, convert to kg
         this.#weight = weight / 10;
     }
 
@@ -144,21 +138,9 @@ class pokemon {
         this.#color = color;
     }
 
-    //addMove(move) {
-    //    this.#moves.push(move);
-    //}
-
-    //setMove(movesArray) {
-    //    this.#moves = movesArray;
-    //}
-
-    setMoves(movimientos) {
-        this.#moves = movimientos;
+    addMove(move) {
+        this.#moves.push(move);
     }
-
-    setEvolution(evo) {
-    this.#evolution = evo;
-}
 
     setImage(url) {
         this.#image = url;
@@ -171,6 +153,7 @@ class pokemon {
     setSound(url) {
         this.#sound = url;
     }
+
 
     // convierte el objeto pokemon a json para envio o almacenamiento
     toJSON(){
@@ -186,8 +169,7 @@ class pokemon {
             grupos_huevo: this.#eggGroups,  
             estadisticas: this.#stats.toJSON(),
             color: this.#color,              
-            movimientos: this.#moves.toJSON(),
-            evoluciones: this.#evolution,
+            movimientos: this.#moves.map(nombre => ({ nombre })),
             imagen: this.#image,             
             shiny: this.#shiny,              
             sonido: this.#sound              

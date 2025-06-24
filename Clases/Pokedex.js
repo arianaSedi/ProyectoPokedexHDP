@@ -338,30 +338,13 @@ class Pokedex {
 
         }
 
-        /*contenedorTarjeta.addEventListener("click", () => {
+        contenedorTarjeta.addEventListener("click", () => {
           //convertir si stats aun no esta procesado
           if (!Pokemon[i].stats || !Pokemon[i].stats.vida) {
             Pokemon[i].stats = getEstadisticas(Pokemon[i].estadisticas).toJSON();
           }
           CardsPokemon(Pokemon[i]);
-        });*/
-
-        contenedorTarjeta.addEventListener("click", async () => {
-        // Asegurar que stats estén procesadas
-        if (!Pokemon[i].stats || !Pokemon[i].stats.vida) {
-          Pokemon[i].stats = getEstadisticas(Pokemon[i].estadisticas).toJSON();
-        }
-
-        // Asegurar que species url exista
-        if (Pokemon[i].species && typeof Pokemon[i].species === "object" && Pokemon[i].species.url) {
-          Pokemon[i].species = Pokemon[i].species.url;
-        }
-
-
-        // Llamar CardsPokemon y esperar que termine
-        await CardsPokemon(Pokemon[i]);
         });
-
 
         tipo.appendChild(circuloDEtipo)
         tipo.appendChild(name)
