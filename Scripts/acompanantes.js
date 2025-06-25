@@ -103,22 +103,18 @@ async function cargarAcompanantes() {
     const card = document.createElement("div");
     card.className = `card card-acompanante text-dark p-3 ${claseFondo}`;
     card.innerHTML = `
-    <img src="${
-      pokemon.image || pokemon.imagen
-    }" class="card-img-top img-fluid">
-    <select class="form-select select-pokemon mt-2" id="select-${pokemon.id}">
-      ${opciones}
-    </select>
-    <button class="btn btn-asignar mt-2" onclick="asignar(${
-      pokemon.id
-    })">Asignar a equipo</button>
-    <button class="btn btn-eliminar mt-2" onclick="eliminar(${
-      pokemon.id
-    })">Eliminar</button>
-  `;
+      <img src="${pokemon.image || pokemon.imagen}" class="card-img-top img-fluid">
+      <p class="nombre-pokemon">${pokemon.name || pokemon.nombre}</p>
+      <select class="form-select select-pokemon mt-2" id="select-${pokemon.id}">
+        ${opciones}
+      </select>
+      <button class="btn btn-asignar mt-2" onclick="asignar(${pokemon.id})">Asignar a equipo</button>
+      <button class="btn btn-eliminar mt-2" onclick="eliminar(${pokemon.id})">Eliminar</button>
+    `;
     contenedor.appendChild(card);
   });
 }
+
 
 // Muestra una animación + sonido al eliminar
 function mostrarAnimacionEliminacion() {
