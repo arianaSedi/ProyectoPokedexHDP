@@ -18,7 +18,7 @@ const CardsPokemon = (pokemon) => {
   const area = document.createElement("div");
   area.setAttribute(
     "class",
-    "areaTarjeta justify-content-center align-items-center d-flex"
+    "areaTarjeta d-flex justify-content-center align-items-center align-content-center "
   );
   area.setAttribute("data-area", "");
 

@@ -8,7 +8,7 @@ class Pokedex {
     const contenedor = document.createElement("div");
     contenedor.setAttribute(
       "class",
-      "pokedex-pantalla container-fluid d-flex flex-wrap justify-content"
+      "pokedex-pantalla container-fluid d-flex flex-wrap justify-content-center"
     );
 
     for (let i = 0; i < Pokemon.length; i++) {
