@@ -1,5 +1,4 @@
 import getEstadisticas from "../Funciones/obtEstadisticas.js";
-//import setAcompañantes from "./SetAcompañantes.js";
 import { agregarAcompanante } from "../Funciones/indexdDB.js";
 
 const CardsPokemon = (pokemon) => {
@@ -13,6 +12,15 @@ const CardsPokemon = (pokemon) => {
   // Eliminar tarjeta previa si existe
   const tarjetaExistente = document.querySelector(".areaTarjeta");
   if (tarjetaExistente) tarjetaExistente.remove();
+  // Reproducir sonido del Pokémon
+    try {
+      const nombreAudio = pokemon.nombre.toLowerCase();
+      const sonido = new Audio(`https://play.pokemonshowdown.com/audio/cries/${nombreAudio}.ogg`);
+      sonido.play().catch(err => console.warn("Error al reproducir sonido:", err));
+    } catch (e) {
+      console.warn("No se pudo cargar el sonido del Pokémon", e);
+    }
+
 
   // Contenedor principal
   const area = document.createElement("div");
@@ -535,24 +543,28 @@ const botonesNav = [
         containerInfor.appendChild(textoDefensas);
 
       }
+      if (texto === "Moves") {
+          
+          const renderMoves = () => {
+          containerInfor.innerHTML = "";
+          if (!pokemon.movimientos || pokemon.movimientos.length === 0) {
+            containerInfor.appendChild(crearFila("Moves", "No hay movimientos"));
+            return;
+          }
+          pokemon.movimientos.slice(0, 5).forEach((mov, i) => {
+            containerInfor.appendChild(
+              crearFila(`Move ${i + 1}`, mov.nombre.replace("-", " "))
+            );
+          });
+          };
+      
+            renderMoves();
+      }
     });
 
     NavbarOpciones.appendChild(btn);
     return btn;
   });
-
-  const renderMoves = () => {
-    containerInfor.innerHTML = "";
-    if (!pokemon.movimientos || pokemon.movimientos.length === 0) {
-      containerInfor.appendChild(crearFila("Moves", "No hay movimientos"));
-      return;
-    }
-    pokemon.movimientos.slice(0, 5).forEach((mov, i) => {
-      containerInfor.appendChild(
-        crearFila(`Move ${i + 1}`, mov.nombre.replace("-", " "))
-      );
-    });
-  };
 
   const containerInfor = document.createElement("div");
   containerInfor.setAttribute("class", "margen_top d-flex flex-column");
