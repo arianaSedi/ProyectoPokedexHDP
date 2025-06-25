@@ -711,14 +711,16 @@ body {
 /* Texto de las tarjetas mis acompaniantes */
 .nombre-pokemon {
   position: relative;
-  font-family: 'letra-nombre', 'Press Start 2P', sans-serif;
+  font-family:'fuente_letra';
   font-size: 20px;
   color: white;
   text-align: center;
+  font-style: italic;
+  letter-spacing: 1.5px;
   text-shadow:
     -1px -1px 0 black,
      1px -1px 0 black,
-    -1px  1px 0 black,
+    -2px  2px 0 black,
      1px  1px 0 black;
   margin-top: 5px;
 }
