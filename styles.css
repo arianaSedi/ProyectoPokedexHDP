@@ -594,6 +594,60 @@ body {
   gap: 1rem;
 }
 
+/* Tarjetas de Equipos */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid #ef5350;
+  
+}
+
+.card-header {
+  background-color: #d32f2f;
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #d32f2f;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.equipo-pokemon-card {
+  width: 90px;
+  height: 90px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.equipo-pokemon-card:hover {
+  transform: scale(1.05);
+  border-color: #ef5350;
+}
+
+.img-pokemon-equipo {
+  width: 60px;
+  height: auto;
+}
+
+.btn-eliminar-poke {
+  background-color: rgba(255, 0, 0, 0.7);
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  z-index: 2;
+}
+
+.btn-eliminar-poke:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+
 
 
 
