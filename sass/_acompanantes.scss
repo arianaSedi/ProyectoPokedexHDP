@@ -1,0 +1,115 @@
+@import 'variables';
+
+.btn-asignar {
+  background: linear-gradient(to right, $azul-claro, $celeste);
+  border: none;
+  color: $blanco;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+
+  &:hover {
+    background: linear-gradient(to right, $azul-oscuro, $celeste-oscuro);
+    transform: scale(1.05);
+  }
+}
+
+.select-pokemon {
+  background-color: $select-bg;
+  border: 3px solid $select-border;
+  border-radius: 12px;
+  color: $gris-oscuro;
+  font-weight: bold;
+  font-family: $font-select;
+  padding: 8px 12px;
+  font-size: 16px;
+  box-shadow: 2px 2px 0 $select-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $select-hover;
+    border-color: $select-hover-border;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px $select-shadow;
+  }
+
+  option {
+    background-color: $select-option-bg;
+    color: $gris-muy-oscuro;
+    font-weight: bold;
+  }
+}
+
+.card-acompanante {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 380px; // Ajusta según necesidad
+  max-width: 250px;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  img {
+    max-height: 160px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  .nombre-pokemon {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .select-pokemon,
+  .btn {
+    width: 100%;
+    max-width: 220px;
+    margin-bottom: 0.4rem;
+  }
+}
+
+
+#listaAcompanantes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mute-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(0,0,0,0.5);
+  border: 2px solid $blanco;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: $blanco;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+
+  &:hover {
+    background: rgba(0,0,0,0.8);
+    transform: scale(1.1);
+  }
+}
+
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid $tarjeta-rojo;
+}

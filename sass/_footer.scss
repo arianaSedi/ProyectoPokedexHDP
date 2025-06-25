@@ -1,0 +1,36 @@
+@import 'variables';
+
+.pokedex-footer {
+  background-color: $bg-footer;
+  border-top: 5px solid $borde-footer;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  width: 100%;
+  padding: 15px;
+  gap: 2rem;
+}
+
+.cruz-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  width: 140px;
+  height: 140px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .cruz-container {
+    display: none !important;
+  }
+}

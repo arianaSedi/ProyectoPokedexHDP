@@ -1,0 +1,84 @@
+@import 'variables';
+
+@media (min-width: 992px) {
+  .card {
+    width: 300px;
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  #listaEquipos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 20px;
+
+    .card {
+      width: 90% !important;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+.card-header {
+  background-color: $rojo-boton;
+  color: $blanco;
+  font-weight: bold;
+  border-bottom: 2px solid $rojo-boton;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.equipo-pokemon-card {
+  width: 120px;
+  height: 120px;
+  background-color: $tarjeta-equipo-bg;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: $tarjeta-rojo;
+  }
+}
+
+.img-pokemon-equipo {
+  width: 100px;
+  height: auto;
+}
+
+.btn-eliminar-poke {
+  background-color: $eliminar-poke-bg;
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  z-index: 2;
+
+  &:hover {
+    background-color: $eliminar-poke-hover;
+  }
+}
+
+.nombre-pokemon {
+  position: relative;
+  font-family: $font-nombre;
+  font-size: 20px;
+  color: $blanco;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -2px  2px 0 black,
+     1px  1px 0 black;
+  margin-top: 5px;
+}

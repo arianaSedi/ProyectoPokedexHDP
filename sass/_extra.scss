@@ -1,0 +1,80 @@
+@import 'variables';
+
+.cruz .flecha {
+  position: absolute;
+  background-color: $bg-cruz;
+  border: 2px solid $borde-cruz;
+  width: 40px;
+  height: 40px;
+}
+
+.cruz .up {
+  top: 10px;
+  left: 45px;
+}
+
+.cruz .down {
+  bottom: 20px;
+  left: 45px;
+}
+
+.cruz .left {
+  top: 45px;
+  left: 10px;
+}
+
+.cruz .right {
+  top: 45px;
+  left: 80px;
+  right: 0;
+}
+
+.cruz .centro {
+  top: 45px;
+  left: 45px;
+  background-color: $bg-cruz;
+  border: 2px solid $borde-centro;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.pantalla-nombres {
+  background-color: $bg-pantalla;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 3px inset $verde-inset;
+  box-shadow: inset 0 0 5px $verde-shadow;
+  min-width: 300px;
+  max-width: 350px;
+}
+
+.nombre-equipo {
+  font-size: 15px;
+  color: $verde-texto;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.github-link {
+  color: $color-negro;
+  margin-left: 8px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: $color-hover;
+}
+
+.botones-acciones {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: end;
+  margin-bottom: 100px;
+}
