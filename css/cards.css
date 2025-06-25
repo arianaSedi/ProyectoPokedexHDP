@@ -1,43 +1,15 @@
 @charset "UTF-8";
-/* Contenedor general de la barra */
-/* Parte izquierda grande como Pokedex */
-/* Boton azul grande */
-/* Luces pequeñas */
-/* Enlaces del menu */
-/* Hover */
-/* Fondo general rojo tipo Pokedex */
-/*para pantallas medianas y pequenas reducimos el logo*/
-/*que el logo quede centrado*/
-/*clase del diseno del menu tipo hamburguesa*/
-/*mostrar menu cuando se activa */
-/*en pantallas grandes mostrar menu normal y oculta del menu-hamb*/
-/*pantallas medianas*/
-/*clase para ocultar */
-/* Contenedor estilo pantalla blanca */
-/* Boton flotante para volver arriba */
-/* Contenedor interno con espacios */
-/* Cruz a la izquierda */
-/* Flechas arriba y abajo */
-/* Flechas izquierda y derecha */
-/* Centro de la cruz */
-/* Pantalla verde centrada */
-/* Texto dentro de la pantalla */
-/* Botones a la derecha */
-/* Estilos de botones */
-/*Esto es pa el area de la tarjeta*/
-/* Teléfonos (pantallas pequeñas: <= 576px) */
-/* Tablets (pantallas medianas: 577px a 991px) */
 @font-face {
   font-family: "letra-circle";
-  src: url("/Resources/circlethings.ttf") format("truetype");
+  src: url("../Resources/circlethings.ttf") format("truetype");
 }
 @font-face {
   font-family: "letra-ParaID";
-  src: url("/Resources/Quicksand-VariableFont_wght.ttf") format("truetype");
+  src: url("../Resources/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
 @font-face {
   font-family: "letra-ParaTipos";
-  src: url("/Resources/Nunito-VariableFont_wght.ttf") format("truetype");
+  src: url("../Resources/Nunito-VariableFont_wght.ttf") format("truetype");
 }
 /* Para evitar márgenes extra que descuadran */
 /*COLORES DE LOS ID EN CARDSPOKEMON*/
@@ -60,7 +32,7 @@
 }
 @font-face {
   font-family: "fuente_letra";
-  src: url("/Resources/Bungee-Regular.ttf") format("truetype");
+  src: url("./Resources/Bungee-Regular.ttf") format("truetype");
 }
 @keyframes mover {
   0% {
