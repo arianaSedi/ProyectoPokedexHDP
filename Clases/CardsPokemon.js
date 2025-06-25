@@ -164,7 +164,7 @@ const CardsPokemon = (pokemon) => {
   const imgPokemon = document.createElement("img");
   imgPokemon.setAttribute("src", pokemon.imagen);
   imgPokemon.setAttribute("alt", pokemon.nombre);
-  imgPokemon.setAttribute("class", "imagen_tarjeta d-flex");
+  imgPokemon.setAttribute("class", "imagen_tarjeta d-flex animarpoke");
 
   // TIPOS
   const tipos_columna = document.createElement("div");
