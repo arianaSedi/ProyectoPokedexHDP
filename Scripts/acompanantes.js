@@ -99,7 +99,7 @@ async function cargarAcompanantes() {
 
     // Crear tarjeta HTML para el acompañante
     const card = document.createElement("div");
-    card.className = `card text-dark m-2 p-2 col-md-3 ${claseFondo}`;
+    card.className = `card card-acompanante text-dark p-3 ${claseFondo}`;
     card.innerHTML = `
     <img src="${pokemon.image || pokemon.imagen}" class="card-img-top img-fluid">
     <select class="form-select select-pokemon mt-2" id="select-${pokemon.id}">
