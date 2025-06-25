@@ -10,19 +10,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="styles.css">
+    
     <!-- <script type="module" src="/Conexiones/conexionPokedex.js"> </script> -->
   </head>
 
   <body class="bg-red">
     <!-- Barra de navegacion estilo Pokedex -->
     <nav class="navbar p-0">
-      <div
-        class="pokedex-navbar d-flex align-items-center justify-content-between w-100"
-      >
-        <div
-          class="pokedex-izq d-flex me-3 align-items-center gap-2 justify-content-start"
-        >
+      <div class="pokedex-navbar d-flex align-items-center justify-content-between w-100">
+        <div class="pokedex-izq d-flex me-3 align-items-center gap-2 justify-content-start">
           <div class="circulo-btn mb-1 mt-5 mx-3"></div>
           <div class="circ red"></div>
           <div class="circ yellow"></div>
@@ -30,18 +28,17 @@
         </div>
 
         <!-- Logo Pokemon -->
-        <div>
-          <img
-            src="images/Pokédex_logo.png"
-            alt="Logo Pokémon"
-            class="logo-img mb-1"
-          />
+        <div class="logo-centrado flex-grow-0 text-center">
+          <img src="images/Pokédex_logo.png" alt="Logo Pokémon" class="logo-img mb-1">
         </div>
 
-        <div class="nav-links d-flex align-items-center me-4 gap-4">
+        <!-- Botón hamburguesa -->
+        <button class="menu-hamb" id="menu-hamb">☰</button>
+
+        <div id="menu" class="nav-links text-center">
           <a href="home.html" class="nav-link">Inicio</a>
           <a href="pokedex.html" class="nav-link">Pokédex</a>
-          <a href="acompanantes.html" class="nav-link">Acompañantes</a>
+          <a href="acompanantes.html" class="nav-link me-3">Acompañantes</a>
         </div>
       </div>
     </nav>
@@ -49,9 +46,7 @@
     <!-- Título de la sección -->
     <h1 class="text-white text-center tituloPokedex">MIS ACOMPAÑANTES</h1>
     <!-- Contenedor blanco estilo pantalla de Pokedex -->
-    <main
-      class="d-flex justify-content-center align-items-center mt-5 d-flex flex-column align-items-center"
-    >
+    <main class="d-flex justify-content-center align-items-center mt-5 d-flex flex-column align-items-center">
       <!-- tarjetas pokemones aqui -->
       <div id="listaAcompanantes" class="row justify-content-center"></div>
 
@@ -63,9 +58,7 @@
     </main>
 
     <footer class="pokedex-footer">
-      <div
-        class="footer-content d-flex flex-column flex-md-row justify-content-center align-items-center w-100"
-      >
+      <div class="footer-content d-flex flex-column flex-md-row justify-content-center align-items-center w-100">
         <!-- Cruz direccional a la izquierda -->
         <div class="cruz-container d-flex justify-content-start mb-4 mb-md-0">
           <div class="cruz">
@@ -112,5 +105,6 @@
 
     <script src="Scripts/flechaScroll.js" defer></script>
     <script type="module" src="Scripts/acompanantes.js"></script>
+    <script src="Scripts/menu-hamb.js" defer> </script>
   </body>
 </html>

@@ -20,28 +20,22 @@
         <div class="circ red"></div>
         <div class="circ yellow"></div>
         <div class="circ green"></div>
-        
       </div>
 
       <!-- Logo Pokemon -->
-       <div>
+       <div class="logo-centrado flex-grow-0 text-center">
         <img src="images/Pokédex_logo.png" alt="Logo Pokémon" class="logo-img mb-1">
-       </div>
+      </div>
+
+       <!-- Botón hamburguesa -->
+        <button class="menu-hamb" id="menu-hamb">☰</button>
       
-      <div class="nav-links d-flex align-items-center me-4 gap-4">
+      <div id="menu" class="nav-links text-center">
         <a href="home.html" class="nav-link">Inicio</a>
         <a href="pokedex.html" class="nav-link">Pokédex</a>
         <a href="acompanantes.html" class="nav-link">Acompañantes</a>
-        <div>
-          <input class="nav-link"
-            type="text"
-            id="busqueda-pokemon"
-            class="form-control w-10"
-            placeholder="Buscar"
-          />
-        </div>
-        <div>
-              <select id="filtro-tipo" class="form-select nav-link">
+          <div>
+              <select id="filtro-tipo" class="form-select nav-link text-center">
                 <option value="todos">Todos</option>
                 <option value="grass">Planta</option>
                 <option value="fire">Fuego</option>
@@ -62,8 +56,14 @@
                 <option value="steel">Hierro</option>
                 <option value="flying">Volador</option>
               </select>
-              </div>
-
+            </div>
+        
+          <input class="nav-link me-3"
+              type="text"
+              id="busqueda-pokemon"
+              class="form-control w-100"
+              placeholder="Buscar"
+            />
       </div>
     </div>
   </nav>
@@ -122,5 +122,9 @@
     <audio id="audio-captura" src="sounds/Sonido Cerrado.mp3"></audio>
 
     <script src="Scripts/flechaScroll.js" defer></script>
+
+    <script src="Scripts/menu-hamb.js" defer> </script>
+
   </body>
+</body>
 </html>

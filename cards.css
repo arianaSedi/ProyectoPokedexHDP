@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* Contenedor general de la barra */
@@ -23,8 +24,20 @@ body {
   border-bottom: 5px solid #9a0007;
   border-bottom-right-radius: 300px;
   position: relative;
-  z-index: 2;
+  z-index: 1003;
+  
 }
+
+@media (max-width: 991px) {
+  .pokedex-izq {
+    display: none !important;
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
 
 /* Boton azul grande */
 .circulo-btn {
@@ -78,8 +91,131 @@ body {
 
 .logo-img {
   max-width: 160px;
+  height: auto;
+  align-items: center;
 }
 
+/*para pantallas medianas y pequenas reducimos el logo*/
+@media (max-width: 991px) {
+  .logo-img {
+    max-width: 120px;
+    margin-left: 15px;
+  }
+}
+
+/*que el logo quede centrado*/
+@media (min-width: 992px) {
+  .logo-centrado {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1004;
+  }
+}
+
+/*clase del diseno del menu tipo hamburguesa*/
+.menu-hamb {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+  width: 15%;
+  align-items: end;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #d32f2f;
+  position: fixed;
+  top: 75px;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  z-index: 1002;
+  transition: all 0.3s ease-in-out;
+}
+
+#menu a,
+#menu input,
+#menu select {
+  margin-bottom: 5px;
+}
+
+/*mostrar menu cuando se activa */
+#menu.activo {
+  display: flex;
+}
+
+/*en pantallas grandes mostrar menu normal y oculta del menu-hamb*/
+@media (min-width: 992px) {
+  .menu-hamb {
+    display: none;
+    margin-left: auto;
+  }
+
+  #menu.oculto {
+    display: flex !important;
+  }
+
+  #menu {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: static;
+    background: transparent;
+    width: 100%;
+    padding: 0;
+    gap: 1rem;
+  }
+
+  #menu a,
+  #menu input,
+  #menu select {
+    margin-bottom: 0;
+  }
+}
+
+/*pantallas medianas*/
+@media (max-width: 991px) {
+  .menu-hamb {
+    display: block;
+  }
+
+  #menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #d32f2f;
+    position: fixed;
+    top: 75px;
+    right: 0;
+    z-index: 1002;
+  }
+
+  #menu input {
+    width: 100%;
+    max-width: none;
+    grid-column: 1 / -1;  
+  }
+
+  #menu select,
+  #menu a {
+    width: 100%;
+  }
+
+  /*clase para ocultar */
+  #menu.oculto {
+  display: none;
+  }
+}
 
 /* Contenedor estilo pantalla blanca */
 .main-pokedex {
@@ -87,6 +223,7 @@ body {
   padding-bottom: 20px; 
   display: flex;
   justify-content: center;
+  
 }
 
 .pokedex-pantalla {
@@ -99,7 +236,6 @@ body {
   max-width: 95%;
   border-bottom-left-radius: 100px;
 }
-
 
 /* Boton flotante para volver arriba */
 .scroll-btn {
@@ -159,6 +295,12 @@ body {
   width: 140px;
   height: 140px;
   position: relative;
+}
+
+@media (max-width: 576px) {
+  .cruz-container {
+    display: none !important;
+  }
 }
 
 .cruz .flecha {
@@ -260,14 +402,14 @@ body {
   position: fixed;
   top: 75px; 
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: calc(100vh - 75px); 
   background-color: rgba(0, 0, 0, 0.295); 
   backdrop-filter: blur(20px);
   display: flex;
+  align-content: center;
   justify-content: center;
-  align-items: flex-start;
-  padding-top: 3.5rem; 
+  align-items: center;
   z-index: 999; 
 }
 
@@ -287,8 +429,9 @@ body {
 
 .tarjeta_principal{
   width: 30rem;
-  min-height: 20rem;
-  height: auto;
+  height:auto;
+  margin-bottom: -35px;
+
 }
 
 .margen_top{
@@ -297,8 +440,48 @@ body {
 
 .br_infor{
   border-radius: 15px;
-  margin-top: -50px;
+  margin-top: -60px;
 }
+
+/* Teléfonos (pantallas pequeñas: <= 576px) */
+@media (max-width: 576px) {
+  .card {
+    width: 20rem;
+    height: auto;
+  }
+
+  .tarjeta_principal {
+    width: 20rem;
+    margin-bottom: -10px;
+    height: 25rem;
+    overflow-x: hidden;
+  }
+
+  .areaTarjeta {
+    align-items: center; 
+    padding-top: 20px;
+  }
+}
+
+/* Tablets (pantallas medianas: 577px a 991px) */
+@media (min-width: 577px) and (max-width: 991px) {
+  .card {
+    width: 20rem;
+    height: auto;
+  }
+
+  .tarjeta_principal {
+    width: 29rem;
+    height:auto;
+    margin-bottom: -15px;
+  }
+
+  .areaTarjeta {
+    align-items: center;
+    padding-top: 30px;
+  }
+}
+
 
 .fondoTarjetaVerde{
   background: #94db6b;
@@ -364,9 +547,9 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .img_volver{
-  width: 35px;
+  width: 40px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 15px ;
 }
 
@@ -799,6 +982,36 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 .color_pink   { color: #fac0dd; }
 .color_purple { color: #e8b5fc; }
 
+#busqueda-pokemon {
+  color: rgb(255, 255, 255); 
+  background-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+#busqueda-pokemon::placeholder {
+  color: white; 
+  opacity: 1;  
+}
+
+.mensaje-no-encontrado {
+  font-weight: bold;
+  color: rgb(15, 12, 12);
+  background-color: #c62828;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+
 /* Pokebola */
 .captura-animacion {
   position: fixed;
@@ -837,4 +1050,26 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 @font-face {
     font-family: "fuente_letra";
     src: url('/Resources/Bungee-Regular.ttf') format('truetype');
+}
+@keyframes mover {
+  0% {
+    transform: translateX(50);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(40);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+ 
+}
+
+.animarpoke {
+  animation: mover 3s ease-in-out infinite;
+  will-change: transform;
+  display: block;
+  position: relative;
 }

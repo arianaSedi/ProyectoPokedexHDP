@@ -22,3 +22,4 @@ class Movimientos{
 
 // Exportar la clase para que pueda ser usada en otros archivos
 export default Movimientos;
+

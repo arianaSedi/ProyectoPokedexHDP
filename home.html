@@ -6,7 +6,8 @@
   <title>Pokedex</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cards.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-red">
 
@@ -19,81 +20,86 @@
         <div class="circ yellow"></div>
         <div class="circ green"></div>
       </div>
-      <div>
-        <img src="images/Pokédex_logo.png" alt="Logo Pokemon" class="logo-img mb-1">
+
+      <!-- Logo Pokemon -->
+       <div class="logo-centrado flex-grow-0 text-center">
+        <img src="images/Pokédex_logo.png" alt="Logo Pokémon" class="logo-img mb-1">
       </div>
-      <div class="nav-links d-flex align-items-center me-4 gap-4">
+
+      <!-- Botón hamburguesa -->
+      <button class="menu-hamb" id="menu-hamb">☰</button>
+
+      <div id="menu" class="nav-links text-center">
         <a href="home.html" class="nav-link">Inicio</a>
         <a href="pokedex.html" class="nav-link">Pokédex</a>
-        <a href="acompanantes.html" class="nav-link">Acompañantes</a>
+        <a href="acompanantes.html" class="nav-link  me-3">Acompañantes</a>
       </div>
     </div>
   </nav>
 
   <div class="body-carrusel">
     <h1 class="tituloPokedex">Bienvenido a la Pokedex</h1>
-    <div class="carruselContainer">
-      <div class="imagen">
-      <img src="images/chamander.png" alt="Charmander">
-      <h3>Charmander</h3>
-      <div class="reflejo" style="background-image: url('images/chamander.png');"></div>
-    </div>
+      <div class="carruselContainer">
+        <div class="imagen">
+          <img src="images/quintaG.jpeg" alt="Quinta Generación">
+          <h3>Quinta Generación</h3>
+          <div class="reflejo" style="background-image: url('images/quintaG.jpeg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/squirtlee.jpg" alt="Squirtle">
-      <h3>Squirtle</h3>
-      <div class="reflejo" style="background-image: url('images/squirtlee.jpg');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/cuartaG.jpeg" alt="Cuarta Generación">
+          <h3>Cuarta Generación</h3>
+          <div class="reflejo" style="background-image: url('images/cuartaG.jpeg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/bulbasaur.jpg" alt="Bulbasaur">
-      <h3>Bulbasaur</h3>
-      <div class="reflejo" style="background-image: url('images/bulbasaur.jpg');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/tercerG.jpeg" alt="Tercera Generación">
+          <h3>Tercera Generación</h3>
+          <div class="reflejo" style="background-image: url('images/tercerG.jpeg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/pikachu.jpg" alt="Pikachu">
-      <h3>Pikachu</h3>
-      <div class="reflejo" style="background-image: url('images/pikachu.jpg');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/segundaG.png" alt="Segunda Generación">
+          <h3>Segunda Generación</h3>
+          <div class="reflejo" style="background-image: url('images/segundaG.png');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/ash.png" alt="Ash Ketchum">
-      <h3>Ash Ketchum</h3>
-      <div class="reflejo" style="background-image: url('images/ash.png');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/primerG.png" alt="Primera Generación">
+          <h3>Primera Generación</h3>
+          <div class="reflejo" style="background-image: url('images/primerG.png');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/primerG.png" alt="Primera Generación">
-      <h3>Primera Generación</h3>
-      <div class="reflejo" style="background-image: url('images/primerG.png');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/bulbasaur.jpg" alt="Bulbasaur">
+          <h3>Bulbasaur</h3>
+          <div class="reflejo" style="background-image: url('images/bulbasaur.jpg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/segundaG.png" alt="Segunda Generación">
-      <h3>Segunda Generación</h3>
-      <div class="reflejo" style="background-image: url('images/segundaG.png');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/squirtlee.jpg" alt="Squirtle">
+          <h3>Squirtle</h3>
+          <div class="reflejo" style="background-image: url('images/squirtlee.jpg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/pokemones.jpeg" alt="Tercera Generación">
-      <h3>Tercera Generación</h3>
-      <div class="reflejo" style="background-image: url('images/pokemones.jpeg');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/chamander.png" alt="Charmander">
+          <h3>Charmander</h3>
+          <div class="reflejo" style="background-image: url('images/chamander.png');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/segundaG.png" alt="Cuarta Generación">
-      <h3>Cuarta Generación</h3>
-      <div class="reflejo" style="background-image: url('images/segundaG.png');"></div>
-    </div>
+        <div class="imagen">
+          <img src="images/pikachu.jpg" alt="Pikachu">
+          <h3>Pikachu</h3>
+          <div class="reflejo" style="background-image: url('images/pikachu.jpg');"></div>
+        </div>
 
-    <div class="imagen">
-      <img src="images/pokemones.jpeg" alt="Quinta Generación">
-      <h3>Quinta Generación</h3>
-      <div class="reflejo" style="background-image: url('images/pokemones.jpeg');"></div>
-    </div>
-
-    </div>
+        <div class="imagen">
+          <img src="images/ash.png" alt="Ash Ketchum">
+          <h3>Ash Ketchum</h3>
+          <div class="reflejo" style="background-image: url('images/ash.png');"></div>
+        </div>
+      </div>
 
     <!--descripion Pokedex -->
     <h1 class="info">Historia de la Pokedex</h1>
@@ -163,5 +169,6 @@
   <script src="Scripts/flechaScroll.js" defer></script>
   <script src="Scripts/carruselPoke.js" defer></script>
   <script src="Scripts/home_sound.js" defer></script>
+  <script src="Scripts/menu-hamb.js" defer> </script>
 </body>
 </html>

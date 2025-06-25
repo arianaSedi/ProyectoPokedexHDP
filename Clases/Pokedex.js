@@ -8,8 +8,28 @@ class Pokedex {
     const contenedor = document.createElement("div");
     contenedor.setAttribute(
       "class",
-      "pokedex-pantalla container-fluid d-flex flex-wrap justify-content"
+      "pokedex-pantalla container-fluid d-flex flex-wrap justify-content-center"
     );
+    contenedor.setAttribute("id", "contenedor-pokedex");
+
+      // Crear e insertar el mensaje dentro de la pokedex-pantalla (área blanca)
+    const mensajeNoEncontrado = document.createElement("div");
+    mensajeNoEncontrado.id = "mensaje-no-encontrado";
+    mensajeNoEncontrado.classList.add(
+      "mensaje-no-encontrado",
+      "text-white",
+      "fw-bold",
+      "text-center",
+      "my-3",
+      "oculto"
+    );
+    mensajeNoEncontrado.textContent = "No se encontró ningún Pokémon con ese nombre o ID.";
+
+    //agregamos al contenedor blanco (donde estan las tarjetas)
+    contenedor.appendChild(mensajeNoEncontrado);
+
+    //agregamos el contenedor blanco al main
+    document.querySelector(".main-pokedex").appendChild(contenedor);
 
     for (let i = 0; i < Pokemon.length; i++) {
       const main = document.querySelector("main");
