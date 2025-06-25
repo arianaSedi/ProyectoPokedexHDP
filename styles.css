@@ -2,87 +2,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Courier New', Courier, monospace;
+  
 }
 
-/*ESTILOS DE POKEDEX.HTML/*
-
-/* Contenedor general de la barra */
-.pokedex-navbar {
-  background-color: #d32f2f;
-  height: 75px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 5px solid #9a0007;
-}
-
-/* Parte izquierda grande como Pokedex */
-.pokedex-izq {
-  width: 450px;
-  height: 150px;
-  background-color: #d32f2f;
-  border-bottom: 5px solid #9a0007;
-  border-bottom-right-radius: 300px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Boton azul grande */
-.circulo-btn {
-  width: 60px;
-  height: 60px;
-  background-color: #2f56c0;
-  border: 4px solid white;
-  border-radius: 50%;
-}
-
-/* Luces pequeñas */
-.circ {
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  border: 1px solid white;
-}
-
-.circ.red { background-color: #e53935; }
-.circ.yellow { background-color: #fdd835; }
-.circ.green { background-color: #66bb6a; }
-
-/* Enlaces del menu */
-.nav-links .nav-link {
-  color: white;
-  font-family: 'Courier New', Courier, monospace;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 15px;
-  border-radius: 8px;
-  background: linear-gradient(to bottom right, #55555573, #55555573);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.479);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
-
-/* Hover */
-.nav-links .nav-link:hover {
-  background: linear-gradient(to bottom right,  #fade3fe8, #f5d12ecc);
-  transform: translateY(-2px);
-  border: 2px solid #3737cede;
-  color: #3737cede;
-}
-
-/* Fondo general rojo tipo Pokedex */
-.bg-red{
-  background-color: #f10000a2;
-  max-height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.logo-img {
-  max-width: 160px;
-}
-
+/*ESTILOS DE POKEDEX.HTML*/
 
 /* Contenedor estilo pantalla blanca */
 .main-pokedex {
@@ -166,6 +89,12 @@ body {
   position: relative;
 }
 
+@media (max-width: 991px) {
+  .cruz-container {
+    display: none !important;
+  }
+}
+
 .cruz .flecha {
   position: absolute;
   background-color: #222121;
@@ -226,6 +155,18 @@ body {
   color: #1b5e20;
   margin: 0;
   line-height: 1.5;
+}
+
+.github-link {
+  color: #000;             
+  margin-left: 8px;         
+  text-decoration: none;    
+  font-size: 1.2rem;        
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #2960c5;         
 }
 
 /* Botones a la derecha */
@@ -365,7 +306,7 @@ body {
     text-shadow: 3px 3px 0px #3122bb, 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
   to {
-    transform: scale(1.05);
+    transform: scale(1);
     text-shadow: 0px 0px 15px #ffffff, 0px 0px 25px #ffc400;
   }
 }
@@ -409,6 +350,23 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .descripcionPokedex {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .info {
+    margin-top: 10px;
+  }
+}
+
 .boton-pokedex-container {
   display: flex;
   justify-content: center;
@@ -441,10 +399,67 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 576px) {
+  .btn-pokedex-pro {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+  }
+}
+
 .icono-boton {
   width: 25px;
   height: 25px;
 }
+
+/* Media query para carrusel en pantallas medianas y pequeñas */
+@media (max-width: 991px) {
+  .carruselContainer {
+    width: 200px;
+    height: 300px;
+    margin-top: 70px;
+  }
+
+  .imagen {
+    width: 160px;
+    height: 240px;
+    margin: 0 auto; /* centrado sin separación lateral */
+  }
+
+  .imagen h3 {
+    font-size: 11px;
+    padding: 3px;
+  }
+
+  .imagen .reflejo {
+    height: 60px;
+    bottom: -65px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carruselContainer {
+    width: 160px;
+    height: 250px;
+    margin-top: 30px;
+  }
+
+  .imagen {
+    width: 100px;
+    height: 150px;
+  
+  }
+
+  .imagen h3 {
+    font-size: 10px;
+  }
+
+  .imagen .reflejo {
+    height: 50px;
+    bottom: -55px;
+  }
+}
+
 
 /* Animacion de eliminacion */
 .eliminacion-animacion {
@@ -593,17 +608,119 @@ body {
   justify-content: center;
   gap: 1rem;
 }
-.github-link {
-  color: #000;             
-  margin-left: 8px;         
-  text-decoration: none;    
-  font-size: 1.2rem;        
-  transition: color 0.3s;
+
+/* Para el botón silenciar*/
+.mute-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(0,0,0,0.5);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.mute-btn:hover {
+    background: rgba(0,0,0,0.8);
+    transform: scale(1.1);
 }
 
-.github-link:hover {
-  color: #c04040;         
+/* Tarjetas de Equipos */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 3px solid #ef5350;
+  
 }
 
+@media (min-width: 992px) {
+  .card {
+    width: 300px;
+    min-height: 220px;
+  }
+}
 
+@media (max-width: 576px) {
+  #listaEquipos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-left: 20px;
+  }
 
+  #listaEquipos .card {
+    width: 90% !important;
+    margin-bottom: 15px;
+  }
+}
+
+.card-header {
+  background-color: #d32f2f;
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #d32f2f;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.equipo-pokemon-card {
+  width: 120px;
+  height: 120px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.equipo-pokemon-card:hover {
+  transform: scale(1.05);
+  border-color: #ef5350;
+}
+
+.img-pokemon-equipo {
+  width: 100px;
+  height: auto;
+}
+
+.btn-eliminar-poke {
+  background-color: rgba(255, 0, 0, 0.7);
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  z-index: 2;
+}
+
+.btn-eliminar-poke:hover {
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Texto de las tarjetas mis acompaniantes */
+.nombre-pokemon {
+  position: relative;
+  font-family:'fuente_letra';
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 1.5px;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -2px  2px 0 black,
+     1px  1px 0 black;
+  margin-top: 5px;
+}

@@ -19,7 +19,7 @@ const ObtenerDatosDB = () => {
 
       variable.dibujarpokedex(alldata);
 
-            // Funcipn que aplica ambos filtros a la vez
+          // Funcipn que aplica ambos filtros a la vez
             function aplicarFiltros() {
             const texto = document.getElementById("busqueda-pokemon").value.toLowerCase();
             const tipoSeleccionado = document.getElementById("filtro-tipo").value.toLowerCase();
@@ -37,12 +37,9 @@ const ObtenerDatosDB = () => {
                 card.style.display = coincideTexto && coincideTipo ? "block" : "none";
             });
             }
-
             document.getElementById("busqueda-pokemon").addEventListener("input", aplicarFiltros);
             document.getElementById("filtro-tipo").addEventListener("change", aplicarFiltros);
-
-
-              };
+          };
 
     getallrequest.onerror = function (event) {
       console.log("Error al obtener los datos ", event.target.error);

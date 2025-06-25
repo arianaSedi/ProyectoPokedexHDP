@@ -66,7 +66,7 @@ const CardsPokemon = (pokemon) => {
   );
 
   const img_volver = document.createElement("img");
-  img_volver.setAttribute("src", "/images/atras.png");
+  img_volver.setAttribute("src", "/images/regresar.png");
   img_volver.setAttribute("class", "img_volver");
 
   const area_boton_acompañante = document.createElement("div");
@@ -471,41 +471,53 @@ const botonesNav = [
 
         const crearStat = (nombre, valor) => {
           const fila = document.createElement("div");
-          fila.classList.add(
-            "d-flex",
-            "align-items-center",
-            "mb-2",
-            "px-3",
-            "gap-2"
-          );
+          fila.classList.add("d-flex", "align-items-center", "mb-2", "px-3", "gap-2");
 
           const nombreDiv = document.createElement("div");
-          nombreDiv.style.width = "80px"; // nombre fijo a la izquierda
+          nombreDiv.style.width = "80px";
           nombreDiv.textContent = nombre;
           nombreDiv.classList.add("fuente_data");
 
           const valorDiv = document.createElement("div");
           valorDiv.style.width = "30px";
           valorDiv.classList.add("text-end", "fw-bold");
-          valorDiv.textContent = valor;
+          valorDiv.textContent = "0";
 
           const barraCont = document.createElement("div");
-          barraCont.style.flex = "1"; // ocupa el resto del espacio
+          barraCont.style.flex = "1";
           barraCont.style.backgroundColor = "#e0e0e0";
           barraCont.style.borderRadius = "4px";
           barraCont.style.height = "6px";
           barraCont.style.overflow = "hidden";
 
           const barra = document.createElement("div");
-          barra.style.width = `${(valor / 150) * 100}%`;
+          barra.style.width = `0%`;
           barra.style.height = "100%";
-          barra.style.backgroundColor = valor >= 60 ? "green" : "red";
+          barra.style.backgroundColor = valor >= 45 ? "green" : "red";
+          barra.style.transition = "width 0.3s ease-out";  // animación visual
 
           barraCont.appendChild(barra);
-
           fila.appendChild(nombreDiv);
           fila.appendChild(valorDiv);
           fila.appendChild(barraCont);
+
+          // la animacion de los numeros
+          let progreso = 0;
+          const duracion = 250;
+          const pasos = 20;
+          const incremento = valor / pasos;
+          const incrementoPorcentaje = ((valor / 150) * 100) / pasos;
+
+          const animacion = setInterval(() => {
+            progreso++;
+            const nuevoValor = Math.min(Math.round(progreso * incremento), valor);
+            const nuevoPorcentaje = Math.min(progreso * incrementoPorcentaje, (valor / 150) * 100);
+
+            valorDiv.textContent = nuevoValor;
+            barra.style.width = `${nuevoPorcentaje}%`;
+
+            if (progreso >= pasos) clearInterval(animacion);
+          }, duracion / pasos);
 
           return fila;
         };

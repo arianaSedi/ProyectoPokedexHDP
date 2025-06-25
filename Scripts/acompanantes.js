@@ -34,17 +34,18 @@ async function cargarEquipos() {
       contenido += `<div class="d-flex flex-wrap justify-content-center gap-2">`;
       equipo.pokemones.forEach((poke) => {
         contenido += `
-    <div class="position-relative text-center" style="width: 90px;">
-      <!-- Botón para eliminar del equipo -->
-      <button onclick="eliminarDeEquipo('${equipo.nombre}', ${poke.id})"
-              class="btn-close rounded-circle position-absolute top-0 end-0 m-1"
-              style="background-color: rgba(255,0,0,0.7);"
-              aria-label="Close">
-      </button>
-      <!-- Imagen del Pokémon -->
-      <img src="${poke.image || poke.imagen}" alt="${poke.name || poke.nombre}" class="img-fluid" style="width: 70px;">
-    </div>
-  `;
+  <div class="equipo-pokemon-card position-relative text-center p-2">
+    <!-- Botón para eliminar del equipo -->
+    <button onclick="eliminarDeEquipo('${equipo.nombre}', ${poke.id})"
+            class="btn-eliminar-poke btn-close position-absolute top-0 end-0"
+            aria-label="Eliminar">
+    </button>
+    <!-- Imagen del Pokémon -->
+    <img src="${poke.image || poke.imagen}" alt="${
+          poke.name || poke.nombre
+        }" class="img-pokemon-equipo mx-auto">
+  </div>
+`;
       });
       contenido += `</div>`;
     }
@@ -68,7 +69,8 @@ async function cargarAcompanantes() {
   pokemones = pokemones.filter((p) => !idsEnEquipos.includes(p.id));
 
   if (pokemones.length === 0) {
-    contenedor.innerHTML = "<p class='text-center text-white'>No tienes acompañantes disponibles.</p>";
+    contenedor.innerHTML =
+      "<p class='text-center text-white'>No tienes acompañantes disponibles.</p>";
     return;
   }
 
@@ -83,6 +85,7 @@ async function cargarAcompanantes() {
       red: "fondoTarjetaRojo",
       blue: "fondoTarjetaAzul",
       green: "fondoTarjetaVerde",
+      grass: "fondoTarjetaVerde",
       brown: "fondoTarjetaMarron",
       yellow: "fondoTarjetaAmarillo",
       pink: "fondoTarjetaRosa",
@@ -101,16 +104,18 @@ async function cargarAcompanantes() {
     const card = document.createElement("div");
     card.className = `card card-acompanante text-dark p-3 ${claseFondo}`;
     card.innerHTML = `
-    <img src="${pokemon.image || pokemon.imagen}" class="card-img-top img-fluid">
-    <select class="form-select select-pokemon mt-2" id="select-${pokemon.id}">
-      ${opciones}
-    </select>
-    <button class="btn btn-asignar mt-2" onclick="asignar(${pokemon.id})">Asignar a equipo</button>
-    <button class="btn btn-eliminar mt-2" onclick="eliminar(${pokemon.id})">Eliminar</button>
-  `;
+      <img src="${pokemon.image || pokemon.imagen}" class="card-img-top img-fluid">
+      <p class="nombre-pokemon">${pokemon.name || pokemon.nombre}</p>
+      <select class="form-select select-pokemon mt-2" id="select-${pokemon.id}">
+        ${opciones}
+      </select>
+      <button class="btn btn-asignar mt-2" onclick="asignar(${pokemon.id})">Asignar a equipo</button>
+      <button class="btn btn-eliminar mt-2" onclick="eliminar(${pokemon.id})">Eliminar</button>
+    `;
     contenedor.appendChild(card);
   });
 }
+
 
 // Muestra una animación + sonido al eliminar
 function mostrarAnimacionEliminacion() {
@@ -143,8 +148,8 @@ window.asignar = async function (id) {
 
   if (mensaje === "Pokémon asignado con éxito") {
     await eliminarAcompanante(id); // quitarlo de acompañantes
-    await cargarAcompanantes();    // actualizar vista de acompañantes
-    await cargarEquipos();         // actualizar vista de equipos
+    await cargarAcompanantes(); // actualizar vista de acompañantes
+    await cargarEquipos(); // actualizar vista de equipos
   }
 };
 
@@ -156,7 +161,7 @@ window.eliminar = async function (id) {
 
   setTimeout(async () => {
     await eliminarAcompanante(id); // eliminar en la DB
-    await cargarAcompanantes();    // actualizar vista
+    await cargarAcompanantes(); // actualizar vista
   }, 1500); // espera que termine el gif
 };
 
@@ -171,7 +176,9 @@ window.eliminarDeEquipo = async (nombreEquipo, id) => {
   // Obtener el color si no está definido (necesario para fondo)
   if (pokemon && !pokemon.color) {
     try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}`);
+      const response = await fetch(
+        `https://pokeapi.co/api/v2/pokemon-species/${pokemon.id}`
+      );
       const data = await response.json();
       pokemon.color = data.color.name;
     } catch (error) {

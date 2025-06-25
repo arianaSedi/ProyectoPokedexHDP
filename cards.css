@@ -99,7 +99,7 @@ body {
 @media (max-width: 991px) {
   .logo-img {
     max-width: 120px;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 }
 
@@ -122,7 +122,7 @@ body {
   cursor: pointer;
   z-index: 1001;
   display: none;
-  width: 20%;
+  width: 15%;
   align-items: end;
 }
 
@@ -155,6 +155,10 @@ body {
   .menu-hamb {
     display: none;
     margin-left: auto;
+  }
+
+  #menu.oculto {
+    display: flex !important;
   }
 
   #menu {
@@ -219,6 +223,7 @@ body {
   padding-bottom: 20px; 
   display: flex;
   justify-content: center;
+  
 }
 
 .pokedex-pantalla {
@@ -290,6 +295,12 @@ body {
   width: 140px;
   height: 140px;
   position: relative;
+}
+
+@media (max-width: 576px) {
+  .cruz-container {
+    display: none !important;
+  }
 }
 
 .cruz .flecha {
@@ -536,9 +547,9 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .img_volver{
-  width: 35px;
+  width: 40px;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 15px ;
 }
 
@@ -564,7 +575,7 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 .fuente_nombre {
   font-family: 'fuente_letra';
   color: white;
-  font-size: 30px;
+  font-size: 28px;
   letter-spacing: 3px;
   text-align: center;
   white-space: nowrap;
@@ -579,7 +590,7 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 
 .fuente_nombreP{
   font-family: 'fuente_letra';
-  font-size: 30px;
+  font-size: 28px;
   line-height: 1.2;
   letter-spacing: 3px;
   z-index: 1;
@@ -619,12 +630,24 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
   margin-right: auto;
 }
 
-.fuente_tipos{
-  font-family: 'Courier New', Courier, monospace;
-  color: rgb(81, 135, 189);
-  font-size: 16px;
-  transform: translateY(-105px);
+@media (max-width: 480px) {
+  .fuente_nombre,
+  .fuente_nombreP {
+    font-size: 18px;
+    letter-spacing: 1px;
+  }
+
+  .fuente_id {
+    font-size: 35px;
+  }
+
+  .imagen_tarjeta,
+  .imagen_tarjetaPokedex {
+    width: 160px;
+    height: 190px;
+  }
 }
+
 
 @font-face {
     font-family: "letra-circle";
@@ -647,9 +670,15 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .fuente_tiposPoke{
-    font-family: 'letra-ParaTipos';
+  font-family: 'letra-ParaTipos';
   color: #051d0c;
   font-size: 22px;
+}
+
+@media (max-width: 480px) {
+  .fuente_tiposPoke {
+    font-size: 18px;
+  }
 }
 
 .decoracion_tipos{
@@ -970,6 +999,19 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 .color_yellow { color: #c7ad46; }
 .color_pink   { color: #fac0dd; }
 .color_purple { color: #e8b5fc; }
+
+#busqueda-pokemon {
+  color: rgb(255, 255, 255); 
+  background-color: transparent;
+  font-weight: bold;
+  font-style: italic;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+#busqueda-pokemon::placeholder {
+  color: white; 
+  opacity: 1;  
+}
 
 /* Pokebola */
 .captura-animacion {

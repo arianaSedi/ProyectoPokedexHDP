@@ -11,6 +11,9 @@ class Pokedex {
       "pokedex-pantalla container-fluid d-flex flex-wrap justify-content-center"
     );
 
+    //agregamos el contenedor blanco al main
+    document.querySelector(".main-pokedex").appendChild(contenedor);
+
     for (let i = 0; i < Pokemon.length; i++) {
       const main = document.querySelector("main");
       const contenedorTarjeta = document.createElement("div");
