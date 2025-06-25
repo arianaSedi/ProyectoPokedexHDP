@@ -157,6 +157,18 @@ body {
   line-height: 1.5;
 }
 
+.github-link {
+  color: #000;             
+  margin-left: 8px;         
+  text-decoration: none;    
+  font-size: 1.2rem;        
+  transition: color 0.3s;
+}
+
+.github-link:hover {
+  color: #2960c5;         
+}
+
 /* Botones a la derecha */
 .botones-acciones {
   flex: 1;
