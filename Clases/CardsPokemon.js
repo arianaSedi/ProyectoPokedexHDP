@@ -66,7 +66,7 @@ const CardsPokemon = (pokemon) => {
   );
 
   const img_volver = document.createElement("img");
-  img_volver.setAttribute("src", "../images/regresar.png");
+  img_volver.setAttribute("src", "./images/regresar.png");
   img_volver.setAttribute("class", "img_volver");
 
   const area_boton_acompañante = document.createElement("div");
