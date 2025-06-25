@@ -562,10 +562,10 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .fuente_nombre {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'fuente_letra';
   color: white;
-  font-size: 35px;
-  letter-spacing: 5px;
+  font-size: 30px;
+  letter-spacing: 3px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -578,10 +578,10 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .fuente_nombreP{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 35px;
+  font-family: 'fuente_letra';
+  font-size: 30px;
   line-height: 1.2;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   z-index: 1;
   white-space: nowrap;
   position: absolute;
@@ -589,15 +589,15 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .fuente_id{
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'letra-ParaID';
   color: #fdfdfd;
   font-weight: bold;
   letter-spacing: 2px;
-  font-size: 70px;
+  font-size: 50px;
 }
 
 .fuente_idPokedex{
-  font-family:'Times New Roman', Times, serif;
+  font-family: 'letra-ParaID';
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 25px;
@@ -628,7 +628,17 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 
 @font-face {
     font-family: "letra-circle";
-    src: url('circlethings.ttf') format('truetype');
+    src: url('/Resources/circlethings.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "letra-ParaID";
+    src: url('/Resources/Quicksand-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "letra-ParaTipos";
+    src: url('/Resources/Nunito-VariableFont_wght.ttf') format('truetype');
 }
 
 .fuente_circle_ {
@@ -637,7 +647,7 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 }
 
 .fuente_tiposPoke{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'letra-ParaTipos';
   color: #051d0c;
   font-size: 22px;
 }
@@ -960,3 +970,8 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 .color_yellow { color: #c7ad46; }
 .color_pink   { color: #fac0dd; }
 .color_purple { color: #e8b5fc; }
+
+@font-face {
+    font-family: "fuente_letra";
+    src: url('/Resources/Bungee-Regular.ttf') format('truetype');
+}
