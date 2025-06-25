@@ -1013,23 +1013,6 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
   opacity: 1;  
 }
 
-.mensaje-no-encontrado {
-  font-weight: bold;
-  color: rgb(15, 12, 12);
-  background-color: #c62828;
-  padding: 12px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  font-size: 18px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.oculto {
-  display: none !important;
-}
-
-
 /* Pokebola */
 .captura-animacion {
   position: fixed;
