@@ -971,6 +971,41 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
 .color_pink   { color: #fac0dd; }
 .color_purple { color: #e8b5fc; }
 
+/* Pokebola */
+.captura-animacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.pokebola-captura {
+  width: 300px;         /* Aumenta el tamaño */
+  height: auto;         /* Mantiene la proporción original */
+  animation: bounce 1s infinite;
+}
+
+.oculto {
+  display: none !important;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 @font-face {
     font-family: "fuente_letra";
     src: url('/Resources/Bungee-Regular.ttf') format('truetype');
