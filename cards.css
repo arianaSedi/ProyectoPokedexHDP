@@ -1010,3 +1010,25 @@ background: radial-gradient(circle,rgb(240, 203, 238) 0%, rgb(223, 121, 209) 100
     font-family: "fuente_letra";
     src: url('/Resources/Bungee-Regular.ttf') format('truetype');
 }
+@keyframes mover {
+  0% {
+    transform: translateX(50);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(40);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+ 
+}
+
+.animarpoke {
+  animation: mover 3s ease-in-out infinite;
+  will-change: transform;
+  display: block;
+  position: relative;
+}
