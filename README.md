@@ -34,7 +34,7 @@ El proyecto está disponible públicamente en GitHub Pages:
 - [Freddy Anastasio Villatoro Ramirez - VR20003](https://github.com/FreddyJr30)
 - [Josué Iván Molina Romero - MR22085](https://github.com/ToteMolina)
 
-## Cómo ejecutrar el proyecto localmente
+## 📁 Cómo ejecutrar el proyecto localmente
 
 1. Clona el repositorio:
 <pre>git clone https://github.com/arianaSedi/ProyectoPokedexHDP.git</pre>
