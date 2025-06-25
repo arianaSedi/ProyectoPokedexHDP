@@ -820,7 +820,7 @@ body {
   z-index: -1;
 }
 .botonOp:hover {
-  color: black;
+  color: #000000;
 }
 .botonOp:hover:before {
   transition: 0.5s all ease;
@@ -829,7 +829,7 @@ body {
   opacity: 1;
 }
 .botonOp:focus {
-  color: black;
+  color: #000000;
 }
 .botonOp:focus:before {
   transition: 0.5s all ease;
@@ -843,7 +843,7 @@ body {
 }
 
 .botonOp.active {
-  color: black;
+  color: #000000;
 }
 .botonOp.active:before {
   transition: 0.5s all ease;
