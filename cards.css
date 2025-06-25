@@ -296,6 +296,12 @@ body {
   position: relative;
 }
 
+@media (max-width: 576px) {
+  .cruz-container {
+    display: none !important;
+  }
+}
+
 .cruz .flecha {
   position: absolute;
   background-color: #222121;
