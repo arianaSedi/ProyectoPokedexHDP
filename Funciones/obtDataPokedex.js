@@ -19,37 +19,27 @@ const ObtenerDatosDB = () => {
 
       variable.dibujarpokedex(alldata);
 
-            // Funcipn que aplica ambos filtros a la vez
-          function aplicarFiltros() {
+          // Funcipn que aplica ambos filtros a la vez
+            function aplicarFiltros() {
             const texto = document.getElementById("busqueda-pokemon").value.toLowerCase();
             const tipoSeleccionado = document.getElementById("filtro-tipo").value.toLowerCase();
             const tarjetas = document.querySelectorAll(".FiltroBuscarPokemon");
-            const mensaje = document.getElementById("mensaje-no-encontrado");
-            let visible = false;
 
             tarjetas.forEach((card) => {
-              const nombre = card.querySelector(".fuente_nombre")?.textContent.toLowerCase() || "";
-              const id = card.querySelector(".fuente_idPokedex")?.textContent.toLowerCase() || "";
-              const tipos = Array.from(card.querySelectorAll(".ColorTipo")).map((el) =>
-                el.textContent.toLowerCase()
-              );
+                const nombre = card.querySelector(".fuente_nombre")?.textContent.toLowerCase() || "";
+                const id = card.querySelector(".fuente_idPokedex")?.textContent.toLowerCase() || "";
+                const tipos = Array.from(card.querySelectorAll(".ColorTipo"))
+                .map((el) => el.textContent.toLowerCase());
 
-              if (!visible && texto.trim() !== "") {
-                mensaje.classList.remove("oculto");
-              } else {
-                mensaje.classList.add("oculto");
-              }
+                const coincideTexto = nombre.includes(texto) || id.includes(texto);
+                const coincideTipo = tipoSeleccionado === "todos" || tipos.includes(tipoSeleccionado);
 
-              const coincideTexto = nombre.includes(texto) || id.includes(texto);
-              const coincideTipo = tipoSeleccionado === "todos" || tipos.includes(tipoSeleccionado);
-
-              const mostrar = coincideTexto && coincideTipo;
-              card.style.display = mostrar ? "block" : "none";
+                card.style.display = coincideTexto && coincideTipo ? "block" : "none";
             });
-          }
+            }
             document.getElementById("busqueda-pokemon").addEventListener("input", aplicarFiltros);
             document.getElementById("filtro-tipo").addEventListener("change", aplicarFiltros);
-    };
+          };
 
     getallrequest.onerror = function (event) {
       console.log("Error al obtener los datos ", event.target.error);
