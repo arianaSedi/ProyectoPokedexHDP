@@ -82,7 +82,7 @@ const CardsPokemon = (pokemon) => {
   );
 
   const img_pokeball = document.createElement("img");
-  img_pokeball.setAttribute("src", "../images/pokeball-abierta.png");
+  img_pokeball.setAttribute("src", "./images/pokeball-abierta.png");
   img_pokeball.setAttribute("class", "img_pokeball");
 
   boton_acompañante.addEventListener("click", async () => {
