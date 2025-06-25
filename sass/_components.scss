@@ -1,0 +1,30 @@
+@import 'variables';
+
+.scroll-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: $bg-scroll;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: $color-boton;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: none;
+  transition: transform 0.2s ease;
+}
+
+.scroll-img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.sscroll-btn:hover {
+  transform: scale(1.1);
+}

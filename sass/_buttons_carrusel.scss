@@ -1,0 +1,94 @@
+@import 'variables';
+
+.botones-acciones .btn-rojo-pokedex,
+.botones-acciones .btn-verde-pokedex {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-rojo-pokedex {
+  background-color: $bg-rojo;
+  border: 2px solid $borde-rojo;
+}
+
+.btn-verde-pokedex {
+  background-color: $bg-azul;
+  border: 2px solid $borde-azul;
+}
+
+.body-carrusel {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+
+.carruselContainer {
+  width: 250px;
+  height: 350px;
+  transform-style: preserve-3d;
+  margin-top: 60px;
+  position: relative;
+}
+
+.imagen {
+  position: absolute;
+  width: 200px;
+  height: 280px;
+  border-radius: 15px;
+  background-color: $bg-imagen;
+  text-align: center;
+  color: $color-blanco;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+  overflow: visible;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 5px;
+    background-color: $bg-h3;
+    width: 100%;
+    font-size: 12px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .reflejo {
+    position: absolute;
+    bottom: -90px;
+    width: 100%;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    transform: scaleY(-1);
+    opacity: 0.25;
+    filter: blur(4px);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
