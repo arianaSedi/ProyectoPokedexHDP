@@ -577,5 +577,23 @@ body {
   font-weight: bold;
 }
 
+/* Tarjetas Acompaniante*/
+.card-acompanante {
+  width: 250px;         /* Tamaño fijo */
+  min-width: 230px;     /* Para que no se encojan demasiado */
+  max-width: 100%;      /* Para responsividad */
+  height: auto;         /* Ajusta según el contenido */
+  margin: 15px;
+  flex: 0 0 auto;       /* No crecer/encoger automáticamente */
+}
+
+#listaAcompanantes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
 
 
