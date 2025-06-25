@@ -338,6 +338,23 @@ body {
   }
 }
 
+@media (max-width: 576px) {
+  .descripcionPokedex {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .descripcion {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: justify;
+  }
+
+  .info {
+    margin-top: 10px;
+  }
+}
+
 .boton-pokedex-container {
   display: flex;
   justify-content: center;
@@ -370,10 +387,67 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
+@media (max-width: 576px) {
+  .btn-pokedex-pro {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+  }
+}
+
 .icono-boton {
   width: 25px;
   height: 25px;
 }
+
+/* Media query para carrusel en pantallas medianas y pequeñas */
+@media (max-width: 991px) {
+  .carruselContainer {
+    width: 200px;
+    height: 300px;
+    margin-top: 70px;
+  }
+
+  .imagen {
+    width: 160px;
+    height: 240px;
+    margin: 0 auto; /* centrado sin separación lateral */
+  }
+
+  .imagen h3 {
+    font-size: 11px;
+    padding: 3px;
+  }
+
+  .imagen .reflejo {
+    height: 60px;
+    bottom: -65px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carruselContainer {
+    width: 160px;
+    height: 250px;
+    margin-top: 30px;
+  }
+
+  .imagen {
+    width: 100px;
+    height: 150px;
+  
+  }
+
+  .imagen h3 {
+    font-size: 10px;
+  }
+
+  .imagen .reflejo {
+    height: 50px;
+    bottom: -55px;
+  }
+}
+
 
 /* Animacion de eliminacion */
 .eliminacion-animacion {
