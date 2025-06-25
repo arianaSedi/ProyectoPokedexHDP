@@ -707,3 +707,18 @@ body {
 .btn-eliminar-poke:hover {
   background-color: rgba(255, 0, 0, 0.9);
 }
+
+/* Texto de las tarjetas mis acompaniantes */
+.nombre-pokemon {
+  position: relative;
+  font-family: 'letra-nombre', 'Press Start 2P', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+  margin-top: 5px;
+}
