@@ -157,6 +157,10 @@ body {
     margin-left: auto;
   }
 
+  #menu.oculto {
+    display: flex !important;
+  }
+
   #menu {
     display: flex;
     flex-direction: row;
