@@ -85,6 +85,7 @@ async function cargarAcompanantes() {
       red: "fondoTarjetaRojo",
       blue: "fondoTarjetaAzul",
       green: "fondoTarjetaVerde",
+      grass: "fondoTarjetaVerde",
       brown: "fondoTarjetaMarron",
       yellow: "fondoTarjetaAmarillo",
       pink: "fondoTarjetaRosa",
