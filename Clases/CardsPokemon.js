@@ -1,5 +1,4 @@
 import getEstadisticas from "../Funciones/obtEstadisticas.js";
-//import setAcompañantes from "./SetAcompañantes.js";
 import { agregarAcompanante } from "../Funciones/indexdDB.js";
 
 const CardsPokemon = (pokemon) => {
@@ -13,6 +12,15 @@ const CardsPokemon = (pokemon) => {
   // Eliminar tarjeta previa si existe
   const tarjetaExistente = document.querySelector(".areaTarjeta");
   if (tarjetaExistente) tarjetaExistente.remove();
+  // Reproducir sonido del Pokémon
+    try {
+      const nombreAudio = pokemon.nombre.toLowerCase();
+      const sonido = new Audio(`https://play.pokemonshowdown.com/audio/cries/${nombreAudio}.ogg`);
+      sonido.play().catch(err => console.warn("Error al reproducir sonido:", err));
+    } catch (e) {
+      console.warn("No se pudo cargar el sonido del Pokémon", e);
+    }
+
 
   // Contenedor principal
   const area = document.createElement("div");
@@ -78,16 +86,19 @@ const CardsPokemon = (pokemon) => {
   img_pokeball.setAttribute("class", "img_pokeball");
 
   boton_acompañante.addEventListener("click", async () => {
-  const acompañante = {
-    id: pokemon.id,
-    name: pokemon.nombre || pokemon.name || "Sin nombre",
-    image: pokemon.imagen || pokemon.image || "images/pokeball.png"
-  };
+  //console.log("Pokemon que se va a agregar:", pokemon);
 
-  const resultado = await agregarAcompanante(acompañante);
-  alert(resultado);
-});
+  const resultado = await agregarAcompanante(pokemon);
 
+  // Solo mostrar animación si fue agregado correctamente
+  if (resultado === "Pokémon agregado correctamente") {
+    mostrarAnimacionCaptura();
+    alert(resultado);
+    setTimeout(() => window.location.reload(), 3000); // esperar animación
+  } else {
+    alert(resultado);
+  }
+  });
 
   boton_volver.addEventListener("click", () => {
     const AreaDiv = document.querySelector("[data-area]");
@@ -546,16 +557,14 @@ const botonesNav = [
             );
           });
           };
-             renderMoves();
+      
+            renderMoves();
       }
-
     });
 
     NavbarOpciones.appendChild(btn);
     return btn;
   });
-
-
 
   const containerInfor = document.createElement("div");
   containerInfor.setAttribute("class", "margen_top d-flex flex-column");
@@ -601,12 +610,27 @@ const botonesNav = [
   dibujarTarjeta.appendChild(informacion_fila);
 
   area.appendChild(dibujarTarjeta);
-  
   main.appendChild(area);
 };
 
 function conteo(numero) {
   return Math.abs(numero).toString().length;
+}
+
+//Animacion Pokebola
+function mostrarAnimacionCaptura() {
+  const animacion = document.getElementById("capturaAnimacion");
+  const sonido = document.getElementById("audio-captura");
+
+  if (animacion && sonido) {
+    animacion.classList.remove("oculto");
+    sonido.currentTime = 0;
+    sonido.play();
+
+    setTimeout(() => {
+      animacion.classList.add("oculto");
+    }, 3000); // dura 3 segundos
+  }
 }
 
 export default CardsPokemon;
