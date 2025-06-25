@@ -1,48 +1,48 @@
-$color_1: white;
-$color_2: #3737cede;
-$color_3: rgb(255, 255, 255);
-$color_4: #ffc400;
-$color_5: #1b5e20;
-$color_6: #fdfdfd;
-$color_7: #5e7966;
-$color_8: #051d0c;
-$color_9: #c2b8b8;
-$color_10: #bbfae5;
-$color_11: #f5c7b5;
-$color_12: #8acdf1;
-$color_13: #706f6f;
-$color_14: #ebb990;
-$color_15: #bba43c;
-$color_16: #c5a1ff;
-$color_17: #ffd6ee;
-$color_18: #d6d0d0;
-$color_19: #b9b8b8;
-$color_20: #70bda1;
-$color_21: #be6c4c;
-$color_22: #4d86a5;
-$color_23: #d3d3d4;
-$color_24: #a57d5e;
-$color_25: #c1b378;
-$color_26: #bd71f0;
-$color_27: #d481b3;
-$color_28: #858383;
-$color_29: #4d4c4c;
-$color_30: #5a5a5a;
-$color_31: black;
-$color_32: #000000;
-$color_33: #292929;
-$color_34: #0f0f0f;
-$color_35: #636363;
-$color_36: #807f7f;
-$color_37: #a0a0a0;
-$color_38: #b4b6b6;
-$color_39: #f1a485;
-$color_40: #9fcff0;
-$color_41: #3ea76a;
-$color_42: #ffc493;
-$color_43: #c7ad46;
-$color_44: #fac0dd;
-$color_45: #e8b5fc;
+$color_blanco: white;
+$color_azul-morado: #3737cede;
+$color_blanco-rgb: rgb(255, 255, 255);
+$color_amarillo: #ffc400;
+$color_verde-oscuro: #1b5e20;
+$color_blanco-claro: #fdfdfd;
+$color_verde-musgo: #5e7966;
+$color_verde-negro: #051d0c;
+$color_gris-claro: #c2b8b8;
+$color_agua-claro: #bbfae5;
+$color_rosado-claro: #f5c7b5;
+$color_celeste: #8acdf1;
+$color_gris-medio: #706f6f;
+$color_naranja-claro: #ebb990;
+$color_dorado: #bba43c;
+$color_lila: #c5a1ff;
+$color_rosado-pastel: #ffd6ee;
+$color_gris-pastel: #d6d0d0;
+$color_gris-suave: #b9b8b8;
+$color_verde-menta: #70bda1;
+$color_rojo-tierra: #be6c4c;
+$color_azul-acero: #4d86a5;
+$color_gris-plata: #d3d3d4;
+$color_marron-claro: #a57d5e;
+$color_amarillo-oro: #c1b378;
+$color_morado-claro: #bd71f0;
+$color_rosado-vivo: #d481b3;
+$color_gris: #858383;
+$color_gris-oscuro: #4d4c4c;
+$color_gris-media: #5a5a5a;
+$color_negro: black;
+$color_negro: #000000;
+$color_negro-media: #292929;
+$color_negro-profundo: #0f0f0f;
+$color_gris-topo: #636363;
+$color_gris-intermedio: #807f7f;
+$color_gris-puro: #a0a0a0;
+$color_gris-neutro: #b4b6b6;
+$color_naranja-suave: #f1a485;
+$color_celeste-suave: #9fcff0;
+$color_verde-claro: #3ea76a;
+$color_naranja-pastel: #ffc493;
+$color_oro-oscuro: #c7ad46;
+$color_rosado-bebe: #fac0dd;
+$color_violeta-claro: #e8b5fc;
 $font-family_1: 'Courier New', Courier, monospace;
 $font-family_2: 'fuente_letra';
 $font-family_3: 'letra-ParaID';
@@ -191,7 +191,7 @@ body {
 }
 .nav-links {
 	.nav-link {
-		color: $color_1;
+		color: $color_blanco;
 		font-family: $font-family_1;
 		text-decoration: none;
 		font-weight: bold;
@@ -204,7 +204,7 @@ body {
 			background: linear-gradient(to bottom right, #fade3fe8, #f5d12ecc);
 			transform: translateY(-2px);
 			border: 2px solid #3737cede;
-			color: $color_2;
+			color: $color_azul-morado;
 		}
 	}
 }
@@ -221,7 +221,7 @@ body {
 }
 .menu-hamb {
 	font-size: 30px;
-	color: $color_3;
+	color: $color_blanco-rgb;
 	background: none;
 	border: none;
 	cursor: pointer;
@@ -281,7 +281,7 @@ body {
 	height: 50px;
 	font-size: 24px;
 	font-weight: bold;
-	color: $color_4;
+	color: $color_amarillo;
 	cursor: pointer;
 	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 	z-index: 1000;
@@ -372,7 +372,7 @@ body {
 .nombre-equipo {
 	font-family: $font-family_1;
 	font-size: 15px;
-	color: $color_5;
+	color: $color_verde-oscuro;
 	margin: 0;
 	line-height: 1.5;
 }
@@ -519,7 +519,7 @@ body {
 }
 .fuente_nombre {
 	font-family: $font-family_2;
-	color: $color_1;
+	color: $color_blanco;
 	font-size: 28px;
 	letter-spacing: 3px;
 	text-align: center;
@@ -542,7 +542,7 @@ body {
 }
 .fuente_id {
 	font-family: $font-family_3;
-	color: $color_6;
+	color: $color_blanco-claro;
 	font-weight: bold;
 	letter-spacing: 2px;
 	font-size: 50px;
@@ -569,16 +569,16 @@ body {
 }
 .fuente_circle_ {
 	font-family: $font-family_4;
-	color: $color_7;
+	color: $color_verde-musgo;
 }
 .fuente_tiposPoke {
 	font-family: $font-family_5;
-	color: $color_8;
+	color: $color_verde-negro;
 	font-size: 22px;
 }
 .decoracion_tipos {
 	font-family: $font-family_6;
-	color: $color_9;
+	color: $color_gris-claro;
 	font-size: 15px;
 	transform: translateY(-105px);
 }
@@ -606,34 +606,34 @@ body {
 	cursor: pointer;
 }
 .color_verdep {
-	color: $color_10;
+	color: $color_agua-claro;
 }
 .color_rojop {
-	color: $color_11;
+	color: $color_rosado-claro;
 }
 .color_azulp {
-	color: $color_12;
+	color: $color_celeste;
 }
 .color_blancop {
-	color: $color_13;
+	color: $color_gris-medio;
 }
 .color_cafep {
-	color: $color_14;
+	color: $color_naranja-claro;
 }
 .color_amarillop {
-	color: $color_15;
+	color: $color_dorado;
 }
 .color_moradop {
-	color: $color_16;
+	color: $color_lila;
 }
 .color_rosadop {
-	color: $color_17;
+	color: $color_rosado-pastel;
 }
 .color_grisp {
-	color: $color_18;
+	color: $color_gris-pastel;
 }
 .color_negrop {
-	color: $color_19;
+	color: $color_gris-suave;
 }
 .margen_abajo {
 	margin-bottom: 20px;
@@ -728,34 +728,34 @@ body {
 	-webkit-text-stroke: 12px #7a7979;
 }
 .color_verde {
-	color: $color_20;
+	color: $color_verde-menta;
 }
 .color_rojo {
-	color: $color_21;
+	color: $color_rojo-tierra;
 }
 .color_azul {
-	color: $color_22;
+	color: $color_azul-acero;
 }
 .color_blanco {
-	color: $color_23;
+	color: $color_gris-plata;
 }
 .color_cafe {
-	color: $color_24;
+	color: $color_marron-claro;
 }
 .color_amarillo {
-	color: $color_25;
+	color: $color_amarillo-oro;
 }
 .color_morado {
-	color: $color_26;
+	color: $color_morado-claro;
 }
 .color_rosado {
-	color: $color_27;
+	color: $color_rosado-vivo;
 }
 .color_gris {
-	color: $color_28;
+	color: $color_gris;
 }
 .color_negro {
-	color: $color_29;
+	color: $color_gris-oscuro;
 }
 .botonOp {
 	font-size: 15px;
@@ -769,7 +769,7 @@ body {
 	border: none;
 	border-radius: 20px;
 	position: relative;
-	color: $color_30;
+	color: $color_gris-media;
 	text-decoration: none;
 	transition: 0.3s ease all;
 	margin-bottom: 20px;
@@ -789,7 +789,7 @@ body {
 		z-index: -1;
 	}
 	&:hover {
-		color: $color_31;
+		color: $color_negro;
 		&:before {
 			transition: 0.5s all ease;
 			left: 0;
@@ -798,7 +798,7 @@ body {
 		}
 	}
 	&:focus {
-		color: $color_31;
+		color: $color_negro;
 		&:before {
 			transition: 0.5s all ease;
 			left: 0;
@@ -808,11 +808,11 @@ body {
 	}
 	&:active {
 		transform: scale(0.9);
-		color: $color_32;
+		color: $color_negro;
 	}
 }
 .botonOp.active {
-	color: $color_31;
+	color: $color_negro;
 	&:before {
 		transition: 0.5s all ease;
 		left: 0;
@@ -823,58 +823,58 @@ body {
 .fuente_infor {
 	font-family: $font-family_7;
 	font-size: 15px;
-	color: $color_33;
+	color: $color_negro-media;
 }
 .fuente_data_bold {
 	font-family: $font-family_7;
 	font-size: 15px;
-	color: $color_34;
+	color: $color_negro-profundo;
 	font-weight: bold;
 }
 .fuente_data {
 	font-family: $font-family_7;
 	font-size: 15px;
-	color: $color_35;
+	color: $color_gris-topo;
 	font-weight: bold;
 }
 .color_white {
-	color: $color_36;
+	color: $color_gris-intermedio;
 }
 .color_black {
-	color: $color_37;
+	color: $color_gris-puro;
 }
 .color_gray {
-	color: $color_38;
+	color: $color_gris-neutro;
 }
 .color_red {
-	color: $color_39;
+	color: $color_naranja-suave;
 }
 .color_blue {
-	color: $color_40;
+	color: $color_celeste-suave;
 }
 .color_green {
-	color: $color_41;
+	color: $color_verde-claro;
 }
 .color_brown {
-	color: $color_42;
+	color: $color_naranja-pastel;
 }
 .color_yellow {
-	color: $color_43;
+	color: $color_oro-oscuro;
 }
 .color_pink {
-	color: $color_44;
+	color: $color_rosado-bebe;
 }
 .color_purple {
-	color: $color_45;
+	color: $color_violeta-claro;
 }
 #busqueda-pokemon {
-	color: $color_3;
+	color: $color_blanco-rgb;
 	background-color: $background-color_14;
 	font-weight: bold;
 	font-style: italic;
 	font-family: $font-family_1;
 	&::placeholder {
-		color: $color_1;
+		color: $color_blanco;
 		opacity: 1;
 	}
 }
