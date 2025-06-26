@@ -25,6 +25,7 @@ Este proyecto consiste en una Pokédex interactiva desarrollada en JavaScript pu
 ## 🌐 Despliegue en GitHub Pages
 
 El proyecto está disponible públicamente en GitHub Pages:
+🔗 [https://arianasedi.github.io/ProyectoPokedexHDP/](https://arianasedi.github.io/ProyectoPokedexHDP/)
 
 ## 👥 Integrantes del Proyecto
 
@@ -36,9 +37,9 @@ El proyecto está disponible públicamente en GitHub Pages:
 
 ## 📁 Cómo ejecutrar el proyecto localmente
 
-1. Clona el repositorio:
+Clona el repositorio:
 <pre>git clone https://github.com/arianaSedi/ProyectoPokedexHDP.git</pre>
-2. Abre **index.html**
+
 
 ## 📚 Recursos y Documentación
 - [Documentación oficial de PokeAPI](https://pokeapi.co/docs/v2)
