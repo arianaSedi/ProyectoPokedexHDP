@@ -1041,11 +1041,11 @@ body {
 }
 @media (max-width: 480px) {
   .fuente_nombre {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 1px;
   }
   .fuente_nombreP {
-    font-size: 18px;
+    font-size: 20px;
     letter-spacing: 1px;
   }
   .fuente_id {
