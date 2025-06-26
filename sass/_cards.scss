@@ -66,45 +66,17 @@ $background-color_13: rgba(0, 0, 0, 0.295);
 $background-color_14: transparent;
 $background-color_15: rgba(255, 255, 255, 0.384);
 
-/* Contenedor general de la barra */
-/* Parte izquierda grande como Pokedex */
-/* Boton azul grande */
-/* Luces pequeñas */
-/* Enlaces del menu */
-/* Hover */
-/* Fondo general rojo tipo Pokedex */
-/*para pantallas medianas y pequenas reducimos el logo*/
-/*que el logo quede centrado*/
-/*clase del diseno del menu tipo hamburguesa*/
-/*mostrar menu cuando se activa */
-/*en pantallas grandes mostrar menu normal y oculta del menu-hamb*/
-/*pantallas medianas*/
-/*clase para ocultar */
-/* Contenedor estilo pantalla blanca */
-/* Boton flotante para volver arriba */
-/* Contenedor interno con espacios */
-/* Cruz a la izquierda */
-/* Flechas arriba y abajo */
-/* Flechas izquierda y derecha */
-/* Centro de la cruz */
-/* Pantalla verde centrada */
-/* Texto dentro de la pantalla */
-/* Botones a la derecha */
-/* Estilos de botones */
-/*Esto es pa el area de la tarjeta*/
-/* Teléfonos (pantallas pequeñas: <= 576px) */
-/* Tablets (pantallas medianas: 577px a 991px) */
 @font-face {
 	font-family: "letra-circle";
-	src: url('/Resources/circlethings.ttf') format('truetype');
+	src: url('../Resources/circlethings.ttf') format('truetype');
 }
 @font-face {
 	font-family: "letra-ParaID";
-	src: url('/Resources/Quicksand-VariableFont_wght.ttf') format('truetype');
+	src: url('../Resources/Quicksand-VariableFont_wght.ttf') format('truetype');
 }
 @font-face {
 	font-family: "letra-ParaTipos";
-	src: url('/Resources/Nunito-VariableFont_wght.ttf') format('truetype');
+	src: url('../Resources/Nunito-VariableFont_wght.ttf') format('truetype');
 }
 /* Para evitar márgenes extra que descuadran */
 /*COLORES DE LOS ID EN CARDSPOKEMON*/
@@ -127,7 +99,7 @@ $background-color_15: rgba(255, 255, 255, 0.384);
 }
 @font-face {
 	font-family: "fuente_letra";
-	src: url('/Resources/Bungee-Regular.ttf') format('truetype');
+	src: url('../Resources/Bungee-Regular.ttf') format('truetype');
 }
 @keyframes mover {
 	0% {
@@ -520,7 +492,7 @@ body {
 .fuente_nombre {
 	font-family: $font-family_2;
 	color: $color_blanco;
-	font-size: 28px;
+	font-size: 25px;
 	letter-spacing: 3px;
 	text-align: center;
 	white-space: nowrap;
@@ -533,7 +505,7 @@ body {
 }
 .fuente_nombreP {
 	font-family: $font-family_2;
-	font-size: 28px;
+	font-size: 25px;
 	line-height: 1.2;
 	letter-spacing: 3px;
 	z-index: 1;
@@ -1019,11 +991,11 @@ body {
 }
 @media (max-width: 480px) {
 	.fuente_nombre {
-		font-size: 18px;
+		font-size: 20px;
 		letter-spacing: 1px;
 	}
 	.fuente_nombreP {
-		font-size: 18px;
+		font-size: 20px;
 		letter-spacing: 1px;
 	}
 	.fuente_id {
