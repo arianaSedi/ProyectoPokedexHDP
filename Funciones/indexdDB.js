@@ -110,9 +110,10 @@ export async function asignarAPequipo(nombreEquipo, pokemon) {
 
   // Agregar clon del Pokémon con solo la información necesaria
   const copiaPokemon = {
-    id: pokemon.id,
-    name: pokemon.name || pokemon.nombre || "Sin nombre",
-    image: pokemon.image || pokemon.imagen || "images/pokeball.png"
+  id: pokemon.id,
+  name: pokemon.name || pokemon.nombre || "Sin nombre",
+  image: pokemon.image || pokemon.imagen || "images/pokeball.png",
+  color: pokemon.color || "gray"
   };
 
   equipo.pokemones.push(copiaPokemon); // Asignar
